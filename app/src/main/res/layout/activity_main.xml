@@ -6,13 +6,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragContainer"
+        android:name="com.christianwestesson.vaxtvakten.HomeFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mainActivityGoHomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragContainer" />
+
+    <Button
+        android:id="@+id/mainActivityGoAddPlantListBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainActivityGoHomeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/fragContainer" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainActivityGoAddPlantListBtn"
+        app:layout_constraintTop_toBottomOf="@+id/fragContainer" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/fragContainer" />
+</androidx.constraintlayout.widget.ConstraintLayout>
