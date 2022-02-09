@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class MyPlantsAdapter() : RecyclerView.Adapter<MyViewHolder>() {
+class MyPlantsAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val vh = MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recview_my_plants, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddPlantViewHolder {
+        val vh = AddPlantViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recview_my_plants, parent, false))
         return vh
     }
 
@@ -16,7 +16,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyViewHolder>() {
         return 10
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
 
     }
 
