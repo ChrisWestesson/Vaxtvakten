@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class HomeFragment : Fragment() {
+
+    var myPlantsAdapter = MyPlantsAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,5 +27,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val myPlantsRecView = view.findViewById<RecyclerView>(R.id.myPlantsRV)
+        myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
+        myPlantsRecView.adapter = myPlantsAdapter
+
     }
 }
