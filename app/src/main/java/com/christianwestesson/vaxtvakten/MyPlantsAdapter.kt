@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyPlantsAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
+    lateinit var homefrag : HomeFragment
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddPlantViewHolder {
         val vh = AddPlantViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recview_my_plants, parent, false))
         return vh
@@ -17,6 +19,10 @@ class MyPlantsAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
+
+        holder.itemView.setOnClickListener {
+            homefrag.goPlantDetails()
+        }
 
     }
 

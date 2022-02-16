@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
@@ -13,11 +14,12 @@ class HomeFragment : Fragment() {
 
     var _binding: FragmentHomeBinding? = null
     val binding get () = _binding!!
-
+    val model : MyPlantViewModel by activityViewModels()
     var myPlantsAdapter = MyPlantsAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        myPlantsAdapter.homefrag = this
 
     }
 
@@ -38,5 +40,9 @@ class HomeFragment : Fragment() {
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
 
+    }
+
+    fun goPlantDetails() {
+        requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, PlantDetailsFragment()).addToBackStack(null).commit()
     }
 }
