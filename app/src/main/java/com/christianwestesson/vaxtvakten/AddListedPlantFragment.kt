@@ -29,5 +29,10 @@ class AddListedPlantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        binding.homeBtn.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, HomeFragment()).addToBackStack(null).commit()
+        }
     }
 }

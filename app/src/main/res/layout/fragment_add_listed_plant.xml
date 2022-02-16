@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/addToListBtn"
+        android:id="@+id/homeBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="lägga till"
