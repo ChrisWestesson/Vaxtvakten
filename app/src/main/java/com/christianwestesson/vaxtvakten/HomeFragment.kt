@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+
+    var _binding: FragmentHomeBinding? = null
+    val binding get () = _binding!!
 
     var myPlantsAdapter = MyPlantsAdapter()
 
@@ -22,7 +26,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        //return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
