@@ -62,4 +62,10 @@ class AddPlantListFragment : Fragment() {
 
         _binding = null
     }
+
+    fun goChoosenPlant()
+    {
+        requireActivity().supportFragmentManager.beginTransaction().
+        add(R.id.fragContainer, AddListedPlantFragment()).addToBackStack(null).commit()
+    }
 }

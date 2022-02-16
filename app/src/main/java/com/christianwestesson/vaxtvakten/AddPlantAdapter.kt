@@ -29,10 +29,9 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
 
         holder.flowertext.text = flowers[position]
-        holder.flowertext.setOnClickListener {
-            Log.i("VAXTDEBUG", "Klickat på en blomma")
 
-
+        holder.itemView.setOnClickListener {
+            addplantfrag.goChoosenPlant()
         }
 
 
