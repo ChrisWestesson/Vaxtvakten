@@ -7,10 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.christianwestesson.vaxtvakten.databinding.ActivityMainBinding.inflate
+import com.christianwestesson.vaxtvakten.databinding.FragmentAddListedPlantBinding.inflate
+import com.christianwestesson.vaxtvakten.databinding.FragmentAddPlantListBinding
+import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
 
 class AddPlantListFragment : Fragment() {
 
     var addplantadapter = AddPlantAdapter()
+    var _binding: FragmentAddPlantListBinding? = null
+    val binding get () = _binding!!
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +29,10 @@ class AddPlantListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_plant_list, container, false)
+        //return inflater.inflate(R.layout.fragment_add_plant_list, container, false)
+        _binding = FragmentAddPlantListBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
