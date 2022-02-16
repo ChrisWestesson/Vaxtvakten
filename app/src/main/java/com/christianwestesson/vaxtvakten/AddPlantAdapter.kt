@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
+    lateinit var  addplantfrag : AddPlantListFragment
+
     var flowers = mutableListOf<String>("Amaryllis", "Aralia", "Aspidistra", "Begonia", "Benjaminfikus",
         "Cyklamen", "Flitiga Lisa", "Fredskalla", "Gloxinia", "Hemtrevnad", "Julstjärna", "Monstera", "Paradisträd",
         "Pelargon", "Prickblad", "Silverkalla", "Spjutbräken", "Svärmors kudde", "Svärmors tunga", "Skvallerreva",
@@ -25,10 +27,14 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
 
+
         holder.flowertext.text = flowers[position]
         holder.flowertext.setOnClickListener {
             Log.i("VAXTDEBUG", "Klickat på en blomma")
+
+
         }
+
 
     }
 

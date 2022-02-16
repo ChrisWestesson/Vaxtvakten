@@ -26,9 +26,21 @@ class AddUnlistedPlanFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentAddUnlistedPlanBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.namnET.text
+
+        binding.btnTakePicture.setOnClickListener {
+            // Camera code
+        }
+
+        binding.nextToAddListBtn.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction().add(R.id.addListFrag, AddListedPlantFragment()).addToBackStack(null).commit()
+        }
     }
 }
