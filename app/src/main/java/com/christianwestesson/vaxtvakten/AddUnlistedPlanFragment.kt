@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
+import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
 
 
 class AddUnlistedPlanFragment : Fragment() {
+
+    var _binding: FragmentAddUnlistedPlanBinding? = null
+    val binding get () = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +24,8 @@ class AddUnlistedPlanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_unlisted_plan, container, false)
+        _binding = FragmentAddUnlistedPlanBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
