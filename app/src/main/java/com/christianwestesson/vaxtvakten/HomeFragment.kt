@@ -47,4 +47,9 @@ class HomeFragment : Fragment() {
     fun goPlantDetails() {
         requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, PlantDetailsFragment()).addToBackStack(null).commit()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
