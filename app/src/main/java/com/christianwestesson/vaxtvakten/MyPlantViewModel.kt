@@ -17,7 +17,7 @@ class MyPlantViewModel : ViewModel() {
     fun addPlant() {
         var temp = PlantInfo()
         temp.title = "Rosorna i hallen"
-        temp.info = "Ska stå i skugga och är känsliga för övervattning. Tål inte direkt solljus."
+        temp.info = "Ska stå i skugga"
         temp.species = "Rosor"
         temp.wateramount = "1 dl"
         temp.waterinterval = 300000
