@@ -100,7 +100,11 @@ class PlantDetailsFragment : Fragment() {
             }
             override fun onFinish() {
                 progressbar.setProgress(0, true)
+
+
             }
         }.start()
     }
+
+
 }

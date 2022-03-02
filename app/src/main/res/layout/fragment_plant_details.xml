@@ -7,24 +7,6 @@
     android:background="@drawable/gradient_background"
     tools:context=".PlantDetailsFragment">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="redigera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="vattna"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <TextView
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
@@ -63,36 +45,33 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="20dp"
         android:text="Minuter"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="636dp" />
 
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:text="Timmar"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/textView27"
-        app:layout_constraintStart_toEndOf="@+id/textView25" />
+        app:layout_constraintStart_toEndOf="@+id/textView25"
+        tools:layout_editor_absoluteY="636dp" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginBottom="20dp"
         android:text="Dagar"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white" />
+        tools:layout_editor_absoluteY="636dp" />
 
     <ProgressBar
         android:id="@+id/timeLeftProgressBar"
@@ -252,6 +231,7 @@
                     android:ems="10"
                     android:hint="Övrigt"
                     android:inputType="textPersonName"
+                    android:singleLine="false"
                     android:textColor="@color/white" />
             </LinearLayout>
 
