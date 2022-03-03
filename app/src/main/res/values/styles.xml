@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="spinnerTheme">
+        <item name="android:background">@drawable/gradient_background</item>
+        <item name="android:textColor">#ffffff</item>
+
+        <!-- this is for api 19 text color -->
+        <item name="android:color">@android:color/white</item>
+    </style>
+
+</resources>
