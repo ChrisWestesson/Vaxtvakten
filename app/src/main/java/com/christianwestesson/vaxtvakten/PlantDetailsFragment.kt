@@ -46,13 +46,10 @@ class PlantDetailsFragment : Fragment() {
         binding.editTextTextPersonName.setText(templist.title)
         binding.editTextTextPersonName2.setText(templist.species)
         binding.editTextTextPersonName3.setText(templist.wateramount)
-        binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
+        binding.editTextTextPersonName4.setText(templist.waterintervalDays.toString())
         binding.editTextTextPersonName5.setText(templist.info)
 
-        binding.button5.setOnClickListener {
-                counter = templist.waterinterval!!
-                startTimer()
-        }
+
 
     }
 
@@ -97,6 +94,8 @@ class PlantDetailsFragment : Fragment() {
                 progressbar.setProgress(counterpercent.toInt(), true)
                 counter--
                 //counterTimesbyTV.text = counterpercent.toString()
+
+
             }
             override fun onFinish() {
                 progressbar.setProgress(0, true)
