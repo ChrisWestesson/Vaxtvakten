@@ -7,6 +7,16 @@
     android:background="@drawable/gradient_background"
     tools:context=".PlantDetailsFragment">
 
+    <Button
+        android:id="@+id/saveEditedPlantButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="469dp"
+        android:text="Spara"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+
     <TextView
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
@@ -154,6 +164,7 @@
                     android:hint="ART"
                     android:inputType="textPersonName"
                     android:textColor="@color/white" />
+
             </LinearLayout>
 
             <LinearLayout

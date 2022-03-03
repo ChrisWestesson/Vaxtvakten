@@ -49,10 +49,9 @@ class PlantDetailsFragment : Fragment() {
         binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
         binding.editTextTextPersonName5.setText(templist.info)
 
-        binding.button5.setOnClickListener {
-                counter = templist.waterinterval!!
-                startTimer()
-        }
+       binding.saveEditedPlantButton.setOnClickListener {
+           requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, HomeFragment()).addToBackStack(null).commit()
+       }
 
     }
 

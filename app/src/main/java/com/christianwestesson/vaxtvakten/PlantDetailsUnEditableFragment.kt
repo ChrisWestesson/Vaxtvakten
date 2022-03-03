@@ -41,6 +41,9 @@ class PlantDetailsUnEditableFragment : Fragment() {
         }
 
         binding.waterPlantButton.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, HomeFragment()).addToBackStack(null).commit()
+
+
 
         }
     }
