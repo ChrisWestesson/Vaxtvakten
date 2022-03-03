@@ -67,4 +67,5 @@ class AddUnlistedPlanFragment : Fragment() {
             binding.imgViewer.setImageBitmap(imageBitmap)
         }
     }
+
 }

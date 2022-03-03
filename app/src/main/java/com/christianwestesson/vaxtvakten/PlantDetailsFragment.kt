@@ -2,16 +2,18 @@ package com.christianwestesson.vaxtvakten
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.activityViewModels
+import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsBinding
 
 
-class PlantDetailsFragment : Fragment() {
+class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
     var _binding: FragmentPlantDetailsBinding? = null
     val binding get () = _binding!!
@@ -32,7 +34,33 @@ class PlantDetailsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
        // return inflater.inflate(R.layout.fragment_plant_details, container, false)
+        val binding = FragmentPlantDetailsBinding.inflate(inflater)
+        val spinner : Spinner = binding.dagarSpinner
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.Dagar,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
+        val spinner1 : Spinner = binding.timerSpinner
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.Timer,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner1.adapter = adapter
+        }
         _binding = FragmentPlantDetailsBinding.inflate(inflater, container, false)
+        inflater.inflate(R.layout.fragment_plant_details, container, false)
         return binding.root
     }
 
@@ -46,7 +74,8 @@ class PlantDetailsFragment : Fragment() {
         binding.editTextTextPersonName.setText(templist.title)
         binding.editTextTextPersonName2.setText(templist.species)
         binding.editTextTextPersonName3.setText(templist.wateramount)
-        binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
+        //binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
+        //binding.dagarSpinner.onItemSelectedListener
         binding.editTextTextPersonName5.setText(templist.info)
 
         binding.button5.setOnClickListener {
@@ -94,13 +123,23 @@ class PlantDetailsFragment : Fragment() {
 
                 counterpercent = counter.toDouble() * countertimesby
                 //findViewById<ProgressBar>(R.id.progressBar).setProgress(counter, true)
-                progressbar.setProgress(counterpercent.toInt(), true)
+                //progressbar.setProgress(counterpercent.toInt(), true)
                 counter--
                 //counterTimesbyTV.text = counterpercent.toString()
             }
             override fun onFinish() {
-                progressbar.setProgress(0, true)
+                //progressbar.setProgress(0, true)
             }
         }.start()
+    }
+    override fun onItemSelected(arg0: AdapterView<*>, arg1: View, position: Int, id: Long) {
+        val dagarSp = "you selected choice # " + position
+        val timerSp = Toast.LENGTH_SHORT
+        val toast = Toast.makeText(this.context,dagarSp,timerSp)
+        toast.show()
+    }
+
+    override fun onNothingSelected(arg0: AdapterView<*>) {
+
     }
 }
