@@ -8,16 +8,6 @@
     android:background="@drawable/gradient_background"
     tools:context=".PlantDetailsFragment">
 
-    <ProgressBar
-        android:id="@+id/timeLeftProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="wrap_content"
@@ -44,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="50dp">
+                android:paddingTop="20dp">
 
                 <TextView
                     android:id="@+id/textView11"
@@ -122,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="20dp">
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/textView14"
@@ -203,7 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="20dp">
 
                 <TextView
                     android:id="@+id/textView28"
@@ -279,6 +269,7 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="20dp"
                 android:text="vattna" />
 
             <Button

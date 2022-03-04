@@ -104,7 +104,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         val countTimeDays = binding.textView28
         val countTimeHours = binding.textView29
         val countTimeMinutes = binding.textView30
-        val progressbar = binding.timeLeftProgressBar
+        //val progressbar = binding.timeLeftProgressBar
        // val counterTimesbyTV : TextView = findViewById<TextView>(R.id.countertimesbyTV)
         object : CountDownTimer(counter.toLong() * 1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
