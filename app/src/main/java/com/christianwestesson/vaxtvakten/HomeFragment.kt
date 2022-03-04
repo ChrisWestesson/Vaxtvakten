@@ -38,6 +38,8 @@ class HomeFragment : Fragment() {
 
 
 
+
+
         val myPlantsRecView = view.findViewById<RecyclerView>(R.id.myPlantsRV)
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
@@ -45,7 +47,7 @@ class HomeFragment : Fragment() {
     }
 
     fun goPlantDetails() {
-        requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, PlantDetailsFragment()).addToBackStack(null).commit()
+        requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, PlantDetailsUnEditableFragment()).addToBackStack(null).commit()
     }
 
     override fun onDestroyView() {
