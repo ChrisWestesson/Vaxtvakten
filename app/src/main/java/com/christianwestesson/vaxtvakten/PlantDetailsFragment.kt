@@ -79,7 +79,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         binding.editTextTextPersonName5.setText(templist.info)
 
         binding.button5.setOnClickListener {
-                counter = templist.waterinterval!!
+                //counter = templist.waterinterval!!
                 startTimer()
         }
 
