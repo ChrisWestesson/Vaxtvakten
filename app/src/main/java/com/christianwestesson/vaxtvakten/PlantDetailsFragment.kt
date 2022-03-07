@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
@@ -33,8 +34,15 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_plant_details, container, false)
-        val binding = FragmentPlantDetailsBinding.inflate(inflater)
+
+        _binding = FragmentPlantDetailsBinding.inflate(inflater, container, false)
+        inflater.inflate(R.layout.fragment_plant_details, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val spinner : Spinner = binding.dagarSpinner
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
@@ -59,13 +67,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             // Apply the adapter to the spinner
             spinner1.adapter = adapter
         }
-        _binding = FragmentPlantDetailsBinding.inflate(inflater, container, false)
-        inflater.inflate(R.layout.fragment_plant_details, container, false)
-        return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         model.addPlant()
 
@@ -75,12 +77,31 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         binding.editTextTextPersonName2.setText(templist.species)
         binding.editTextTextPersonName3.setText(templist.wateramount)
         //binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
-        //binding.dagarSpinner.onItemSelectedListener
+        //binding.dagarSpinner.onItemSelectedListener = this
         binding.editTextTextPersonName5.setText(templist.info)
 
-        binding.button5.setOnClickListener {
+        //binding.button5.setOnClickListener {
                 //counter = templist.waterinterval!!
                 startTimer()
+        //}
+
+        binding.dagarSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#ffffff"))
+            }
+        }
+        binding.timerSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#ffffff"))
+            }
         }
 
     }
@@ -101,9 +122,9 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
 
        // val countTime: TextView = findViewById(R.id.timerTV)
-        val countTimeDays = binding.textView28
-        val countTimeHours = binding.textView29
-        val countTimeMinutes = binding.textView30
+        //val countTimeDays = binding.textView28
+        //val countTimeHours = binding.textView29
+        //val countTimeMinutes = binding.textView30
         //val progressbar = binding.timeLeftProgressBar
        // val counterTimesbyTV : TextView = findViewById<TextView>(R.id.countertimesbyTV)
         object : CountDownTimer(counter.toLong() * 1000, 1000) {
@@ -116,9 +137,9 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
                 counterMinutes = counterMinutes - counterHours * 60
                 counterHours = counterHours - counterDays * 24
 
-                countTimeHours.text = counterHours.toString()
-                countTimeDays.text = counterDays.toString()
-                countTimeMinutes.text = counterMinutes.toString()
+                //countTimeHours.text = counterHours.toString()
+                //countTimeDays.text = counterDays.toString()
+                //countTimeMinutes.text = counterMinutes.toString()
 
 
                 counterpercent = counter.toDouble() * countertimesby
