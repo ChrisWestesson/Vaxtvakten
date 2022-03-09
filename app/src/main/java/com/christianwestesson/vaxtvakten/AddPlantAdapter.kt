@@ -22,15 +22,25 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return flowers.size
+
+        addplantfrag.model.plantList.value?.let {
+            return it.size
+        }
+
+        return 0
+
     }
 
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
+        var currentPlant = addplantfrag.model.plantList.value!![position]
 
-        holder.flowertext.text = flowers[position]
+        Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.toString()}")
+        Log.i("VAXTVAKTENDEBUG", "currentPlant.species: ${currentPlant.species.toString()}")
+
+        holder.flowertext.text = currentPlant.species
 
         holder.itemView.setOnClickListener {
-            addplantfrag.goChoosenPlant()
+            addplantfrag.goChoosenPlant(currentPlant)
         }
 
 

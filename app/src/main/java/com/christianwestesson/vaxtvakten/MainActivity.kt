@@ -3,7 +3,8 @@ package com.christianwestesson.vaxtvakten
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.fragment.app.FragmentContainerView
+import android.widget.ImageButton
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        Databasehelper.checkStart()
+
+
+
         supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         //val fragcont = findViewById<FragmentContainerView>(R.id.fragContainer)
 
@@ -24,8 +29,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, addPlantList).commit()
         }
 
-        findViewById<Button>(R.id.mainActivityGoHomeBtn).setOnClickListener {
+        findViewById<Button>(R.id.mainActivityGoHomeBtnn).setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
+        }
+        findViewById<ImageButton>(R.id.mainActivityGoHomeBtn).setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
+        }
+        findViewById<ImageButton>(R.id.addPlantBtn).setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, addPlantList).commit()
+
         }
 
         //test github
@@ -34,4 +46,5 @@ class MainActivity : AppCompatActivity() {
         //Nytt test CW
         //Mattias was here again
     }
+
 }

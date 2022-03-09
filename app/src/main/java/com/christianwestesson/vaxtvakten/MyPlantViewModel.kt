@@ -12,13 +12,19 @@ import androidx.room.*
 import java.time.LocalDateTime
 import java.util.*
 
-class MyPlantViewModel : AndroidViewModel() {
+class MyPlantViewModel : ViewModel() {
 
     val myplant: MutableLiveData<List<PlantInfo>> by lazy {
         MutableLiveData<List<PlantInfo>>()
     }
 
+    val plantList: MutableLiveData<List<Plant>> by lazy {
+        MutableLiveData<List<Plant>>()
+    }
+
     val listofplants = mutableListOf<PlantInfo>()
+
+
 
     var newTimetoWaterMilli : Long? = null
     var timeInMillis : Long? = null
@@ -31,6 +37,23 @@ class MyPlantViewModel : AndroidViewModel() {
     }
 
 
+
+    fun createList() {
+        Log.i("VAXTVAKTENDEBUG", "Createlist körs")
+
+        var userdao = Databasehelper.getDatabase().userDao()
+        var list = userdao.getAll()
+        val listofPlants = mutableListOf<Plant>()
+
+        for(item in list) {
+            listofPlants.add(item)
+        }
+
+
+        plantList.value = listofPlants
+        Log.i("VAXTVAKTENDEBUG", "model.plantList.value: ${plantList.value!!.toString()}")
+
+    }
 
 
 

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.christianwestesson.vaxtvakten.databinding.ActivityMainBinding.inflate
@@ -16,6 +17,7 @@ import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
 class AddPlantListFragment : Fragment() {
 
     val addplantadapter = AddPlantAdapter()
+    val model : MyPlantViewModel by activityViewModels()
 
 
 
@@ -63,9 +65,12 @@ class AddPlantListFragment : Fragment() {
         _binding = null
     }
 
-    fun goChoosenPlant()
+    fun goChoosenPlant(chosenPlant : Plant)
     {
+        val addlistedplantfrag = AddListedPlantFragment()
+        addlistedplantfrag.currentPlant = chosenPlant
+
         requireActivity().supportFragmentManager.beginTransaction().
-        add(R.id.fragContainer, AddListedPlantFragment()).addToBackStack(null).commit()
+        add(R.id.fragContainer, addlistedplantfrag).addToBackStack(null).commit()
     }
 }
