@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>    </style>
     <style name="spinnerTheme">
         <item name="android:background">@drawable/gradient_background</item>
         <item name="android:textColor">#ffffff</item>
 
         <!-- this is for api 19 text color -->
         <item name="android:color">@android:color/white</item>
+    </style>
+    
+    <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item>
     </style>
 
 </resources>

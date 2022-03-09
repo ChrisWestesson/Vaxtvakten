@@ -47,7 +47,7 @@ class AddUnlistedPlanFragment : Fragment() {
         }
 
         binding.nextToAddListBtn.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, AddListedPlantFragment()).addToBackStack(null).commit()
+            requireActivity().supportFragmentManager.beginTransaction().add(R.id.appBarLayout, AddListedPlantFragment()).addToBackStack(null).commit()
         }
     }
     private fun dispatchTakePictureIntent() {

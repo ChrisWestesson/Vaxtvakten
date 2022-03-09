@@ -31,8 +31,10 @@ class AddListedPlantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.homeBtn.setOnClickListener {
+       /* binding.homeBtn.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, HomeFragment()).addToBackStack(null).commit()
         }
+
+        */
     }
 }

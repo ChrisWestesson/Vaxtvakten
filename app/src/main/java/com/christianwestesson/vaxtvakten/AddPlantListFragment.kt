@@ -51,7 +51,7 @@ class AddPlantListFragment : Fragment() {
 
         binding.addNewPlantButton.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction().
-            add(R.id.fragContainer, AddUnlistedPlanFragment()).addToBackStack(null).commit()
+            add(R.id.appBarLayout, AddUnlistedPlanFragment()).addToBackStack(null).commit()
 
         }
 
@@ -66,6 +66,6 @@ class AddPlantListFragment : Fragment() {
     fun goChoosenPlant()
     {
         requireActivity().supportFragmentManager.beginTransaction().
-        add(R.id.fragContainer, AddListedPlantFragment()).addToBackStack(null).commit()
+        add(R.id.appBarLayout, AddListedPlantFragment()).addToBackStack(null).commit()
     }
 }

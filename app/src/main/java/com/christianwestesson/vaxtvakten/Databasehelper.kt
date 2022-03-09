@@ -24,8 +24,8 @@ class Databasehelper {
             var plantList = userdao.getAll()
             if(plantList.size == 0)
             {
-                var roseplant = Plant(uid = 1, waterintervalWeeks = 1)
-                userdao.insertPlant()
+               // var roseplant = Plant(uid = 1, waterintervalWeeks = 1)
+                //userdao.insertPlant()
 
 
 
@@ -47,7 +47,7 @@ data class Plant(
     @ColumnInfo(name = "species") val species: String?,
     @ColumnInfo(name = "wateramount") val wateramount: String?,
     @ColumnInfo(name = "info") val info: String?,
-    @ColumnInfo(name = "giveWaterDate") val giveWaterDate: Date?
+    @ColumnInfo(name = "giveWaterDate") val giveWaterDate: Long?
 
 )
 

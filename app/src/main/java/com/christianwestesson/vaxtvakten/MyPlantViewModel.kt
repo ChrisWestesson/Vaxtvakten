@@ -12,7 +12,7 @@ import androidx.room.*
 import java.time.LocalDateTime
 import java.util.*
 
-class MyPlantViewModel : AndroidViewModel() {
+class MyPlantViewModel : ViewModel() {
 
     val myplant: MutableLiveData<List<PlantInfo>> by lazy {
         MutableLiveData<List<PlantInfo>>()
