@@ -64,21 +64,31 @@ class PlantDetailsUnEditableFragment : Fragment() {
             binding.timeLeftPB.setProgress(it, true)
 
         }
+
+        var days = templist.waterintervalDays!!
+        var hours = templist.waterintervalHours!!
+
         model.progressPercent.observe(viewLifecycleOwner, observerProgress)
+
+        binding.detailsNameTextview.text = templist.title
+        binding.detailsTypeTextview.text = templist.species
+        binding.detailsWaterAmountTextview.text = templist.wateramount
+        binding.detailsFrequencyTextview.text =  "${days.toString()} dagar ${hours.toString()} timmar"
+        binding.detailsOtherTextview.text = templist.info
+
 
 
 
         //model.wateringDate (1, 12)
 
-        var days = templist.waterintervalDays!!
-        var hours = templist.waterintervalHours!!
+
 
         Log.i("VAXTVAKTENDEBUG", "hours: ${hours}")
         Log.i("VAXTVAKTENDEBUG", "dayss: ${days}")
 
 
 
-        binding.frekvensTV.text = "${days.toString()} dagar ${hours.toString()} timmar"
+       // binding.frekvensTV.text = "${days.toString()} dagar ${hours.toString()} timmar"
 
         binding.giveWaterButton.setOnClickListener {
             model.wateringDate(days, hours)

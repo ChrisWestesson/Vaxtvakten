@@ -27,7 +27,6 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
 
-
         holder.flowertext.text = flowers[position]
 
         holder.itemView.setOnClickListener {

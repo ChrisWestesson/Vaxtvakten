@@ -4,13 +4,15 @@ import android.icu.text.SimpleDateFormat
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.room.*
 import java.time.LocalDateTime
 import java.util.*
 
-class MyPlantViewModel : ViewModel() {
+class MyPlantViewModel : AndroidViewModel() {
 
     val myplant: MutableLiveData<List<PlantInfo>> by lazy {
         MutableLiveData<List<PlantInfo>>()
@@ -27,6 +29,8 @@ class MyPlantViewModel : ViewModel() {
     val progressPercent: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
     }
+
+
 
 
 
@@ -119,4 +123,8 @@ class MyPlantViewModel : ViewModel() {
         progressPercent.value = timeleftpercent.toInt()
 
     }
+
+
+
+
 }
