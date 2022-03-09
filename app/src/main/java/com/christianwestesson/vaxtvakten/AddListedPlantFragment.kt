@@ -13,6 +13,10 @@ class AddListedPlantFragment : Fragment() {
     var _binding: FragmentAddListedPlantBinding? = null
     val binding get () = _binding!!
 
+    var currentPlant = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+        waterintervalHours = 0, info = "", species = "", title = "",
+        wateramount = "", giveWaterDate = 0, imgName = "")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,6 +33,10 @@ class AddListedPlantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.detailsTypeTextview.text = currentPlant.species
+        binding.detailsOtherTextview.text = currentPlant.info
+        binding.detailsWaterAmountTextview.text = currentPlant.wateramount
 
 
        /* binding.homeBtn.setOnClickListener {
