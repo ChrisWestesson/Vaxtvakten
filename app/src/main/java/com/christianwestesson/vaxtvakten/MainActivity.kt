@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
 
     val homeFrag = HomeFragment()
     val addPlantList = AddPlantListFragment()
+    val plantDetail = PlantDetailsFragment()
+    val plantDetailUnE = PlantDetailsUnEditableFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         //val fragcont = findViewById<FragmentContainerView>(R.id.fragContainer)
-
+/*
         findViewById<Button>(R.id.mainActivityGoAddPlantListBtn).setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, addPlantList).commit()
         }
@@ -32,11 +34,23 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.mainActivityGoHomeBtnn).setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         }
-        findViewById<ImageButton>(R.id.mainActivityGoHomeBtn).setOnClickListener {
+
+ */
+        findViewById<ImageButton>(R.id.homePlantBtn).setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         }
         findViewById<ImageButton>(R.id.addPlantBtn).setOnClickListener {
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, addPlantList).commit()
+
+        }
+
+        findViewById<ImageButton>(R.id.notificationPlantBtn).setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetailUnE).commit()
+
+        }
+
+        findViewById<ImageButton>(R.id.deletePlantBtn).setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetail).commit()
 
         }
 
