@@ -33,7 +33,9 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
+
         var currentPlant = addplantfrag.model.plantList.value!![position]
+        holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
 
         Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.toString()}")
         Log.i("VAXTVAKTENDEBUG", "currentPlant.species: ${currentPlant.species.toString()}")

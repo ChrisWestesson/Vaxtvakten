@@ -50,10 +50,12 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
        // model.addPlant()
 
+        /*
         var templist = PlantInfo()
             model.myplant.value!![0].let {
                 templist = it
             }
+         */
 
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
 

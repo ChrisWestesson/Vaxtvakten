@@ -4,21 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.21354166666666666" />
-        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.139" />
+        <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.139" />
+        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.139" />
         <entry key="app/src/main/res/font/vaxtvakten_font.xml" value="0.22760416666666666" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.27022705078125003" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25890045166015624" />
         <entry key="app/src/main/res/layout/fragment_add_listed_plant.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/fragment_add_plant_list.xml" value="0.2515625" />
-        <entry key="app/src/main/res/layout/fragment_add_unlisted_plan.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add_unlisted_plan.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2515625" />
-        <entry key="app/src/main/res/layout/fragment_plant_details.xml" value="0.21437072753906253" />
-        <entry key="app/src/main/res/layout/fragment_plant_details_un_editable.xml" value="0.1828125" />
+        <entry key="app/src/main/res/layout/fragment_plant_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_plant_details_un_editable.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/gradient_background.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/notification_layout.xml" value="0.22760416666666666" />
         <entry key="app/src/main/res/layout/recview_add_plant.xml" value="0.24166666666666667" />
-        <entry key="app/src/main/res/layout/recview_my_plants.xml" value="0.2500213623046876" />
+        <entry key="app/src/main/res/layout/recview_my_plants.xml" value="0.2599133222678166" />
       </map>
     </option>
   </component>
