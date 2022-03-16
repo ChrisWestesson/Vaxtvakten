@@ -43,6 +43,25 @@ class MyPlantViewModel : ViewModel() {
             "Amaryllis" -> image = R.drawable.amaryllis
             "Aralia" -> image = R.drawable.aralia
             "Ampellilja" -> image = R.drawable.ampellilja
+            "Begonia" -> image = R.drawable.begonia
+            "Benjaminfikus" -> image = R.drawable.benjaminfikus
+            "Cyklamen" -> image = R.drawable.cyklamen
+            "Flitiga Lisa" -> image = R.drawable.flitigalisa
+            "Fredskalla" -> image = R.drawable.fredskalla
+            "Gloxinia" -> image = R.drawable.gloxinia
+            "Hemtrevnad" -> image = R.drawable.hemtrevnad
+            "Julstjärna" -> image = R.drawable.julstjarna
+            "Monstera" -> image = R.drawable.monstera
+            "Paradisträd" -> image = R.drawable.paradistrad
+            "Pelargon" -> image = R.drawable.pelargon
+            "Prickblad" -> image = R.drawable.prickblad
+            "Silverkalla" -> image = R.drawable.silverkalla
+            "Spjutbräken" -> image = R.drawable.spjutbraken
+            "Svärmors kudde" -> image = R.drawable.svarmorskudde
+            "Svärmors tunga" -> image = R.drawable.svarmorstunga
+            "Skvallerreva" -> image = R.drawable.skvallerreva
+            "Våreld" -> image = R.drawable.vareld
+
 
             else -> {
                 print("Hittade inte blomman")
@@ -92,34 +111,24 @@ class MyPlantViewModel : ViewModel() {
         var userdao = Databasehelper.getDatabase().userDao()
         var date = Calendar.getInstance().timeInMillis
 
-        var myPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 3,
-            waterintervalHours = 12, info = "", species = "Aralia", title = "Min växt",
-            wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia")
 
         Log.i("VAXTVAKTENDEBUG", "insertmyplant")
         userdao.insertMyPlant(plantinfo)
 
-
-        Log.i("VAXTVAKTENDEBUG", "Get all my plants: ${userdao.getAllMyPlants().toString()}")
     }
 
 
 
-    fun addPlant() {
+    fun addPlant(plantinfo : Plant) {
 
-        var temp = PlantInfo()
-        temp.title = "Rosorna i hallen"
-        temp.info = "Ska stå i skugga"
-        temp.species = "Rosor"
-        temp.wateramount = "1 dl"
-        temp.waterintervalDays = 0
-        temp.waterintervalHours = 1
-        temp.giveWaterDate = Calendar.getInstance().time
+        Log.i("VAXTVAKTENDEBUG", "addPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
+        var date = Calendar.getInstance().timeInMillis
 
 
-        listofplants.add(temp)
+        Log.i("VAXTVAKTENDEBUG", "insertplant")
+        userdao.insertPlant(plantinfo)
 
-        myplant.value = listofplants
     }
 
     fun waterPlant (nextDate : Date) {
@@ -229,8 +238,12 @@ class MyPlantViewModel : ViewModel() {
         Log.i("VAXTVAKTENDEBUG", "timeinmillis: ${timeInMillis}")
         Log.i("VAXTVAKTENDEBUG", "timetowater: ${timetowater}")
         Log.i("VAXTVAKTENDEBUG", "timeleftMilli: ${timeleftMilli}")
+        var timeleftpercent = 0.1
 
-        var timeleftpercent = timeleftMilli / intervalMilli!! * 0.1
+        if (timeleftMilli > 0) {
+            timeleftpercent = timeleftMilli / intervalMilli!! * 0.1
+        }
+
         Log.i("VAXTVAKTENDEBUG", "timeleftpercent: ${timeleftpercent}")
 
         progressPercent.value = timeleftpercent.toInt()

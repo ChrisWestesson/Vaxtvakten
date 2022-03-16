@@ -10,8 +10,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.christianwestesson.vaxtvakten.Databasehelper.Companion.model
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
+import java.util.*
 
 
 class AddUnlistedPlanFragment : Fragment() {
@@ -40,6 +42,8 @@ class AddUnlistedPlanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var date = Calendar.getInstance().timeInMillis
+
         binding.namnET.text
 
         binding.btnCamera.setOnClickListener {
@@ -47,7 +51,37 @@ class AddUnlistedPlanFragment : Fragment() {
         }
 
         binding.nextToAddListBtn.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, AddListedPlantFragment()).addToBackStack(null).commit()
+
+            var addToMyPlantList = MyPlant(
+                uid = 0,
+                waterintervalWeeks = 1,
+                waterintervalDays = 0,
+                waterintervalHours = 0,
+                info = binding.infoET.text.toString(),
+                species = binding.artET.text.toString(),
+                title = binding.namnET.text.toString(),
+                wateramount = binding.vattenmNgdET.text.toString(),
+                giveWaterDate = date,
+                imgName = "img")
+
+            var addToPlantList = Plant(
+                uid = 0,
+                waterintervalWeeks = 1,
+                waterintervalDays = 0,
+                waterintervalHours = 0,
+                info = binding.infoET.text.toString(),
+                species = binding.artET.text.toString(),
+                title = "",
+                wateramount = binding.vattenmNgdET.text.toString(),
+                giveWaterDate = date,
+                imgName = "img")
+
+            model.addMyPlant(addToMyPlantList)
+            model.addPlant(addToPlantList)
+
+
+
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
         }
     }
     private fun dispatchTakePictureIntent() {

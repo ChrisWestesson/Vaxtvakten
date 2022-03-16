@@ -108,7 +108,7 @@
             app:layout_constraintTop_toBottomOf="@+id/vattenmängdET" />
 
         <EditText
-            android:id="@+id/övrigtET"
+            android:id="@+id/infoET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -129,12 +129,11 @@
             android:id="@+id/nextToAddListBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="115dp"
+            android:layout_marginBottom="32dp"
             android:text="lägg till"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/övrigtET" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -30,8 +30,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
             android:elevation="10dp"
             app:cardCornerRadius="8dp"
@@ -39,11 +40,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/myPlantDetailImageIV"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/svarmorstunga" />
+            <ImageView
+                android:id="@+id/myPlantDetailImageIV"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/svarmorstunga" />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -53,12 +54,12 @@
 
             <TextView
                 android:id="@+id/nameTV"
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="40dp"
                 android:layout_weight="1"
-                android:text="Namn"
+                android:text="Namn               :"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -66,8 +67,9 @@
                 android:id="@+id/detailsNameTextview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@color/white"
@@ -81,12 +83,12 @@
 
             <TextView
                 android:id="@+id/artTV"
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="ART"
+                android:text="ART                  :"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -94,7 +96,9 @@
                 android:id="@+id/detailsTypeTextview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@color/white"
@@ -108,12 +112,12 @@
 
             <TextView
                 android:id="@+id/vattenmTV"
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="Vattenmängd"
+                android:text="Vattenmängd :"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -121,8 +125,9 @@
                 android:id="@+id/detailsWaterAmountTextview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@color/white"
@@ -137,12 +142,12 @@
 
             <TextView
                 android:id="@+id/frekvensTV"
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="Frekvens"
+                android:text="Frekvens          :"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -150,8 +155,9 @@
                 android:id="@+id/detailsFrequencyTextview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@color/white"
@@ -165,12 +171,12 @@
 
             <TextView
                 android:id="@+id/övrigtTv"
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="Övrigt"
+                android:text="Övrigt               :"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -178,8 +184,9 @@
                 android:id="@+id/detailsOtherTextview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@color/white"

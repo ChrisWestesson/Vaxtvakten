@@ -73,7 +73,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         }
 
 
-        model.addPlant()
+        //model.addPlant()
 
         var templist = model.myplant.value!![0]
 
