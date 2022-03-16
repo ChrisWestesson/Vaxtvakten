@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -32,7 +33,9 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
+
         var currentPlant = addplantfrag.model.plantList.value!![position]
+        holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
 
         Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.toString()}")
         Log.i("VAXTVAKTENDEBUG", "currentPlant.species: ${currentPlant.species.toString()}")
@@ -51,6 +54,7 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 class AddPlantViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
     var flowertext = view.findViewById<TextView>(R.id.addplantTV)
+    var flowerImage = view.findViewById<ImageView>(R.id.imageViewAddPlant)
 
 
 
