@@ -11,12 +11,12 @@
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/myplantTitleTV"
         app:srcCompat="@drawable/svarmorstunga"
         tools:srcCompat="@drawable/svarmorstunga" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/myplantTitleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -27,9 +27,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/myPlantsProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="140dp"
+        android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:progress="56"
@@ -38,39 +38,34 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="2 d 16 h"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/myPlantTimeLeftTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Vattna"
+        android:text="2 d 16 h"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPlantsProgressBar" />
+
+    <TextView
+        android:id="@+id/myPlantWaterTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="11dp"
+        android:text="VATTNA"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPlantTimeLeftTextView" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="16dp"
         android:layout_height="16dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/myPlantWaterTV"
+        app:layout_constraintTop_toBottomOf="@+id/myPlantTimeLeftTextView"
         app:srcCompat="@drawable/img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

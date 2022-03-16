@@ -24,6 +24,10 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
     var waterinterval = 0
     var counter = 0
 
+    var currentPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+        waterintervalHours = 0, info = "", species = "", title = "",
+        wateramount = "", giveWaterDate = 0, imgName = "")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -73,12 +77,12 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
         var templist = model.myplant.value!![0]
 
-        binding.editTextTextPersonName.setText(templist.title)
-        binding.editTextTextPersonName2.setText(templist.species)
-        binding.editTextTextPersonName3.setText(templist.wateramount)
+        binding.editTextTextPersonName.setText(currentPlant.title)
+        binding.editTextTextPersonName2.setText(currentPlant.species)
+        binding.editTextTextPersonName3.setText(currentPlant.wateramount)
         //binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
         //binding.dagarSpinner.onItemSelectedListener = this
-        binding.editTextTextPersonName5.setText(templist.info)
+        binding.editTextTextPersonName5.setText(currentPlant.info)
 
         //binding.button5.setOnClickListener {
                 //counter = templist.waterinterval!!

@@ -37,6 +37,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         model.createList()
+        model.createMyPlantList()
 
 
 
@@ -50,12 +51,17 @@ class HomeFragment : Fragment() {
 
     }
 
-    fun goPlantDetails() {
-        requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, PlantDetailsUnEditableFragment()).addToBackStack(null).commit()
-    }
+    fun goPlantDetails(chosenPlant : MyPlant) {
+        val plantdetailsuneditablefrag = PlantDetailsUnEditableFragment()
+        plantdetailsuneditablefrag.currentPlant = chosenPlant
+
+        requireActivity().supportFragmentManager.beginTransaction().
+        add(R.id.fragContainer, plantdetailsuneditablefrag).addToBackStack(null).commit()    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

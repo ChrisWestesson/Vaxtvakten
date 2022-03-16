@@ -2,9 +2,9 @@ package com.christianwestesson.vaxtvakten
 
 import android.content.Context
 import android.util.Log
-import androidx.fragment.app.activityViewModels
 import androidx.room.*
 import java.util.*
+
 
 class Databasehelper {
 
@@ -26,6 +26,8 @@ class Databasehelper {
 
 
 
+
+
         fun checkStart()
         {
             var userdao = getDatabase().userDao()
@@ -33,7 +35,6 @@ class Databasehelper {
             var date = Calendar.getInstance().timeInMillis
 
             var plantList = userdao.getAll()
-
 
 
             if(plantList.size == 0)
@@ -50,9 +51,6 @@ class Databasehelper {
                 var aralia = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 3,
                     waterintervalHours = 12, info = "", species = "Aralia", title = "",
                     wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia")
-
-
-
 
 
                 userdao.insertPlant(amaryllis, aralia, ampellilja)
@@ -81,10 +79,35 @@ data class Plant(
 
 )
 
+@Entity
+data class MyPlant(
+    @PrimaryKey(autoGenerate = true) val uid: Int,
+    @ColumnInfo(name = "waterintervalWeeks") val waterintervalWeeks: Int,
+    @ColumnInfo(name = "waterintervalDays") val waterintervalDays: Int,
+    @ColumnInfo(name = "waterintervalHours") val waterintervalHours: Int,
+    @ColumnInfo(name = "title") val title: String,
+    @ColumnInfo(name = "species") val species: String,
+    @ColumnInfo(name = "wateramount") val wateramount: String,
+    @ColumnInfo(name = "info") val info: String,
+    @ColumnInfo(name = "imgName") val imgName: String,
+    @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long
+
+)
+
 @Dao
 interface UserDao {
     @Query("SELECT * FROM plant")
     fun getAll(): List<Plant>
+
+   // @Query("SELECT * FROM myplant")
+   // fun getAllMyPlants(): List<MyPlant>
+
+    @Query("SELECT * FROM myplant ORDER BY giveWaterDate")
+    fun getAllMyPlants(): List<MyPlant>
+
+
+    @Update
+    fun updateWaterDate(plant: MyPlant)
 
     //  @Query("SELECT * FROM plant WHERE age >60 ")
     //  fun getOldPeople(): List<Plant>
@@ -102,11 +125,14 @@ interface UserDao {
     @Insert
     fun insertPlant(vararg users: Plant)
 
+    @Insert
+    fun insertMyPlant(vararg users: MyPlant)
+
     @Delete
     fun delete(user: Plant)
 }
 
-@Database(entities = [Plant::class], version = 1)
+@Database(entities = [Plant::class, MyPlant::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 }

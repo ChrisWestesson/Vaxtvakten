@@ -4,12 +4,9 @@ import android.icu.text.SimpleDateFormat
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.room.*
-import java.time.LocalDateTime
 import java.util.*
 
 class MyPlantViewModel : ViewModel() {
@@ -20,6 +17,10 @@ class MyPlantViewModel : ViewModel() {
 
     val plantList: MutableLiveData<List<Plant>> by lazy {
         MutableLiveData<List<Plant>>()
+    }
+
+    val myPlantList: MutableLiveData<List<MyPlant>> by lazy {
+        MutableLiveData<List<MyPlant>>()
     }
 
     val listofplants = mutableListOf<PlantInfo>()
@@ -55,6 +56,39 @@ class MyPlantViewModel : ViewModel() {
 
     }
 
+    fun createMyPlantList() {
+        Log.i("VAXTVAKTENDEBUG", "Createlist körs")
+
+        var userdao = Databasehelper.getDatabase().userDao()
+        var list = userdao.getAllMyPlants()
+        val myListofPlants = mutableListOf<MyPlant>()
+
+        for(item in list) {
+            myListofPlants.add(item)
+        }
+
+
+        myPlantList.value = myListofPlants
+        Log.i("VAXTVAKTENDEBUG", "model.plantList.value: ${myPlantList.value!!.toString()}")
+
+    }
+
+    fun addMyPlant(plantinfo : MyPlant) {
+        Log.i("VAXTVAKTENDEBUG", "addMyPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
+        var date = Calendar.getInstance().timeInMillis
+
+        var myPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 3,
+            waterintervalHours = 12, info = "", species = "Aralia", title = "Min växt",
+            wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia")
+
+        Log.i("VAXTVAKTENDEBUG", "insertmyplant")
+        userdao.insertMyPlant(plantinfo)
+
+
+        Log.i("VAXTVAKTENDEBUG", "Get all my plants: ${userdao.getAllMyPlants().toString()}")
+    }
+
 
 
     fun addPlant() {
@@ -86,14 +120,15 @@ class MyPlantViewModel : ViewModel() {
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    fun wateringDate (days : Int, hours : Int ) {
+    fun wateringDate (weeks : Int , days : Int, hours : Int ) {
 
         Log.i("VAXTVAKTENDEBUG", "wateringdate körs")
 
+        var weeksinMilli = weeks * 604800
         var daysinMilli = days * 86400
         var hoursMilli = hours * 3600
 
-        intervalMilli = daysinMilli + hoursMilli
+        intervalMilli = weeksinMilli + daysinMilli + hoursMilli
 
 
 
@@ -106,10 +141,12 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "calendar : ${calendar.time}")
 
+        calendar.add(calendar.weekYear, + weeks)
         calendar.add(Calendar.DAY_OF_YEAR, +days)
         calendar.add(Calendar.HOUR, +hours)
 
         newTimetoWaterMilli = calendar.timeInMillis
+        var newtime = newTimetoWaterMilli
 
         var newTimetoWater = calendar.time
 
@@ -129,21 +166,63 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "dateString : ${dateString}")
 
-        timeLeft()
+        //var percent = timeLeft(newtime!!)
 
     }
 
-    fun timeLeft() {
+    fun waterMyPlant(plant : MyPlant) {
+        var wateredPlant = plant
+
+        var timeToWater = Calendar.getInstance()
+
+        Log.i("VAXTVAKTENDEBUG", "timetowater : ${timeToWater.time}")
+
+        timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
+        timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
+        timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
+
+        var timetoWaterMilli = timeToWater.timeInMillis
+
+        wateredPlant.giveWaterDate = timetoWaterMilli
+
+        var userdao = Databasehelper.getDatabase().userDao()
+        userdao.updateWaterDate(plant = wateredPlant)
+
+
+    }
+
+    fun timeLeft(timetowater : Long, weeks : Int, days : Int, hours : Int) : Int {
+        var weeksinMilli = weeks * 604800
+        var daysinMilli = days * 86400
+        var hoursMilli = hours * 3600
+
+        var intervalMilli = weeksinMilli + daysinMilli + hoursMilli
+
         timeInMillis = Calendar.getInstance().timeInMillis
-        var timeleftMilli = newTimetoWaterMilli!! - timeInMillis!!
-        Log.i("VAXTVAKTENDEBUG", "newtimetowater: ${newTimetoWaterMilli}")
-        Log.i("VAXTVAKTENDEBUG", "timeinmillis: ${timeleftMilli}")
+        //var timeleftMilli = newTimetoWaterMilli!! - timeInMillis!!
+
+        var timeleftMilli = timetowater - timeInMillis!!
+
+        /*
+        var timeleftMilli : Long =  1
+
+        if(timetowater > timeInMillis!!) {
+            timeleftMilli = timetowater - timeInMillis!!
+        }
+
+         */
+
+        Log.i("VAXTVAKTENDEBUG", "timeinmillis: ${timeInMillis}")
+        Log.i("VAXTVAKTENDEBUG", "timetowater: ${timetowater}")
         Log.i("VAXTVAKTENDEBUG", "timeleftMilli: ${timeleftMilli}")
 
         var timeleftpercent = timeleftMilli / intervalMilli!! * 0.1
         Log.i("VAXTVAKTENDEBUG", "timeleftpercent: ${timeleftpercent}")
 
         progressPercent.value = timeleftpercent.toInt()
+
+        return timeleftpercent.toInt()
+
 
     }
 

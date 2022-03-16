@@ -24,6 +24,10 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
     val model : MyPlantViewModel by activityViewModels()
 
+    var currentPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+        waterintervalHours = 0, info = "", species = "", title = "",
+        wateramount = "", giveWaterDate = 0, imgName = "")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,26 +59,36 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
 
         val observer = Observer<List<PlantInfo>> {
-            var dateString = simpleDateFormat.format(templist.giveWaterDate)
+            var dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
             binding.timeToWaterTV.text = dateString
         }
         model.myplant.observe(viewLifecycleOwner, observer)
 
-        val observerProgress = Observer<Int> {
+       /* val observerProgress = Observer<Int> {
             binding.timeLeftPB.setProgress(it, true)
 
         }
 
-        var days = templist.waterintervalDays!!
-        var hours = templist.waterintervalHours!!
+        */
 
-        model.progressPercent.observe(viewLifecycleOwner, observerProgress)
+        var percent = model.timeLeft(
+            timetowater = currentPlant.giveWaterDate,
+            weeks = currentPlant.waterintervalWeeks,
+            days = currentPlant.waterintervalDays,
+            hours = currentPlant.waterintervalHours)
+        binding.timeLeftPB.setProgress(percent)
 
-        binding.detailsNameTextview.text = templist.title
-        binding.detailsTypeTextview.text = templist.species
-        binding.detailsWaterAmountTextview.text = templist.wateramount
-        binding.detailsFrequencyTextview.text =  "${days.toString()} dagar ${hours.toString()} timmar"
-        binding.detailsOtherTextview.text = templist.info
+        var days = currentPlant.waterintervalDays
+        var hours = currentPlant.waterintervalHours
+        var weeks = currentPlant.waterintervalWeeks
+
+        //model.progressPercent.observe(viewLifecycleOwner, observerProgress)
+
+        binding.detailsNameTextview.text = currentPlant.title
+        binding.detailsTypeTextview.text = currentPlant.species
+        binding.detailsWaterAmountTextview.text = currentPlant.wateramount
+        binding.detailsFrequencyTextview.text =  "${weeks.toString()} vecka ${days.toString()} dagar ${hours.toString()} timmar"
+        binding.detailsOtherTextview.text = currentPlant.info
 
 
 
@@ -91,7 +105,15 @@ class PlantDetailsUnEditableFragment : Fragment() {
        // binding.frekvensTV.text = "${days.toString()} dagar ${hours.toString()} timmar"
 
         binding.giveWaterButton.setOnClickListener {
-            model.wateringDate(days, hours)
+            model.waterMyPlant(plant = currentPlant)
+            percent = model.timeLeft(
+                timetowater = currentPlant.giveWaterDate,
+                weeks = currentPlant.waterintervalWeeks,
+                days = currentPlant.waterintervalDays,
+                hours = currentPlant.waterintervalHours)
+            binding.timeLeftPB.setProgress(percent)
+            var dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
+            binding.timeToWaterTV.text = dateString
         }
 
         binding.editPlantDetailsButton.setOnClickListener {
@@ -100,9 +122,12 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
         }
 
-        binding.waterPlantButton.setOnClickListener {
+        binding.updateButton.setOnClickListener {
 
-            model.timeLeft()
+            model.timeLeft(timetowater = currentPlant.giveWaterDate,
+                weeks = currentPlant.waterintervalWeeks,
+                days = currentPlant.waterintervalDays,
+                hours = currentPlant.waterintervalHours)
 
         }
     }

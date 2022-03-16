@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         //val fragcont = findViewById<FragmentContainerView>(R.id.fragContainer)
 
