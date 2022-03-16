@@ -4,9 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+//notification
+    var ten = 10000
+    var twenty = 20000
+
+    private val mNotificationTime = Calendar.getInstance().timeInMillis + 5000 //Set after 5 seconds from the current time.
+    private val mNotificationTime2 = Calendar.getInstance().timeInMillis + ten //Set after 5 seconds from the current time.
+    private val mNotificationTime3 = Calendar.getInstance().timeInMillis + twenty //Set after 5 seconds from the current time.
+    private var mNotified = false
+
+    //notification
 
     val homeFrag = HomeFragment()
     val addPlantList = AddPlantListFragment()
@@ -15,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (!mNotified) {
+            // NotificationUtils().setNotification(mNotificationTime, this@MainActivity)
+        }
 
         Databasehelper.ctx = applicationContext
 
