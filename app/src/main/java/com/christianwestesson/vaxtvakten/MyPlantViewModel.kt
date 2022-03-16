@@ -37,6 +37,20 @@ class MyPlantViewModel : ViewModel() {
         MutableLiveData<Int>()
     }
 
+    fun stringtoIMG(name : String) : Int{
+        var image = 0
+        when (name) {
+            "Amaryllis" -> image = R.drawable.amaryllis
+            "Aralia" -> image = R.drawable.aralia
+            "Ampellilja" -> image = R.drawable.ampellilja
+
+            else -> {
+                print("Hittade inte blomman")
+            }
+        }
+        return  image
+    }
+
 
 
     fun createList() {

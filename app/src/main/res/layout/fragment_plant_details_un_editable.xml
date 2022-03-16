@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/myPlantDetailImageIV"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/svarmorstunga" />
@@ -208,21 +208,13 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
             android:layout_weight="1"
+            android:progressTint="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/giveWaterButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/updateButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="Uppdatera"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -236,6 +228,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/vaxtvakentLightGreen"
                 android:text="Redigera"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -247,6 +240,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/vaxtvakentLightGreen"
                 android:text="Vattna"
                 app:layout_constraintBottom_toTopOf="@+id/editPlantDetailsButton"
                 app:layout_constraintEnd_toEndOf="parent"

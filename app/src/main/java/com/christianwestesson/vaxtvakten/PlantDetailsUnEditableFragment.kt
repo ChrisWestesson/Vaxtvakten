@@ -83,7 +83,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
         var weeks = currentPlant.waterintervalWeeks
 
         //model.progressPercent.observe(viewLifecycleOwner, observerProgress)
-
+        binding.myPlantDetailImageIV.setImageResource(model.stringtoIMG(currentPlant.species))
         binding.detailsNameTextview.text = currentPlant.title
         binding.detailsTypeTextview.text = currentPlant.species
         binding.detailsWaterAmountTextview.text = currentPlant.wateramount
@@ -122,14 +122,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
         }
 
-        binding.updateButton.setOnClickListener {
 
-            model.timeLeft(timetowater = currentPlant.giveWaterDate,
-                weeks = currentPlant.waterintervalWeeks,
-                days = currentPlant.waterintervalDays,
-                hours = currentPlant.waterintervalHours)
-
-        }
     }
 
 
