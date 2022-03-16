@@ -43,6 +43,25 @@ class MyPlantViewModel : ViewModel() {
             "Amaryllis" -> image = R.drawable.amaryllis
             "Aralia" -> image = R.drawable.aralia
             "Ampellilja" -> image = R.drawable.ampellilja
+            "Begonia" -> image = R.drawable.begonia
+            "Benjaminfikus" -> image = R.drawable.benjaminfikus
+            "Cyklamen" -> image = R.drawable.cyklamen
+            "Flitiga Lisa" -> image = R.drawable.flitigalisa
+            "Fredskalla" -> image = R.drawable.fredskalla
+            "Gloxinia" -> image = R.drawable.gloxinia
+            "Hemtrevnad" -> image = R.drawable.hemtrevnad
+            "Julstjärna" -> image = R.drawable.julstjarna
+            "Monstera" -> image = R.drawable.monstera
+            "Paradisträd" -> image = R.drawable.paradistrad
+            "Pelargon" -> image = R.drawable.pelargon
+            "Prickblad" -> image = R.drawable.prickblad
+            "Silverkalla" -> image = R.drawable.silverkalla
+            "Spjutbräken" -> image = R.drawable.spjutbraken
+            "Svärmors kudde" -> image = R.drawable.svarmorskudde
+            "Svärmors tunga" -> image = R.drawable.svarmorstunga
+            "Skvallerreva" -> image = R.drawable.skvallerreva
+            "Våreld" -> image = R.drawable.vareld
+
 
             else -> {
                 print("Hittade inte blomman")

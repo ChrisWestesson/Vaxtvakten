@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:elevation="10dp"
@@ -23,6 +23,8 @@
             android:id="@+id/myPlantDetailImageIV"
             android:layout_width="match_parent"
             android:layout_height="243dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/svarmorstunga"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +36,7 @@
         android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:text="NAMN"
         android:textColor="@color/white"
@@ -46,7 +48,7 @@
         android:id="@+id/artTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="ART"
         android:textColor="@color/white"
@@ -58,7 +60,7 @@
         android:id="@+id/vattenmTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="VATTENMÄNGD"
         android:textColor="@color/white"
@@ -70,7 +72,7 @@
         android:id="@+id/frekvensTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="FREKVENS"
         android:textColor="@color/white"
@@ -82,7 +84,7 @@
         android:id="@+id/övrigtTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="ÖVRIGT"
         android:textColor="@color/white"
@@ -97,69 +99,82 @@
         android:text="lägga till"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsOtherTextview" />
 
 
     <TextView
         android:id="@+id/detailsTypeTextview"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/artTV"
         app:layout_constraintTop_toBottomOf="@+id/detailsNameEditText" />
 
     <TextView
         android:id="@+id/detailsWaterAmountTextview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vattenmTV"
         app:layout_constraintTop_toBottomOf="@+id/detailsTypeTextview" />
 
     <TextView
         android:id="@+id/detailsFrequencyTextview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frekvensTV"
         app:layout_constraintTop_toBottomOf="@+id/detailsWaterAmountTextview" />
 
     <TextView
         android:id="@+id/detailsOtherTextview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/övrigtTv"
         app:layout_constraintTop_toBottomOf="@+id/detailsFrequencyTextview" />
 
     <EditText
         android:id="@+id/detailsNameEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:backgroundTint="@color/white"
         android:ems="10"
+        android:hint="Namn"
         android:inputType="textPersonName"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nameTV"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
