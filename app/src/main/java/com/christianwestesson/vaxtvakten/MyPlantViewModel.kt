@@ -43,6 +43,7 @@ class MyPlantViewModel : ViewModel() {
             "Amaryllis" -> image = R.drawable.amaryllis
             "Aralia" -> image = R.drawable.aralia
             "Ampellilja" -> image = R.drawable.ampellilja
+            "Aspidistra" -> image = R.drawable.aspidistra
             "Begonia" -> image = R.drawable.begonia
             "Benjaminfikus" -> image = R.drawable.benjaminfikus
             "Cyklamen" -> image = R.drawable.cyklamen
