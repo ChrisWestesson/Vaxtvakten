@@ -48,7 +48,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        model.addPlant()
+       // model.addPlant()
 
         var templist = PlantInfo()
             model.myplant.value!![0].let {
