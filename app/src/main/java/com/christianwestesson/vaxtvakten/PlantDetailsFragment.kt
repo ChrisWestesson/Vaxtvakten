@@ -75,7 +75,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
         //model.addPlant()
 
-        var templist = model.myplant.value!![0]
+//        var templist = model.myplant.value!![0]
 
         binding.editTextTextPersonName.setText(currentPlant.title)
         binding.editTextTextPersonName2.setText(currentPlant.species)
