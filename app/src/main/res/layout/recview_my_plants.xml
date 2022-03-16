@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -29,14 +29,27 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/myPlantImageIV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginStart="5dp"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/svarmorstunga"
                     tools:srcCompat="@drawable/svarmorstunga" />
+
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/myplantSpeciesTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/myplantTitleTV"

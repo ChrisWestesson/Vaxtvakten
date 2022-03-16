@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -36,6 +37,8 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
         val dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
 
+        holder.plantIMG.setImageResource(homefrag.model.stringtoIMG(currentPlant.species))
+
 
         var percent = homefrag.model.timeLeft(
             timetowater = currentPlant.giveWaterDate,
@@ -48,6 +51,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.toString()}")
         Log.i("VAXTVAKTENDEBUG", "currentPlant.species: ${currentPlant.species.toString()}")
 
+        holder.species.text = currentPlant.species
         holder.progressbar.setProgress(percent)
         holder.name.text = currentPlant.title
         holder.timeleft.text = "Vattnas ${dateString}"
@@ -69,9 +73,11 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 class MyPlantsViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
     var name = view.findViewById<TextView>(R.id.myplantTitleTV)
+    var species = view.findViewById<TextView>(R.id.myplantSpeciesTV)
     var progressbar = view.findViewById<ProgressBar>(R.id.myPlantsProgressBar)
     var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
     var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
+    var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
 
 
 
