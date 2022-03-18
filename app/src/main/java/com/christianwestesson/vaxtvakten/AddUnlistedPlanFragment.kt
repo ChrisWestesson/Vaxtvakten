@@ -3,6 +3,7 @@ package com.christianwestesson.vaxtvakten
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
@@ -13,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.christianwestesson.vaxtvakten.Databasehelper.Companion.model
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 import java.util.*
 
 
@@ -22,6 +26,8 @@ class AddUnlistedPlanFragment : Fragment() {
     val binding get () = _binding!!
 
     val REQUEST_IMAGE_CAPTURE = 1
+
+    var imagename = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +68,8 @@ class AddUnlistedPlanFragment : Fragment() {
                 title = binding.namnET.text.toString(),
                 wateramount = binding.vattenmNgdET.text.toString(),
                 giveWaterDate = date,
-                imgName = "img")
+                imgName = "",
+                userimgName = imagename)
 
             var addToPlantList = Plant(
                 uid = 0,
@@ -74,7 +81,8 @@ class AddUnlistedPlanFragment : Fragment() {
                 title = "",
                 wateramount = binding.vattenmNgdET.text.toString(),
                 giveWaterDate = date,
-                imgName = "img")
+                imgName = "",
+                userimgName = imagename)
 
             model.addMyPlant(addToMyPlantList)
             model.addPlant(addToPlantList)
@@ -98,8 +106,38 @@ class AddUnlistedPlanFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == AppCompatActivity.RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap
+
+            val imageuuid = UUID.randomUUID().toString()
+
+            val stream = ByteArrayOutputStream()
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 90, stream)
+            val imagedata = stream.toByteArray()
+
+            val imagedir = File(requireContext().getExternalFilesDir("vaxtvakten"), "plantimages")
+            imagedir.mkdirs()
+            val imagefile = File(imagedir, imageuuid+".jpg")
+            imagename = imageuuid+".jpg"
+
+            val fileout = FileOutputStream(imagefile)
+            fileout.write(imagedata)
+
+
             binding.imgViewer.setImageBitmap(imageBitmap)
         }
     }
+
+    /*
+    fun getimage()
+    {
+        val theuuid = "xyz"
+
+        val imagedir = File(requireContext().getExternalFilesDir(), "plantimages")
+        val imagefile = File(imagedir, theuuid+".jpg")
+
+        val imagebytes = imagefile.readBytes()
+        val bitmap = BitmapFactory.decodeByteArray(imagebytes)
+    }
+
+     */
 
 }

@@ -32,8 +32,6 @@
                     android:id="@+id/myPlantImageIV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:layout_marginStart="5dp"
-                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/svarmorstunga"
                     tools:srcCompat="@drawable/svarmorstunga" />
 
@@ -104,6 +102,7 @@
                 android:layout_marginBottom="20dp"
                 android:textAlignment="center"
                 app:srcCompat="@drawable/img" />
+
         </LinearLayout>
 
     </LinearLayout>

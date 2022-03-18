@@ -26,7 +26,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
     var currentPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
         waterintervalHours = 0, info = "", species = "", title = "",
-        wateramount = "", giveWaterDate = 0, imgName = "")
+        wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

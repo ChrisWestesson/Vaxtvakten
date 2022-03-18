@@ -1,6 +1,7 @@
 package com.christianwestesson.vaxtvakten
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.icu.text.SimpleDateFormat
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.lifecycle.Observer
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddListedPlantBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsUnEditableBinding
+import java.io.File
 
 
 class PlantDetailsUnEditableFragment : Fragment() {
@@ -26,7 +28,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
     var currentPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
         waterintervalHours = 0, info = "", species = "", title = "",
-        wateramount = "", giveWaterDate = 0, imgName = "")
+        wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,7 +87,21 @@ class PlantDetailsUnEditableFragment : Fragment() {
         var weeks = currentPlant.waterintervalWeeks
 
         //model.progressPercent.observe(viewLifecycleOwner, observerProgress)
-        binding.myPlantDetailImageIV.setImageResource(model.stringtoIMG(currentPlant.species))
+        if(currentPlant.userimgName != "")
+        {
+            // GET FILE STUFF
+            val imagedir = File(requireContext().getExternalFilesDir("vaxtvakten"), "plantimages")
+            val imagefile = File(imagedir, currentPlant.userimgName)
+
+            val imagebytes = imagefile.readBytes()
+            val bitmap = BitmapFactory.decodeByteArray(imagebytes, 0, imagebytes.size)
+            binding.myPlantDetailImageIV.setImageBitmap(bitmap)
+        } else {
+            binding.myPlantDetailImageIV.setImageResource(model.stringtoIMG(currentPlant.species))
+        }
+
+
+       // binding.myPlantDetailImageIV.setImageResource(model.stringtoIMG(currentPlant.species))
         binding.detailsNameTextview.text = currentPlant.title
         binding.detailsTypeTextview.text = currentPlant.species
         binding.detailsWaterAmountTextview.text = currentPlant.wateramount

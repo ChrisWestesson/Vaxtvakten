@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddListedPlantBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
+import java.io.File
 
 class AddListedPlantFragment : Fragment() {
 
@@ -20,7 +22,7 @@ class AddListedPlantFragment : Fragment() {
 
     var currentPlant = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
         waterintervalHours = 0, info = "", species = "", title = "",
-        wateramount = "", giveWaterDate = 0, imgName = "")
+        wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
 
 
 
@@ -41,7 +43,18 @@ class AddListedPlantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.i("CURRENTPLANT", currentPlant.species)
+        if(currentPlant.userimgName != "")
+        {
+            // GET FILE STUFF
+            val imagedir = File(requireContext().getExternalFilesDir("vaxtvakten"), "plantimages")
+            val imagefile = File(imagedir, currentPlant.userimgName)
+
+            val imagebytes = imagefile.readBytes()
+            val bitmap = BitmapFactory.decodeByteArray(imagebytes, 0, imagebytes.size)
+            binding.myPlantDetailImageIV.setImageBitmap(bitmap)
+        } else {
+            binding.myPlantDetailImageIV.setImageResource(model.stringtoIMG(currentPlant.species))
+        }
 
         var weeks = currentPlant.waterintervalWeeks.toString()
         var days = currentPlant.waterintervalDays.toString()
@@ -65,7 +78,8 @@ class AddListedPlantFragment : Fragment() {
                 title = binding.detailsNameEditText.text.toString(),
                 wateramount = binding.detailsWaterAmountTextview.text.toString(),
                 giveWaterDate = currentPlant.giveWaterDate,
-                imgName = currentPlant.imgName)
+                imgName = currentPlant.imgName,
+                userimgName = currentPlant.userimgName)
 
             model.addMyPlant(plantToAdd)
 
