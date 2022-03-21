@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/unlistedFrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddUnlistedPlanFragment">
+    tools:context=".AddUnlistedPlanFragment"
+    android:background="@color/vaxtvakentLightGreen">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/gradient_background"
-        tools:context=".MainActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/vaxtvakentLightGreen"
+            tools:context=".MainActivity">
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
 
             <Button
                 android:id="@+id/btn_camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_700"
                 android:text="ta bild"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,11 +50,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Namn"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -71,11 +69,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Vattenmängd"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -89,11 +88,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="ART"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.27"
@@ -107,11 +107,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Frekvens"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -125,11 +126,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Övrigt"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -142,6 +144,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="83dp"
                 android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/teal_700"
+                android:fontFamily="serif"
                 android:text="lägg till"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -149,8 +153,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/infoET" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,17 +24,15 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="8dp">
 
-
                 <ImageView
                     android:id="@+id/myPlantImageIV"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:layout_marginStart="5dp"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitXY"
+                    app:shapeAppearanceOverlay="@style/RoundedSquare"
                     app:srcCompat="@drawable/svarmorstunga"
                     tools:srcCompat="@drawable/svarmorstunga" />
 
@@ -46,10 +45,11 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/myplantTitleTV"
@@ -58,9 +58,10 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:text="Krukväxt vardagsrum"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <ProgressBar
                 android:id="@+id/myPlantsProgressBar"
@@ -70,7 +71,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="20dp"
                 android:progress="56"
-                android:progressTint="@color/design_default_color_background"
+                android:progressTint="@color/black"
                 android:textAlignment="center" />
 
             <TextView
@@ -80,9 +81,10 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="serif"
                 android:text="2 d 16 h"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/myPlantWaterTV"
@@ -91,9 +93,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="serif"
                 android:text="Vattna"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <ImageView
                 android:id="@+id/imageView2"
