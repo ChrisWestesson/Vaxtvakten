@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.graphics.BitmapFactory
 import android.icu.text.SimpleDateFormat
 import android.os.Build
 import android.util.Log
@@ -11,6 +12,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import java.io.File
 
 class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
@@ -37,8 +39,21 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
         val dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
 
-        holder.plantIMG.setImageResource(homefrag.model.stringtoIMG(currentPlant.species))
+       // holder.plantIMG.setImageResource(homefrag.model.stringtoIMG(currentPlant.species))
+        //  holder.plantIMG.setImageResource(R.drawable.)
 
+        if(currentPlant.userimgName != "")
+        {
+            // GET FILE STUFF
+            val imagedir = File(holder.itemView.context.getExternalFilesDir("vaxtvakten"), "plantimages")
+            val imagefile = File(imagedir, currentPlant.userimgName)
+
+            val imagebytes = imagefile.readBytes()
+            val bitmap = BitmapFactory.decodeByteArray(imagebytes, 0, imagebytes.size)
+            holder.plantIMG.setImageBitmap(bitmap)
+        } else {
+            holder.plantIMG.setImageResource(homefrag.model.stringtoIMG(currentPlant.species))
+        }
 
         var percent = homefrag.model.timeLeft(
             timetowater = currentPlant.giveWaterDate,

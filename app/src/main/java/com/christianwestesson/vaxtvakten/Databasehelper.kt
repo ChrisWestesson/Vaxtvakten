@@ -42,91 +42,91 @@ class Databasehelper {
 
                 var amaryllis = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Amaryllis", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "amaryllis")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "amaryllis", userimgName = "")
 
                 var ampellilja = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Ampellilja", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "ampellilja")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "ampellilja", userimgName = "")
 
-                var aralia = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 3,
-                    waterintervalHours = 12, info = "", species = "Aralia", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia")
+                var aralia = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
+                    waterintervalHours = 0, info = "", species = "Aralia", title = "",
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia", userimgName = "")
 
                 var aspidistra = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Aspidistra", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aspidistra")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aspidistra", userimgName = "")
 
                 var begonia = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Begonia", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "begonia")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "begonia", userimgName = "")
 
                 var benjaminfikus = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Benjaminfikus", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "benjaminfikus")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "benjaminfikus", userimgName = "")
 
                 var cyklamen = Plant(uid = 0, waterintervalWeeks = 2, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Cyklamen", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "cyklamen")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "cyklamen", userimgName = "")
 
                 var flitigaLisa = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Flitiga Lisa", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "flitigalisa")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "flitigalisa", userimgName = "")
 
                 var fredskalla = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Fredskalla", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "fredskalla")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "fredskalla", userimgName = "")
 
                 var gloxinia = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 10,
                     waterintervalHours = 0, info = "", species = "Gloxinia", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "gloxinia")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "gloxinia", userimgName = "")
 
                 var hemtrevnad = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Hemtrevnad", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "hemtrevnad")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "hemtrevnad", userimgName = "")
 
                 var julstjärna = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Julstjärna", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "julstjärna")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "julstjärna", userimgName = "")
 
                 var monstera = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Monstera", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "monstera")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "monstera", userimgName = "")
 
                 var paradisträd = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Paradisträd", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "paradisträd")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "paradisträd", userimgName = "")
 
                 var pelargon = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Pelargon", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "pelargon")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "pelargon", userimgName = "")
 
                 var prickblad = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Prickblad", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "prickblad")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "prickblad", userimgName = "")
 
                 var silverkalla = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Silverkalla", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "silverkalla")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "silverkalla", userimgName = "")
 
                 var spjutbräken = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Spjutbräken", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "spjutbräken")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "spjutbräken", userimgName = "")
 
                 var svärmorskudde = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Svärmors kudde", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "svärmorskudde")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "svärmorskudde", userimgName = "")
 
                 var svärmorstunga = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Svärmors tunga", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "svärmorstunga")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "svärmorstunga", userimgName = "")
 
                 var skvallerreva = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Skvallerreva", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "skvallerreva")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "skvallerreva", userimgName = "")
 
                 var våreld = Plant(uid = 0, waterintervalWeeks = 1, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Våreld", title = "",
-                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "våreld")
+                    wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "våreld", userimgName = "")
 
                 userdao.insertPlant(amaryllis, aralia, ampellilja, aspidistra, begonia, benjaminfikus, cyklamen, flitigaLisa, fredskalla, gloxinia, hemtrevnad,
                 julstjärna, monstera, paradisträd, pelargon, prickblad, silverkalla, spjutbräken, svärmorskudde, svärmorstunga, skvallerreva, våreld)
@@ -151,7 +151,8 @@ data class Plant(
     @ColumnInfo(name = "wateramount") val wateramount: String,
     @ColumnInfo(name = "info") val info: String,
     @ColumnInfo(name = "imgName") val imgName: String,
-    @ColumnInfo(name = "giveWaterDate") val giveWaterDate: Long
+    @ColumnInfo(name = "giveWaterDate") val giveWaterDate: Long,
+    @ColumnInfo(name = "userimgName") val userimgName: String
 
 )
 
@@ -166,7 +167,9 @@ data class MyPlant(
     @ColumnInfo(name = "wateramount") val wateramount: String,
     @ColumnInfo(name = "info") val info: String,
     @ColumnInfo(name = "imgName") val imgName: String,
-    @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long
+    @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long,
+    @ColumnInfo(name = "userimgName") val userimgName: String
+
 
 )
 

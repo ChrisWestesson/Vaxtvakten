@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.io.File
 
 class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
@@ -35,7 +37,22 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
     override fun onBindViewHolder(holder: AddPlantViewHolder, position: Int) {
 
         var currentPlant = addplantfrag.model.plantList.value!![position]
-        holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
+
+        if(currentPlant.userimgName != "")
+        {
+            // GET FILE STUFF
+            val imagedir = File(holder.itemView.context.getExternalFilesDir("vaxtvakten"), "plantimages")
+            val imagefile = File(imagedir, currentPlant.userimgName)
+
+            val imagebytes = imagefile.readBytes()
+            val bitmap = BitmapFactory.decodeByteArray(imagebytes, 0, imagebytes.size)
+            holder.flowerImage.setImageBitmap(bitmap)
+        } else {
+            holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
+        }
+
+
+       // holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
 
         Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.toString()}")
         Log.i("VAXTVAKTENDEBUG", "currentPlant.species: ${currentPlant.species.toString()}")
