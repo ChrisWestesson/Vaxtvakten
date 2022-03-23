@@ -209,7 +209,10 @@ interface UserDao {
     fun insertMyPlant(vararg users: MyPlant)
 
     @Delete
-    fun delete(user: Plant)
+    fun deleteMyPlant(user: MyPlant)
+
+    @Delete
+    fun deletePlant(user: Plant)
 }
 
 @Database(entities = [Plant::class, MyPlant::class], version = 1)

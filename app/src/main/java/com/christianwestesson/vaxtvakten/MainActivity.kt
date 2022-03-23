@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
  */
         findViewById<ImageButton>(R.id.homePlantBtn).setOnClickListener {
-            NotificationUtils().setNotification(mNotificationTime2, this@MainActivity)
+           // NotificationUtils().setNotification(mNotificationTime2, this@MainActivity)
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         }
         findViewById<ImageButton>(R.id.addPlantBtn).setOnClickListener {

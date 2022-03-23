@@ -6,6 +6,8 @@ import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
+import android.util.Log
+import androidx.core.app.NotificationCompat
 import java.util.*
 
 /**
@@ -15,9 +17,11 @@ import java.util.*
 class NotificationUtils {
 
 
-    fun setNotification(timeInMilliSeconds: Long, activity: Activity) {
+    fun setNotification(timeInMilliSeconds: Long, activity: Activity, id : Int) {
 
         //------------  alarm settings start  -----------------//
+
+        Log.i("VAXTAPPDEBUG", "setNotification körs, timeinmillis: ${timeInMilliSeconds}, activity: ${activity}")
 
         if (timeInMilliSeconds > 0) {
 
@@ -27,15 +31,21 @@ class NotificationUtils {
 
             alarmIntent.putExtra("reason", "notification")
             alarmIntent.putExtra("timestamp", timeInMilliSeconds)
-            alarmIntent.putExtra("fruit", "banan")
+            alarmIntent.putExtra("fruit", "banan" + id)
 
 
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = timeInMilliSeconds
 
 
-            val pendingIntent = PendingIntent.getBroadcast(activity, 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT)
+            val pendingIntent = PendingIntent.getBroadcast(activity, id, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT)
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
+
+
+
+
+
+
 
         }
 

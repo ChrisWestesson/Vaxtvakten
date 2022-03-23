@@ -11,6 +11,8 @@ import java.util.*
 
 class MyPlantViewModel : ViewModel() {
 
+    var homeFragment = HomeFragment()
+
     val myplant: MutableLiveData<List<PlantInfo>> by lazy {
         MutableLiveData<List<PlantInfo>>()
     }
@@ -118,6 +120,21 @@ class MyPlantViewModel : ViewModel() {
 
     }
 
+    fun deleteMyPlant(plantinfo : MyPlant) {
+        Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
+        var date = Calendar.getInstance().timeInMillis
+
+
+        Log.i("VAXTVAKTENDEBUG", "delete")
+        userdao.deleteMyPlant(plantinfo)
+
+
+
+
+
+    }
+
 
 
     fun addPlant(plantinfo : Plant) {
@@ -129,6 +146,18 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "insertplant")
         userdao.insertPlant(plantinfo)
+
+    }
+
+    fun deletePlant(plantinfo : Plant) {
+        Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
+        var date = Calendar.getInstance().timeInMillis
+
+
+        Log.i("VAXTVAKTENDEBUG", "delete")
+
+        userdao.deletePlant(plantinfo)
 
     }
 
