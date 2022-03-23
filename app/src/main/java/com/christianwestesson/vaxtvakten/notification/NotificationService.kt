@@ -14,6 +14,8 @@ import android.media.RingtoneManager
 import android.os.Build
 import java.util.*
 import android.app.NotificationChannel
+import android.os.Bundle
+import android.util.Log
 import com.christianwestesson.vaxtvakten.R
 
 
@@ -62,8 +64,11 @@ class NotificationService : IntentService("NotificationService") {
 
 
         var timestamp: Long = 0
+        var plant : String = "Din växt"
         if (intent != null && intent.extras != null) {
             timestamp = intent.extras!!.getLong("timestamp")
+            plant = intent.extras!!.getString("reason", "Din växt")
+            Log.i("VAXTVAKTENDEBUG", "timestamp: " + timestamp.toString() + " PLANT: " + plant)
         }
 
 
@@ -76,16 +81,14 @@ class NotificationService : IntentService("NotificationService") {
 
             val context = this.applicationContext
             var notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            var text = intent!!.getStringExtra("fruit")
 
             val notifyIntent = Intent(this, ResultActivity::class.java)
 
 
-
-
-
             val title = "Växtvakten"
-            val message = text + notifyIntent.getStringExtra("fruit") +  "XYZ" + " behöver vattnas"
+            val message = plant + " behöver vattnas"
+
+
 
            // notifyIntent.putExtra("title", title)
            // notifyIntent.putExtra("message", message)

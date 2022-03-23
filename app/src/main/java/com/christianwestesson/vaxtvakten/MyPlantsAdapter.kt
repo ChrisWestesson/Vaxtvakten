@@ -88,7 +88,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
             homefrag.model.createMyPlantList()
 
 
-            NotificationUtils().setNotification(currentPlant.giveWaterDate, homefrag.requireActivity(), id = currentPlant.uid)
+            NotificationUtils().setNotification(currentPlant.giveWaterDate, homefrag.requireActivity(), id = currentPlant.uid, plantname = currentPlant.title)
 
             notifyDataSetChanged()
 

@@ -6,6 +6,7 @@ import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import java.util.*
@@ -17,7 +18,7 @@ import java.util.*
 class NotificationUtils {
 
 
-    fun setNotification(timeInMilliSeconds: Long, activity: Activity, id : Int) {
+    fun setNotification(timeInMilliSeconds: Long, activity: Activity, id : Int, plantname : String) {
 
         //------------  alarm settings start  -----------------//
 
@@ -29,9 +30,15 @@ class NotificationUtils {
             val alarmManager = activity.getSystemService(Activity.ALARM_SERVICE) as AlarmManager
             val alarmIntent = Intent(activity.applicationContext, AlarmReceiver::class.java) // AlarmReceiver1 = broadcast receiver
 
-            alarmIntent.putExtra("reason", "notification")
+
+
+            alarmIntent.putExtra("reason", plantname)
+            alarmIntent.putExtra("plant", plantname)
             alarmIntent.putExtra("timestamp", timeInMilliSeconds)
-            alarmIntent.putExtra("fruit", "banan" + id)
+
+
+
+
 
 
             val calendar = Calendar.getInstance()
