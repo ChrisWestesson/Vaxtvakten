@@ -70,11 +70,12 @@ class MainActivity : AppCompatActivity() {
             if (homeFrag.model.homeFragment.showDeleteButton == true)
             {
                 homeFrag.model.homeFragment.showDeleteButton = false
-                homeFrag.myPlantsAdapter.notifyDataSetChanged()
+
             } else {
                 homeFrag.model.homeFragment.showDeleteButton = true
-                homeFrag.myPlantsAdapter.notifyDataSetChanged()
+
             }
+            homeFrag.myPlantsAdapter.notifyDataSetChanged()
 
 
         }
