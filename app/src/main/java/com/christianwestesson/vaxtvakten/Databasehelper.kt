@@ -52,7 +52,7 @@ class Databasehelper {
                     waterintervalHours = 0, info = "", species = "Aralia", title = "",
                     wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia", userimgName = "")
 
-                var aspidistra = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+                var aspidistra = Plant(uid = 0, waterintervalWeeks = 2, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Aspidistra", title = "",
                     wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aspidistra", userimgName = "")
 
