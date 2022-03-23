@@ -82,6 +82,12 @@ class NotificationService : IntentService("NotificationService") {
 
 
             val title = "Växtvakten"
+
+            if (plant == "") {
+                plant = "Din växt"
+            }
+
+
             val message = plant + " behöver vattnas"
 
 
