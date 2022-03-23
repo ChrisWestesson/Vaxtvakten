@@ -23,22 +23,24 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
                 android:elevation="10dp"
                 app:cardCornerRadius="8dp">
 
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/myPlantImageIV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:adjustViewBounds="true"
                     app:srcCompat="@drawable/svarmorstunga"
                     tools:srcCompat="@drawable/svarmorstunga" />
 
                 <ImageView
                     android:id="@+id/myPlantRedDelete"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/ic_baseline_red_delete_24"
                     tools:visibility="invisible" />
 
@@ -75,7 +77,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="20dp"
                 android:progress="56"
-                android:progressTint="@color/design_default_color_background"
+                android:progressTint="@color/colorAccent"
                 android:textAlignment="center" />
 
             <TextView
