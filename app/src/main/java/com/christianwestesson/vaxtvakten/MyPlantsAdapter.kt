@@ -81,11 +81,13 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         holder.name.text = currentPlant.title
         holder.timeleft.text = "Vattnas ${dateString}"
 
+
         holder.giveWater.setOnClickListener {
             homefrag.model.waterMyPlant(plant = currentPlant)
             homefrag.model.createMyPlantList()
 
-            NotificationUtils().setNotification(currentPlant.giveWaterDate, homefrag.requireActivity())
+
+            NotificationUtils().setNotification(currentPlant.giveWaterDate, homefrag.requireActivity(), id = currentPlant.uid)
 
             notifyDataSetChanged()
 
@@ -93,7 +95,9 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
             holder.itemView.setOnClickListener {
 
-              //  homefrag.goPlantDetails(chosenPlant = currentPlant)
+                homefrag.goPlantDetails(chosenPlant = currentPlant)
+
+
 
 
             }
