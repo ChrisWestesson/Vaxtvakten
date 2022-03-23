@@ -39,6 +39,9 @@ class MyPlantViewModel : ViewModel() {
         MutableLiveData<Int>()
     }
 
+
+
+
     fun stringtoIMG(name : String) : Int{
         var image = 0
         when (name) {
@@ -246,6 +249,8 @@ class MyPlantViewModel : ViewModel() {
 
     }
 
+
+
     fun timeLeft(timetowater : Long, weeks : Int, days : Int, hours : Int) : Int {
         var weeksinMilli = weeks * 604800
         var daysinMilli = days * 86400
@@ -284,6 +289,8 @@ class MyPlantViewModel : ViewModel() {
 
 
     }
+
+
 
 
 

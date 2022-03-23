@@ -23,6 +23,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
     private val mNotificationTime2 = Calendar.getInstance().timeInMillis + 5000
     private var mNotified = false
 
+
     lateinit var homefrag: HomeFragment
 
 
@@ -101,6 +102,20 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
 
             }
+        if (homefrag.model.homeFragment.showDeleteButton == false){
+            holder.deleteIMG.visibility = View.INVISIBLE
+        } else if (homefrag.model.homeFragment.showDeleteButton == true){
+            holder.deleteIMG.visibility = View.VISIBLE
+        }
+
+
+
+        holder.deleteIMG.setOnClickListener {
+            homefrag.model.deleteMyPlant(currentPlant)
+            homefrag.model.createMyPlantList()
+            homefrag.model.homeFragment.showDeleteButton = false
+            notifyDataSetChanged()
+        }
 
         }
 
@@ -114,6 +129,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
         var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
         var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
+        var deleteIMG = view.findViewById<ImageView>(R.id.myPlantRedDelete)
 
 
     }
