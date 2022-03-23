@@ -152,68 +152,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="10dp">
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="serif"
-                    android:text="Frekvens         :"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="serif"
-                    android:text="Dagar"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <Spinner
-                    android:id="@+id/dagar_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/black"
-                    android:contentDescription="@string/app_name"
-                    android:dropDownSelector="@color/black"
-                    android:foregroundTint="@color/black"
-                    android:theme="@style/spinnerTheme"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="serif"
-                    android:text="Veckor"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <Spinner
-                    android:id="@+id/timer_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/black"
-                    android:contentDescription="@string/app_name"
-                    android:theme="@style/spinnerTheme"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <TextView
@@ -240,6 +178,99 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
                     android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="serif"
+                android:text="Frekvens         "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Veckor"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/timer_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/app_name"
+                    android:entries="@array/Veckor"
+                    android:theme="@style/spinnerTheme"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Dagar"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/dagar_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/app_name"
+                    android:dropDownSelector="@color/black"
+                    android:entries="@array/Dagar"
+                    android:foregroundTint="@color/black"
+                    android:theme="@style/spinnerTheme"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Timmer"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/timmer_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/app_name"
+                    android:dropDownSelector="@color/black"
+                    android:entries="@array/Timmer"
+                    android:foregroundTint="@color/black"
+                    android:theme="@style/spinnerTheme"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+
             </LinearLayout>
 
         </LinearLayout>
