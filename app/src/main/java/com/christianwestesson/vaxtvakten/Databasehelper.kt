@@ -169,6 +169,7 @@ data class MyPlant(
     @ColumnInfo(name = "imgName") val imgName: String,
     @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long,
     @ColumnInfo(name = "userimgName") val userimgName: String
+    
 
 
 )

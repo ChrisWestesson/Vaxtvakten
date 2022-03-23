@@ -53,7 +53,11 @@ class HomeFragment : Fragment() {
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
 
+
+
     }
+
+
 
     fun goPlantDetails(chosenPlant : MyPlant) {
         val plantdetailsuneditablefrag = PlantDetailsUnEditableFragment()

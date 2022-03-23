@@ -18,6 +18,8 @@ import com.christianwestesson.vaxtvakten.R
 
 
 class NotificationService : IntentService("NotificationService") {
+
+
     private lateinit var mNotification: Notification
     private val mNotificationId: Int = 1000
 
@@ -70,6 +72,8 @@ class NotificationService : IntentService("NotificationService") {
         if (timestamp > 0) {
 
 
+
+
             val context = this.applicationContext
             var notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             val notifyIntent = Intent(this, ResultActivity::class.java)
@@ -87,7 +91,7 @@ class NotificationService : IntentService("NotificationService") {
             calendar.timeInMillis = timestamp
 
 
-            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_ONE_SHOT)
             val res = this.resources
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 

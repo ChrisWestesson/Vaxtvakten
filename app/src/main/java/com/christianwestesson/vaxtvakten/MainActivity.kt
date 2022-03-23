@@ -66,7 +66,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.deletePlantBtn).setOnClickListener {
+
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetail).commit()
+
 
         }
 

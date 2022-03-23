@@ -49,6 +49,13 @@
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
+            <ImageView
+                android:id="@+id/myPlantRedDelete"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/ic_baseline_red_delete_24"
+                tools:visibility="invisible" />
+
             <TextView
                 android:id="@+id/myplantTitleTV"
                 android:layout_width="match_parent"
