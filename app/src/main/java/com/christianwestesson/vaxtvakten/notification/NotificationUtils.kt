@@ -34,7 +34,7 @@ class NotificationUtils {
 
             alarmIntent.putExtra("reason", plantname)
             alarmIntent.putExtra("plant", plantname)
-            alarmIntent.putExtra("species", plantname)
+            alarmIntent.putExtra("species", species)
             alarmIntent.putExtra("timestamp", timeInMilliSeconds)
 
 

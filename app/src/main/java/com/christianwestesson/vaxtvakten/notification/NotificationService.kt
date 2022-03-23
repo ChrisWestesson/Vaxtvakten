@@ -65,9 +65,11 @@ class NotificationService : IntentService("NotificationService") {
 
         var timestamp: Long = 0
         var plant : String = "Din växt"
+        var species : String = ""
         if (intent != null && intent.extras != null) {
             timestamp = intent.extras!!.getLong("timestamp")
             plant = intent.extras!!.getString("reason", "Din växt")
+            species = intent.extras!!.getString("species", "")
             Log.i("VAXTVAKTENDEBUG", "timestamp: " + timestamp.toString() + " PLANT: " + plant)
         }
 
@@ -90,9 +92,12 @@ class NotificationService : IntentService("NotificationService") {
             if (plant == "") {
                 plant = "Din växt"
             }
+            if (species == "") {
+                plant = "okänd växt"
+            }
 
 
-            val message = plant + " behöver vattnas"
+            val message = plant + " av typen " + species + " behöver vattnas"
 
 
 
