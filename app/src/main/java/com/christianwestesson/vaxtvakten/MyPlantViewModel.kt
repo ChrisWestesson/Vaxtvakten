@@ -11,6 +11,8 @@ import java.util.*
 
 class MyPlantViewModel : ViewModel() {
 
+    var homeFragment = HomeFragment()
+
     val myplant: MutableLiveData<List<PlantInfo>> by lazy {
         MutableLiveData<List<PlantInfo>>()
     }
@@ -36,6 +38,9 @@ class MyPlantViewModel : ViewModel() {
     val progressPercent: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
     }
+
+
+
 
     fun stringtoIMG(name : String) : Int{
         var image = 0
@@ -118,6 +123,21 @@ class MyPlantViewModel : ViewModel() {
 
     }
 
+    fun deleteMyPlant(plantinfo : MyPlant) {
+        Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
+        var date = Calendar.getInstance().timeInMillis
+
+
+        Log.i("VAXTVAKTENDEBUG", "delete")
+        userdao.deleteMyPlant(plantinfo)
+
+
+
+
+
+    }
+
 
 
     fun addPlant(plantinfo : Plant) {
@@ -129,6 +149,18 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "insertplant")
         userdao.insertPlant(plantinfo)
+
+    }
+
+    fun deletePlant(plantinfo : Plant) {
+        Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
+        var date = Calendar.getInstance().timeInMillis
+
+
+        Log.i("VAXTVAKTENDEBUG", "delete")
+
+        userdao.deletePlant(plantinfo)
 
     }
 
@@ -201,11 +233,13 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "timetowater : ${timeToWater.time}")
 
-        timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
-        timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
-        timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
+        //timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
+      //  timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
+      //  timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
 
-        var timetoWaterMilli = timeToWater.timeInMillis
+       // var timetoWaterMilli = timeToWater.timeInMillis
+
+        var timetoWaterMilli = timeToWater.timeInMillis + 5000
 
         wateredPlant.giveWaterDate = timetoWaterMilli
 
@@ -214,6 +248,8 @@ class MyPlantViewModel : ViewModel() {
 
 
     }
+
+
 
     fun timeLeft(timetowater : Long, weeks : Int, days : Int, hours : Int) : Int {
         var weeksinMilli = weeks * 604800
@@ -253,6 +289,8 @@ class MyPlantViewModel : ViewModel() {
 
 
     }
+
+
 
 
 

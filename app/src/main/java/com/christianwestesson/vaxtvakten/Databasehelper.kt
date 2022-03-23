@@ -52,7 +52,7 @@ class Databasehelper {
                     waterintervalHours = 0, info = "", species = "Aralia", title = "",
                     wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aralia", userimgName = "")
 
-                var aspidistra = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+                var aspidistra = Plant(uid = 0, waterintervalWeeks = 2, waterintervalDays = 0,
                     waterintervalHours = 0, info = "", species = "Aspidistra", title = "",
                     wateramount = "Vattna tills jorden är lätt fuktig", giveWaterDate = date, imgName = "aspidistra", userimgName = "")
 
@@ -169,6 +169,7 @@ data class MyPlant(
     @ColumnInfo(name = "imgName") val imgName: String,
     @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long,
     @ColumnInfo(name = "userimgName") val userimgName: String
+    
 
 
 )
@@ -208,7 +209,10 @@ interface UserDao {
     fun insertMyPlant(vararg users: MyPlant)
 
     @Delete
-    fun delete(user: Plant)
+    fun deleteMyPlant(user: MyPlant)
+
+    @Delete
+    fun deletePlant(user: Plant)
 }
 
 @Database(entities = [Plant::class, MyPlant::class], version = 1)

@@ -12,4 +12,5 @@ class PlantInfo {
     var wateramount = ""
     var info = ""
     var giveWaterDate : Date? = null
+
 }

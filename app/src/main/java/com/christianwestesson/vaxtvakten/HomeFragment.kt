@@ -16,10 +16,13 @@ class HomeFragment : Fragment() {
     val binding get () = _binding!!
     val model : MyPlantViewModel by activityViewModels()
     var myPlantsAdapter = MyPlantsAdapter()
+    var showDeleteButton = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myPlantsAdapter.homefrag = this
+
+
 
     }
 
@@ -36,8 +39,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         model.createList()
         model.createMyPlantList()
+
+
 
 
 
@@ -49,7 +56,11 @@ class HomeFragment : Fragment() {
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
 
+
+
     }
+
+
 
     fun goPlantDetails(chosenPlant : MyPlant) {
         val plantdetailsuneditablefrag = PlantDetailsUnEditableFragment()

@@ -14,10 +14,14 @@ import android.media.RingtoneManager
 import android.os.Build
 import java.util.*
 import android.app.NotificationChannel
+import android.os.Bundle
+import android.util.Log
 import com.christianwestesson.vaxtvakten.R
 
 
 class NotificationService : IntentService("NotificationService") {
+
+
     private lateinit var mNotification: Notification
     private val mNotificationId: Int = 1000
 
@@ -60,8 +64,11 @@ class NotificationService : IntentService("NotificationService") {
 
 
         var timestamp: Long = 0
+        var plant : String = "Din växt"
         if (intent != null && intent.extras != null) {
             timestamp = intent.extras!!.getLong("timestamp")
+            plant = intent.extras!!.getString("reason", "Din växt")
+            Log.i("VAXTVAKTENDEBUG", "timestamp: " + timestamp.toString() + " PLANT: " + plant)
         }
 
 
@@ -70,16 +77,28 @@ class NotificationService : IntentService("NotificationService") {
         if (timestamp > 0) {
 
 
+
+
             val context = this.applicationContext
             var notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
             val notifyIntent = Intent(this, ResultActivity::class.java)
 
-            val title = "Växtvakten"
-            val message = "namn på blomma" + "behöver vattnas"
 
-            notifyIntent.putExtra("title", title)
-            notifyIntent.putExtra("message", message)
-            notifyIntent.putExtra("notification", true)
+            val title = "Växtvakten"
+
+            if (plant == "") {
+                plant = "Din växt"
+            }
+
+
+            val message = plant + " behöver vattnas"
+
+
+
+           // notifyIntent.putExtra("title", title)
+           // notifyIntent.putExtra("message", message)
+           // notifyIntent.putExtra("notification", true)
 
             notifyIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
 
@@ -87,7 +106,7 @@ class NotificationService : IntentService("NotificationService") {
             calendar.timeInMillis = timestamp
 
 
-            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_ONE_SHOT)
             val res = this.resources
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
