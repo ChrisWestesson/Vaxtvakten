@@ -16,6 +16,7 @@ class HomeFragment : Fragment() {
     val binding get () = _binding!!
     val model : MyPlantViewModel by activityViewModels()
     var myPlantsAdapter = MyPlantsAdapter()
+    var showDeleteButton = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

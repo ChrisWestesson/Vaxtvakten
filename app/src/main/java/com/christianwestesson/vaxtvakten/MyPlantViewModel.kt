@@ -39,6 +39,9 @@ class MyPlantViewModel : ViewModel() {
         MutableLiveData<Int>()
     }
 
+
+
+
     fun stringtoIMG(name : String) : Int{
         var image = 0
         when (name) {

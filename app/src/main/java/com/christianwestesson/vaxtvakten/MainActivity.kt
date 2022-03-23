@@ -67,8 +67,8 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.deletePlantBtn).setOnClickListener {
 
-            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetail).commit()
-
+            homeFrag.model.homeFragment.showDeleteButton = true
+            homeFrag.myPlantsAdapter.notifyDataSetChanged()
 
         }
 
