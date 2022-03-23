@@ -18,7 +18,7 @@ import java.util.*
 class NotificationUtils {
 
 
-    fun setNotification(timeInMilliSeconds: Long, activity: Activity, id : Int, plantname : String) {
+    fun setNotification(timeInMilliSeconds: Long, activity: Activity, id : Int, plantname : String, species : String) {
 
         //------------  alarm settings start  -----------------//
 
@@ -34,6 +34,7 @@ class NotificationUtils {
 
             alarmIntent.putExtra("reason", plantname)
             alarmIntent.putExtra("plant", plantname)
+            alarmIntent.putExtra("species", plantname)
             alarmIntent.putExtra("timestamp", timeInMilliSeconds)
 
 
