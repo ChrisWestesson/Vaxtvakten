@@ -2,11 +2,8 @@ package com.christianwestesson.vaxtvakten
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
-import com.christianwestesson.vaxtvakten.notification.AlarmReceiver
-import com.christianwestesson.vaxtvakten.notification.NotificationService
 import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.util.*
 
@@ -33,10 +30,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        if (!mNotified) {
-             NotificationUtils().setNotification(mNotificationTime, this@MainActivity)
-        }
-
         Databasehelper.ctx = applicationContext
 
         setContentView(R.layout.activity_main)
@@ -59,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
  */
         findViewById<ImageButton>(R.id.homePlantBtn).setOnClickListener {
+            NotificationUtils().setNotification(mNotificationTime2, this@MainActivity)
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         }
         findViewById<ImageButton>(R.id.addPlantBtn).setOnClickListener {
@@ -67,12 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.notificationPlantBtn).setOnClickListener {
-            //supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetailUnE).commit()
-
-            Log.i("VAXTAPPDEBUG", "Klickat på notisknapp")
-            NotificationUtils().setNotification(mNotificationTime, this@MainActivity)
-
-
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetailUnE).commit()
 
         }
 

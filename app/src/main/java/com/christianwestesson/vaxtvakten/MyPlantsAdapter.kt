@@ -17,12 +17,19 @@ import java.io.File
 import java.util.*
 
 class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
+    var ten = 10000
+    var twenty = 20000
 
-    lateinit var homefrag : HomeFragment
+    private val mNotificationTime2 = Calendar.getInstance().timeInMillis + 5000
+    private var mNotified = false
+
+    lateinit var homefrag: HomeFragment
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyPlantsViewHolder {
-        val vh = MyPlantsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recview_my_plants, parent, false))
+        val vh = MyPlantsViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.recview_my_plants, parent, false)
+        )
         return vh
     }
 
@@ -41,13 +48,13 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
         val dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
 
-       // holder.plantIMG.setImageResource(homefrag.model.stringtoIMG(currentPlant.species))
+        // holder.plantIMG.setImageResource(homefrag.model.stringtoIMG(currentPlant.species))
         //  holder.plantIMG.setImageResource(R.drawable.)
 
-        if(currentPlant.userimgName != "")
-        {
+        if (currentPlant.userimgName != "") {
             // GET FILE STUFF
-            val imagedir = File(holder.itemView.context.getExternalFilesDir("vaxtvakten"), "plantimages")
+            val imagedir =
+                File(holder.itemView.context.getExternalFilesDir("vaxtvakten"), "plantimages")
             val imagefile = File(imagedir, currentPlant.userimgName)
 
             val imagebytes = imagefile.readBytes()
@@ -61,7 +68,8 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
             timetowater = currentPlant.giveWaterDate,
             weeks = currentPlant.waterintervalWeeks,
             days = currentPlant.waterintervalDays,
-            hours = currentPlant.waterintervalHours)
+            hours = currentPlant.waterintervalHours
+        )
 
 
 
@@ -76,27 +84,32 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         holder.giveWater.setOnClickListener {
             homefrag.model.waterMyPlant(plant = currentPlant)
             homefrag.model.createMyPlantList()
+
+            NotificationUtils().setNotification(currentPlant.giveWaterDate, homefrag.requireActivity())
+
             notifyDataSetChanged()
+
         }
 
-        holder.itemView.setOnClickListener {
-            //homefrag.goPlantDetails(chosenPlant = currentPlant)
-            NotificationUtils().setNotification(Calendar.getInstance().timeInMillis + 5000, homefrag.requireActivity())
+            holder.itemView.setOnClickListener {
+
+              //  homefrag.goPlantDetails(chosenPlant = currentPlant)
+
+
+            }
+
         }
 
     }
 
-}
+    class MyPlantsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-class MyPlantsViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-
-    var name = view.findViewById<TextView>(R.id.myplantTitleTV)
-    var species = view.findViewById<TextView>(R.id.myplantSpeciesTV)
-    var progressbar = view.findViewById<ProgressBar>(R.id.myPlantsProgressBar)
-    var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
-    var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
-    var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
+        var name = view.findViewById<TextView>(R.id.myplantTitleTV)
+        var species = view.findViewById<TextView>(R.id.myplantSpeciesTV)
+        var progressbar = view.findViewById<ProgressBar>(R.id.myPlantsProgressBar)
+        var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
+        var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
+        var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
 
 
-
-}
+    }
