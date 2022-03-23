@@ -12,7 +12,9 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.io.File
+import java.util.*
 
 class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
@@ -78,7 +80,8 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         }
 
         holder.itemView.setOnClickListener {
-            homefrag.goPlantDetails(chosenPlant = currentPlant)
+            //homefrag.goPlantDetails(chosenPlant = currentPlant)
+            NotificationUtils().setNotification(Calendar.getInstance().timeInMillis + 5000, homefrag.requireActivity())
         }
 
     }

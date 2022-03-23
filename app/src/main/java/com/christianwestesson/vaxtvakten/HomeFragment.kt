@@ -45,6 +45,8 @@ class HomeFragment : Fragment() {
 
 
 
+
+
         val myPlantsRecView = view.findViewById<RecyclerView>(R.id.myPlantsRV)
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter

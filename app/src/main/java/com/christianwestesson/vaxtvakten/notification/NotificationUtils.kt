@@ -6,6 +6,7 @@ import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
+import android.util.Log
 import java.util.*
 
 /**
@@ -18,6 +19,8 @@ class NotificationUtils {
     fun setNotification(timeInMilliSeconds: Long, activity: Activity) {
 
         //------------  alarm settings start  -----------------//
+
+        Log.i("VAXTAPPDEBUG", "setNotification körs, timeinmillis: ${timeInMilliSeconds}, activity: ${activity}")
 
         if (timeInMilliSeconds > 0) {
 
