@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.util.*
 
 
@@ -27,9 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (!mNotified) {
-            // NotificationUtils().setNotification(mNotificationTime, this@MainActivity)
-        }
+
 
         Databasehelper.ctx = applicationContext
 
@@ -53,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
  */
         findViewById<ImageButton>(R.id.homePlantBtn).setOnClickListener {
+            NotificationUtils().setNotification(mNotificationTime2, this@MainActivity)
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         }
         findViewById<ImageButton>(R.id.addPlantBtn).setOnClickListener {

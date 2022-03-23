@@ -19,8 +19,8 @@ class ResultActivity : AppCompatActivity() {
 
 
         if (intent.getBooleanExtra("notification", false)) { //Just for confirmation
-           // txtTitleView.text = intent.getStringExtra("title")
-            //txtMsgView.text = intent.getStringExtra("message")
+          //  txtTitleView.text = intent.getStringExtra("title")
+           // txtMsgView.text = intent.getStringExtra("message")
 
         }
 

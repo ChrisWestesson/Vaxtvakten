@@ -75,7 +75,7 @@ class NotificationService : IntentService("NotificationService") {
             val notifyIntent = Intent(this, ResultActivity::class.java)
 
             val title = "Växtvakten"
-            val message = "namn på blomma" + "behöver vattnas"
+            val message = "XYZ" + " behöver vattnas"
 
             notifyIntent.putExtra("title", title)
             notifyIntent.putExtra("message", message)

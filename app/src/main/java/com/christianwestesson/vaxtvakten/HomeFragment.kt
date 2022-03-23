@@ -21,6 +21,8 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         myPlantsAdapter.homefrag = this
 
+
+
     }
 
     override fun onCreateView(
@@ -35,6 +37,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         model.createList()
         model.createMyPlantList()

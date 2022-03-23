@@ -27,6 +27,7 @@ class NotificationUtils {
 
             alarmIntent.putExtra("reason", "notification")
             alarmIntent.putExtra("timestamp", timeInMilliSeconds)
+            alarmIntent.putExtra("fruit", "banan")
 
 
             val calendar = Calendar.getInstance()
