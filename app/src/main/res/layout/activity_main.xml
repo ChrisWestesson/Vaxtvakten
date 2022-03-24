@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AAD3A1"
+    android:background="@color/vaxtvakentLightGreen"
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -25,9 +25,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:text="Mina Växter"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fragContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,15 +49,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/gradient_background"
-            app:srcCompat="@drawable/ic_baseline_home_24" />
+            android:background="@drawable/button_corner_radius"
+            app:srcCompat="@drawable/ic_baseline_home_24"/>
 
         <ImageButton
             android:id="@+id/addPlantBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/gradient_background"
+            android:background="@drawable/button_corner_radius"
             app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
         <ImageButton
@@ -63,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/gradient_background"
+            android:background="@drawable/button_corner_radius"
             app:srcCompat="@drawable/ic_baseline_notifications_24" />
 
         <ImageButton
@@ -71,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/gradient_background"
+            android:background="@drawable/button_corner_radius"
             app:srcCompat="@drawable/ic_baseline_delete_24" />
     </LinearLayout>
 

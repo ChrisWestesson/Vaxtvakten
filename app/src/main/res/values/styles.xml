@@ -5,15 +5,39 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>    </style>
     <style name="spinnerTheme">
-        <item name="android:background">@drawable/gradient_background</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@color/vaxtvakentLightGreen</item>
+        <item name="android:textColor">@color/black</item>
 
         <!-- this is for api 19 text color -->
-        <item name="android:color">@android:color/white</item>
+        <item name="android:color">@android:color/black</item>
     </style>
     
     <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">10sp</item>
     </style>
+
+    <style name="RoundedSquare">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">30%</item>
+        <item name="cornerSizeTopRight">30%</item>
+        <item name="cornerSizeBottomLeft">30%</item>
+        <item name="cornerSizeBottomRight">30%</item>
+    </style>
+
+    <style name="RoundedSquare1">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedSquare2">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="RoundedSquare3">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSize">70dp</item>
+    </style>
+
 
 </resources>

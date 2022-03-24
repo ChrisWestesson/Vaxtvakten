@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/unlistedFrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddUnlistedPlanFragment">
+    tools:context=".AddUnlistedPlanFragment"
+    android:background="@color/vaxtvakentLightGreen">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/gradient_background"
-        tools:context=".MainActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/vaxtvakentLightGreen"
+            tools:context=".MainActivity">
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
 
             <Button
                 android:id="@+id/btn_camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_700"
                 android:text="ta bild"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,11 +53,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Namn"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -71,11 +72,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Vattenmängd"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -89,34 +91,36 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="ART"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.27"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/namnET" />
 
-            <EditText
+            <TextView
                 android:id="@+id/frekvensET"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Frekvens"
                 android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vattenmängdET" />
+                app:layout_constraintTop_toBottomOf="@+id/infoET" />
 
             <EditText
                 android:id="@+id/infoET"
@@ -125,32 +129,111 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:fontFamily="serif"
                 android:hint="Övrigt"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frekvensET" />
+                app:layout_constraintTop_toBottomOf="@+id/vattenmängdET" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frekvensET">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Veckor"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/timer_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/app_name"
+                    android:entries="@array/Veckor"
+                    android:theme="@style/spinnerTheme"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Dagar"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/dagar_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/app_name"
+                    android:dropDownSelector="@color/black"
+                    android:entries="@array/Dagar"
+                    android:foregroundTint="@color/black"
+                    android:theme="@style/spinnerTheme"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:text="Tid"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/timmer_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/app_name"
+                    android:dropDownSelector="@color/black"
+                    android:entries="@array/Timmer"
+                    android:foregroundTint="@color/black"
+                    android:theme="@style/spinnerTheme"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/nextToAddListBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="83dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/teal_700"
+                android:fontFamily="serif"
                 android:text="lägg till"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/infoET" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
