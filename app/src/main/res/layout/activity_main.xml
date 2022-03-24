@@ -64,10 +64,8 @@
             android:id="@+id/notificationPlantBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="@drawable/green_leaf"
+            android:background="@drawable/button_corner_radius"
             app:srcCompat="@drawable/ic_baseline_notifications_24" />
 
         <ImageButton
