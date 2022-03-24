@@ -64,7 +64,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Namn              :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -96,7 +96,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="ART                  :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -129,7 +129,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Vattenmängd :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -162,7 +162,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Frekvens         :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -194,7 +194,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Övrigt               :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -223,7 +223,8 @@
                 android:fontFamily="serif"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/teal_700"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/timeLeftPB"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

@@ -14,8 +14,9 @@
         android:layout_marginTop="24dp"
         android:fontFamily="serif"
         android:text="Lägg till Växt/lista med växter"
-        android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textColor="@color/teal_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

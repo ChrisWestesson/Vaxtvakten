@@ -55,8 +55,9 @@
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textColor="@color/teal_700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/myplantTitleTV"
@@ -67,7 +68,7 @@
                 android:layout_weight="1"
                 android:text="Krukväxt vardagsrum"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <ProgressBar
                 android:id="@+id/myPlantsProgressBar"
@@ -89,7 +90,7 @@
                 android:layout_marginBottom="5dp"
                 android:text="2 d 16 h"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/teal_700" />
 
             <TextView
                 android:id="@+id/myPlantWaterTV"
@@ -100,7 +101,8 @@
                 android:layout_marginBottom="5dp"
                 android:text="Vattna"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/teal_700"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView2"
