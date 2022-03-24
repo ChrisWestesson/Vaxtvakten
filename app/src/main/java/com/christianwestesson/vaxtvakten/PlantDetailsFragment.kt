@@ -59,7 +59,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-        val spinner1 : Spinner = binding.timerSpinner
+        val spinner1 : Spinner = binding.veckorSpinner
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             requireActivity(),
@@ -71,7 +71,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             // Apply the adapter to the spinner
             spinner1.adapter = adapter
         }
-        val spinner2 : Spinner = binding.timerSpinner
+        val spinner2 : Spinner = binding.timmerSpinner
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             requireActivity(),
@@ -107,16 +107,25 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
-                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#ffffff"))
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF070707"))
             }
         }
-        binding.timerSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        binding.veckorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
-                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#ffffff"))
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF070707"))
+            }
+        }
+        binding.timmerSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF070707"))
             }
         }
 
