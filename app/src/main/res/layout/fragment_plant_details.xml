@@ -8,25 +8,11 @@
     tools:context=".PlantDetailsFragment">
 
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:gravity="center"
-        android:padding="10dip"
-        android:text="Spara"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.863" />
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,11 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
@@ -55,6 +42,7 @@
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/svarmorstunga"
                     app:shapeAppearanceOverlay="@style/RoundedSquare" />
             </androidx.cardview.widget.CardView>
@@ -215,7 +203,7 @@
                     android:textSize="14sp" />
 
                 <Spinner
-                    android:id="@+id/timer_spinner"
+                    android:id="@+id/veckor_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
@@ -273,6 +261,22 @@
 
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/teal_700"
+                android:gravity="center"
+                android:padding="10dip"
+                android:text="Spara"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+                app:layout_constraintVertical_bias="0.863" />
 
         </LinearLayout>
     </ScrollView>

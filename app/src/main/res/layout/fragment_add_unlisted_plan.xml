@@ -160,7 +160,7 @@
                     android:textSize="14sp" />
 
                 <Spinner
-                    android:id="@+id/timer_spinner"
+                    android:id="@+id/veckor_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
