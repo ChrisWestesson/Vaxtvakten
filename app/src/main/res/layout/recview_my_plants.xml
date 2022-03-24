@@ -31,9 +31,10 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/myPlantImageIV"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/svarmorstunga"
                     tools:srcCompat="@drawable/svarmorstunga" />
 

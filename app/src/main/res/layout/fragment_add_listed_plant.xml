@@ -22,9 +22,10 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/myPlantDetailImageIV"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="200dp"
             android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             android:src="@drawable/svarmorstunga"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
