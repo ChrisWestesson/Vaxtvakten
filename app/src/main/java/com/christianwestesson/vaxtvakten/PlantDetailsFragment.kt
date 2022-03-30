@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.view.get
 import androidx.fragment.app.activityViewModels
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsBinding
@@ -20,6 +21,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
     val binding get () = _binding!!
 
     val model : MyPlantViewModel by activityViewModels()
+    var myPlantsAdapter = MyPlantsAdapter()
 
     var waterinterval = 0
     var counter = 0
@@ -27,6 +29,11 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
     var currentPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
         waterintervalHours = 0, info = "", species = "", title = "",
         wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
+
+    var selectWeeks = IntArray(12){it}
+    var selectDays = IntArray(6){it}
+    var selectHours = IntArray(23){it}
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,24 +96,45 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
 //        var templist = model.myplant.value!![0]
 
-        binding.editTextTextPersonName.setText(currentPlant.title)
-        binding.editTextTextPersonName2.setText(currentPlant.species)
-        binding.editTextTextPersonName3.setText(currentPlant.wateramount)
+        //binding.editTextName.text = currentPlant.title
+
+        binding.editTextName.setText(currentPlant.title)
+        binding.editTextSpecies.setText(currentPlant.species).toString()
+        binding.editTextWateramount.setText(currentPlant.wateramount)
         //binding.editTextTextPersonName4.setText(templist.waterinterval.toString())
         //binding.dagarSpinner.onItemSelectedListener = this
-        binding.editTextTextPersonName5.setText(currentPlant.info)
+        binding.editTextInfo.setText(currentPlant.info)
 
-        //binding.button5.setOnClickListener {
-                //counter = templist.waterinterval!!
-                startTimer()
-        //}
+
+        binding.veckorSpinner.setSelection(currentPlant.waterintervalWeeks, true)
+        binding.dagarSpinner.setSelection(currentPlant.waterintervalDays, true)
+        binding.timmerSpinner.setSelection(currentPlant.waterintervalHours, true)
+
+
+        //startTimer()
+
+        binding.saveButton.setOnClickListener {
+
+            currentPlant.title = binding.editTextName.text.toString()
+            currentPlant.species = binding.editTextSpecies.text.toString()
+            currentPlant.wateramount = binding.editTextWateramount.text.toString()
+            currentPlant.info = binding.editTextInfo.text.toString()
+
+            Log.i("PIAXDEBUG", "currentplant weeks: " + currentPlant.waterintervalWeeks + " currenplantname: " +  currentPlant.title + " name: " +  binding.editTextName.text.toString())
+            Log.i("PIAXDEBUG", "currentplant days: " + currentPlant.waterintervalDays)
+            Log.i("PIAXDEBUG", "currentplant hours: " + currentPlant.waterintervalHours)
+
+            model.updateMyPlant(currentPlant)
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+        }
 
         binding.dagarSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                Log.i("PIAXDEBUG", "SELECT " + position.toString() + "Days: " +  selectDays[position])
+                currentPlant.waterintervalDays = selectDays[position]
                 (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
@@ -115,7 +143,8 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                Log.i("PIAXDEBUG", "SELECT " + position.toString() + "Weeks: " +  selectWeeks[position])
+                currentPlant.waterintervalWeeks = selectWeeks[position]
                 (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
@@ -124,7 +153,8 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                Log.i("PIAXDEBUG", "SELECT " + position.toString() + "Hours: " +  selectHours[position])
+                currentPlant.waterintervalHours = selectHours[position]
                 (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
@@ -135,6 +165,8 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         super.onDestroyView()
         _binding = null
     }
+
+    /*
 
     fun startTimer() {
 
@@ -178,6 +210,8 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             }
         }.start()
     }
+
+    */
     override fun onItemSelected(arg0: AdapterView<*>, arg1: View, position: Int, id: Long) {
         val dagarSp = "you selected choice # " + position
         val timerSp = Toast.LENGTH_SHORT

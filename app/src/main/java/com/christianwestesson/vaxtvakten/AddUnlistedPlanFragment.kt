@@ -32,6 +32,18 @@ class AddUnlistedPlanFragment : Fragment() {
 
     var imagename = ""
 
+    var selectWeeks = IntArray(12){it}
+    var selectDays = IntArray(6){it}
+    var selectHours = IntArray(23){it}
+
+    var myPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+        waterintervalHours = 0, info = "", species = "", title = "",
+        wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
+
+    var newPlant = Plant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
+        waterintervalHours = 0, info = "", species = "", title = "",
+        wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,7 +65,6 @@ class AddUnlistedPlanFragment : Fragment() {
 
         var date = Calendar.getInstance().timeInMillis
 
-        binding.namnET.text
 
         binding.btnCamera.setOnClickListener {
             dispatchTakePictureIntent()
@@ -61,6 +72,7 @@ class AddUnlistedPlanFragment : Fragment() {
 
         binding.nextToAddListBtn.setOnClickListener {
 
+            /*
             var addToMyPlantList = MyPlant(
                 uid = 0,
                 waterintervalWeeks = 1,
@@ -74,6 +86,16 @@ class AddUnlistedPlanFragment : Fragment() {
                 imgName = "",
                 userimgName = imagename)
 
+             */
+
+            myPlant.title = binding.nameET.text.toString()
+            myPlant.species = binding.speciesET.text.toString()
+            myPlant.wateramount = binding.wateramountET.text.toString()
+            myPlant.info = binding.infoET.text.toString()
+            myPlant.giveWaterDate = date
+            myPlant.userimgName = imagename
+
+            /*
             var addToPlantList = Plant(
                 uid = 0,
                 waterintervalWeeks = 1,
@@ -87,8 +109,16 @@ class AddUnlistedPlanFragment : Fragment() {
                 imgName = "",
                 userimgName = imagename)
 
-            model.addMyPlant(addToMyPlantList)
-            model.addPlant(addToPlantList)
+             */
+
+            newPlant.species = binding.speciesET.text.toString()
+            newPlant.wateramount = binding.wateramountET.text.toString()
+            newPlant.info = binding.infoET.text.toString()
+            newPlant.giveWaterDate = date
+            newPlant.userimgName = imagename
+
+            model.addMyPlant(myPlant)
+            model.addPlant(newPlant)
 
 
 
@@ -138,6 +168,8 @@ class AddUnlistedPlanFragment : Fragment() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                myPlant.waterintervalDays = selectDays[position]
+                newPlant.waterintervalDays = selectDays[position]
                 (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
@@ -147,6 +179,8 @@ class AddUnlistedPlanFragment : Fragment() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                myPlant.waterintervalHours = selectHours[position]
+                newPlant.waterintervalHours = selectHours[position]
                 (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
@@ -156,6 +190,8 @@ class AddUnlistedPlanFragment : Fragment() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                myPlant.waterintervalWeeks = selectWeeks[position]
+                newPlant.waterintervalWeeks = selectWeeks[position]
                 (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }

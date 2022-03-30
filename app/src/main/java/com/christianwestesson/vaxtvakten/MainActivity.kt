@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             homeFrag.myPlantsAdapter.notifyDataSetChanged()
+            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
 
 
         }

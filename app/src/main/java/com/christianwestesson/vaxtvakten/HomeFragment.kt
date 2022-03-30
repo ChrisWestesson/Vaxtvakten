@@ -41,8 +41,7 @@ class HomeFragment : Fragment() {
 
 
 
-        model.createList()
-        model.createMyPlantList()
+
 
 
 
@@ -56,7 +55,9 @@ class HomeFragment : Fragment() {
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
 
-
+        model.createList()
+        model.createMyPlantList()
+        myPlantsAdapter.notifyDataSetChanged()
 
     }
 
