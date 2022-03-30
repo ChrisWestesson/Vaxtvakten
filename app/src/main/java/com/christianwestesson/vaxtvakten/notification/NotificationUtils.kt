@@ -38,10 +38,6 @@ class NotificationUtils {
             alarmIntent.putExtra("timestamp", timeInMilliSeconds)
 
 
-
-
-
-
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = timeInMilliSeconds
 

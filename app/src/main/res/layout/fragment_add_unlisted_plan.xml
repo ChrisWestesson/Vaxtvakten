@@ -46,7 +46,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/namnET"
+                android:id="@+id/nameET"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -66,7 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
 
             <EditText
-                android:id="@+id/vattenmängdET"
+                android:id="@+id/wateramountET"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -82,10 +82,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/artET" />
+                app:layout_constraintTop_toBottomOf="@+id/speciesET" />
 
             <EditText
-                android:id="@+id/artET"
+                android:id="@+id/speciesET"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -101,7 +101,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.27"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/namnET" />
+                app:layout_constraintTop_toBottomOf="@+id/nameET" />
 
             <TextView
                 android:id="@+id/frekvensET"
@@ -140,7 +140,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vattenmängdET" />
+                app:layout_constraintTop_toBottomOf="@+id/wateramountET" />
 
             <LinearLayout
                 android:id="@+id/linearLayout6"

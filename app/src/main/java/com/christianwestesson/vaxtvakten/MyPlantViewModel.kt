@@ -98,6 +98,8 @@ class MyPlantViewModel : ViewModel() {
     fun createMyPlantList() {
         Log.i("VAXTVAKTENDEBUG", "Createlist körs")
 
+        myPlantList.value = null
+
         var userdao = Databasehelper.getDatabase().userDao()
         var list = userdao.getAllMyPlants()
         val myListofPlants = mutableListOf<MyPlant>()
@@ -109,6 +111,7 @@ class MyPlantViewModel : ViewModel() {
 
         myPlantList.value = myListofPlants
         Log.i("VAXTVAKTENDEBUG", "model.plantList.value: ${myPlantList.value!!.toString()}")
+        homeFragment.myPlantsAdapter.notifyDataSetChanged()
 
     }
 
@@ -164,6 +167,7 @@ class MyPlantViewModel : ViewModel() {
 
     }
 
+    /*
     fun waterPlant (nextDate : Date) {
         Log.i("VAXTVAKTENDEBUG", "waterplant körs")
        var currentPlant = myplant.value!![0]
@@ -174,6 +178,7 @@ class MyPlantViewModel : ViewModel() {
         Log.i("VAXTVAKTENDEBUG", "myplant.value : ${myplant.value!!}")
 
     }
+     */
 
     @RequiresApi(Build.VERSION_CODES.N)
     fun wateringDate (weeks : Int , days : Int, hours : Int ) {
@@ -206,7 +211,7 @@ class MyPlantViewModel : ViewModel() {
 
         var newTimetoWater = calendar.time
 
-        waterPlant(newTimetoWater)
+        //waterPlant(newTimetoWater)
 
 
 
@@ -233,19 +238,43 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "timetowater : ${timeToWater.time}")
 
-        //timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
-      //  timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
-      //  timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
+        timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
+        timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
+        timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
 
-       // var timetoWaterMilli = timeToWater.timeInMillis
+        var timetoWaterMilli = timeToWater.timeInMillis
 
-        var timetoWaterMilli = timeToWater.timeInMillis + 5000
+       // var timetoWaterMilli = timeToWater.timeInMillis + 5000
 
         wateredPlant.giveWaterDate = timetoWaterMilli
 
         var userdao = Databasehelper.getDatabase().userDao()
         userdao.updateWaterDate(plant = wateredPlant)
 
+    }
+
+    fun updateMyPlant(myPlant : MyPlant) {
+        /*
+        var wateredPlant = plant
+
+        var timeToWater = Calendar.getInstance()
+
+        Log.i("VAXTVAKTENDEBUG", "timetowater : ${timeToWater.time}")
+
+        //timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
+        //  timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
+        //  timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
+
+        // var timetoWaterMilli = timeToWater.timeInMillis
+
+        var timetoWaterMilli = timeToWater.timeInMillis + 5000
+
+        wateredPlant.giveWaterDate = timetoWaterMilli
+
+         */
+
+        var userdao = Databasehelper.getDatabase().userDao()
+        userdao.updateWaterDate(plant = myPlant)
 
     }
 
