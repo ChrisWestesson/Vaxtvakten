@@ -129,16 +129,17 @@ class MyPlantViewModel : ViewModel() {
     fun deleteMyPlant(plantinfo : MyPlant) {
         Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
         var userdao = Databasehelper.getDatabase().userDao()
-        var date = Calendar.getInstance().timeInMillis
 
-
-        Log.i("VAXTVAKTENDEBUG", "delete")
+        Log.i("VAXTVAKTENDEBUG", "deleteMyplant")
         userdao.deleteMyPlant(plantinfo)
+    }
 
+    fun deleteListedPlant(plantinfo : Plant) {
+        Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
+        var userdao = Databasehelper.getDatabase().userDao()
 
-
-
-
+        Log.i("VAXTVAKTENDEBUG", "deleteListedPlant")
+        userdao.deletePlant(plantinfo)
     }
 
 
