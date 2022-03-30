@@ -84,11 +84,15 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
 
         holder.giveWater.setOnClickListener {
+            Log.i("VAXTAPPDEBUG","klickat på vattna, time in millis INNAN watermyplant: " + currentPlant.giveWaterDate)
+
             homefrag.model.waterMyPlant(plant = currentPlant)
             homefrag.model.createMyPlantList()
 
 
             NotificationUtils().setNotification(currentPlant.giveWaterDate, homefrag.requireActivity(), id = currentPlant.uid, plantname = currentPlant.title, species = currentPlant.species)
+
+            Log.i("VAXTAPPDEBUG","klickat på vattna, time in millis EFTER watermyplant: " + currentPlant.giveWaterDate)
 
             notifyDataSetChanged()
 
