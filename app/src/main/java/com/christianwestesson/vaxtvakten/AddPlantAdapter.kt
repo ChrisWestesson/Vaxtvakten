@@ -54,12 +54,13 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
        // holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
 
-        Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.toString()}")
+        Log.i("VAXTVAKTENDEBUG", "currentPlant: ${currentPlant.uid.toString()}")
         Log.i("VAXTVAKTENDEBUG", "currentPlant.species: ${currentPlant.species.toString()}")
 
         holder.flowertext.text = currentPlant.species
 
         holder.itemView.setOnClickListener {
+
             addplantfrag.goChoosenPlant(currentPlant)
         }
 
