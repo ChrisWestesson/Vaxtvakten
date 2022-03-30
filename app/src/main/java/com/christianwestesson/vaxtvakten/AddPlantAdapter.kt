@@ -53,10 +53,12 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
         }
 
         holder.listDelete.setOnClickListener {
-            addplantfrag.model.deleteMyPlant(currentPlant)
+            addplantfrag.model.deleteListedPlant(currentPlant)
             addplantfrag.model.createMyPlantList()
-            addplantfrag.model.homeFragment.showDeleteButton = false
+            addplantfrag.model.createList()
             notifyDataSetChanged()
+
+
         }
 
 
