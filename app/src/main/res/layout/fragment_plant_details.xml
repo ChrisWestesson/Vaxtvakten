@@ -40,9 +40,10 @@
 
                 <ImageView
                     android:id="@+id/imageView7"
-                    android:layout_width="match_parent"
+                    android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/svarmorstunga"
                     app:shapeAppearanceOverlay="@style/RoundedSquare" />
             </androidx.cardview.widget.CardView>
@@ -61,7 +62,7 @@
                     android:fontFamily="serif"
                     android:text="Namn               :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -91,7 +92,7 @@
                     android:fontFamily="serif"
                     android:text="ART                  :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -121,7 +122,7 @@
                     android:fontFamily="serif"
                     android:text="Vattenmändg :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -151,7 +152,7 @@
                     android:fontFamily="serif"
                     android:text="Övrigt              :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -179,7 +180,7 @@
                 android:fontFamily="serif"
                 android:text="Frekvens         "
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/teal_700"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -199,7 +200,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Veckor"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -207,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
                     android:entries="@array/Veckor"
                     android:theme="@style/spinnerTheme"
@@ -220,7 +221,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Dagar"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -228,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
                     android:dropDownSelector="@color/black"
                     android:entries="@array/Dagar"
@@ -243,7 +244,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Tid"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -251,7 +252,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
                     android:dropDownSelector="@color/black"
                     android:entries="@array/Timmer"

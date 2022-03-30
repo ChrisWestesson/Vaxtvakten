@@ -116,8 +116,9 @@
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="14sp"
+                android:textColorHint="@color/teal_700"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infoET" />
@@ -156,7 +157,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Veckor"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -164,7 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
                     android:entries="@array/Veckor"
                     android:theme="@style/spinnerTheme"
@@ -177,7 +178,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Dagar"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -185,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
                     android:dropDownSelector="@color/black"
                     android:entries="@array/Dagar"
@@ -201,7 +202,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Tid"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -209,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
                     android:dropDownSelector="@color/black"
                     android:entries="@array/Timmer"

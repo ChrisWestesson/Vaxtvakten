@@ -138,7 +138,7 @@ class AddUnlistedPlanFragment : Fragment() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
-                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF070707"))
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
         binding.timmerSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -147,7 +147,7 @@ class AddUnlistedPlanFragment : Fragment() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
-                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF070707"))
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
         binding.veckorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -156,7 +156,7 @@ class AddUnlistedPlanFragment : Fragment() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 Log.i("PIAXDEBUG", "SELECT " + position.toString())
-                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF070707"))
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
             }
         }
 
