@@ -84,8 +84,8 @@ class AddListedPlantFragment : Fragment() {
             model.addMyPlant(plantToAdd)
 
 
-
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+            requireActivity().supportFragmentManager.popBackStack()
+           // requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
         }
     }
 }

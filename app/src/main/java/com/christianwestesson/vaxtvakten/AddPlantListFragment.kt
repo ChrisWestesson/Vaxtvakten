@@ -30,6 +30,8 @@ class AddPlantListFragment : Fragment() {
 
         addplantadapter.addplantfrag = this
 
+
+
     }
 
     override fun onCreateView(
@@ -53,7 +55,7 @@ class AddPlantListFragment : Fragment() {
 
         binding.addNewPlantButton.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction().
-            add(R.id.fragContainer, AddUnlistedPlanFragment()).addToBackStack(null).commit()
+            add(R.id.fragContainer, AddUnlistedPlanFragment()).commit()
 
         }
 
@@ -61,6 +63,7 @@ class AddPlantListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+
 
         _binding = null
     }
