@@ -8,6 +8,16 @@ import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.util.*
 
 
+/*
+Lägga till egen växt --> Måste ange Art
+                            Kunna ta bort blommor från listan.
+                            Popback istället för replace?
+
+
+
+ */
+
+
 class MainActivity : AppCompatActivity() {
 //notification
     var ten = 10000
