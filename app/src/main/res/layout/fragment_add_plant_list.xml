@@ -15,7 +15,7 @@
         android:fontFamily="serif"
         android:text="Lägg till Växt/lista med växter"
         android:textColor="@color/teal_700"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

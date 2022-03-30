@@ -28,7 +28,7 @@
         android:fontFamily="serif"
         android:text="Mina Växter"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fragContainer"
         app:layout_constraintEnd_toEndOf="parent"
