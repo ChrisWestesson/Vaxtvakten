@@ -4,12 +4,15 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.christianwestesson.vaxtvakten.Databasehelper.Companion.model
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
@@ -91,6 +94,72 @@ class AddUnlistedPlanFragment : Fragment() {
 
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
         }
+
+        val spinner : Spinner = binding.dagarSpinner
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.Dagar,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
+        val spinner1 : Spinner = binding.veckorSpinner
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.Veckor,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner1.adapter = adapter
+        }
+        val spinner2 : Spinner = binding.timmerSpinner
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.Timmer,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner2.adapter = adapter
+        }
+
+        binding.dagarSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
+            }
+        }
+        binding.timmerSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
+            }
+        }
+        binding.veckorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Log.i("PIAXDEBUG", "SELECT " + position.toString())
+                (parent!!.getChildAt(0) as TextView).setTextColor(Color.parseColor("#FF000000"))
+            }
+        }
+
     }
     private fun dispatchTakePictureIntent() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)

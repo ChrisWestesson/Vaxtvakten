@@ -30,26 +30,30 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:elevation="10dp"
                 app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/myPlantDetailImageIV"
-                    android:layout_width="match_parent"
+                    android:layout_width="200dp"
                     android:layout_height="200dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/svarmorstunga" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
@@ -61,7 +65,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Namn              :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -93,7 +97,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="ART                  :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -126,7 +130,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Vattenmängd :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -159,7 +163,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Frekvens         :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -191,7 +195,7 @@
                     android:layout_weight="1"
                     android:fontFamily="serif"
                     android:text="Övrigt               :"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -220,7 +224,8 @@
                 android:fontFamily="serif"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/teal_700"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/timeLeftPB"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
