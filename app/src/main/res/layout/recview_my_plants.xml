@@ -108,12 +108,12 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="16dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:textAlignment="center"
-                app:srcCompat="@drawable/img" />
+                app:srcCompat="@drawable/ic_baseline_water_drop_24" />
 
         </LinearLayout>
 
