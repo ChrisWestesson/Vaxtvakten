@@ -59,14 +59,19 @@ class PlantDetailsUnEditableFragment : Fragment() {
             }
          */
 
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:00")
 
+        val dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
+        binding.timeToWaterTV.text = dateString
 
+        /*
         val observer = Observer<List<PlantInfo>> {
             var dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
             binding.timeToWaterTV.text = dateString
         }
         model.myplant.observe(viewLifecycleOwner, observer)
+
+         */
 
        /* val observerProgress = Observer<Int> {
             binding.timeLeftPB.setProgress(it, true)
@@ -136,7 +141,12 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
         binding.editPlantDetailsButton.setOnClickListener {
 
-            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragContainer, PlantDetailsFragment()).addToBackStack(null).commit()
+            val plantdetailsfrag = PlantDetailsFragment()
+            plantdetailsfrag.currentPlant = currentPlant
+
+            requireActivity().supportFragmentManager.beginTransaction().
+            add(R.id.fragContainer, plantdetailsfrag).addToBackStack(null).commit()
+
 
         }
 

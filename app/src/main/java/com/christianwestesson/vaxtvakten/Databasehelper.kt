@@ -143,32 +143,32 @@ class Databasehelper {
 @Entity
 data class Plant(
     @PrimaryKey(autoGenerate = true) val uid: Int,
-    @ColumnInfo(name = "waterintervalWeeks") val waterintervalWeeks: Int,
-    @ColumnInfo(name = "waterintervalDays") val waterintervalDays: Int,
-    @ColumnInfo(name = "waterintervalHours") val waterintervalHours: Int,
-    @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "species") val species: String,
-    @ColumnInfo(name = "wateramount") val wateramount: String,
-    @ColumnInfo(name = "info") val info: String,
-    @ColumnInfo(name = "imgName") val imgName: String,
-    @ColumnInfo(name = "giveWaterDate") val giveWaterDate: Long,
-    @ColumnInfo(name = "userimgName") val userimgName: String
+    @ColumnInfo(name = "waterintervalWeeks") var waterintervalWeeks: Int,
+    @ColumnInfo(name = "waterintervalDays") var waterintervalDays: Int,
+    @ColumnInfo(name = "waterintervalHours") var waterintervalHours: Int,
+    @ColumnInfo(name = "title") var title: String,
+    @ColumnInfo(name = "species") var species: String,
+    @ColumnInfo(name = "wateramount") var wateramount: String,
+    @ColumnInfo(name = "info") var info: String,
+    @ColumnInfo(name = "imgName") var imgName: String,
+    @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long,
+    @ColumnInfo(name = "userimgName") var userimgName: String
 
 )
 
 @Entity
 data class MyPlant(
     @PrimaryKey(autoGenerate = true) val uid: Int,
-    @ColumnInfo(name = "waterintervalWeeks") val waterintervalWeeks: Int,
-    @ColumnInfo(name = "waterintervalDays") val waterintervalDays: Int,
-    @ColumnInfo(name = "waterintervalHours") val waterintervalHours: Int,
-    @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "species") val species: String,
-    @ColumnInfo(name = "wateramount") val wateramount: String,
-    @ColumnInfo(name = "info") val info: String,
-    @ColumnInfo(name = "imgName") val imgName: String,
+    @ColumnInfo(name = "waterintervalWeeks") var waterintervalWeeks: Int,
+    @ColumnInfo(name = "waterintervalDays") var waterintervalDays: Int,
+    @ColumnInfo(name = "waterintervalHours") var waterintervalHours: Int,
+    @ColumnInfo(name = "title") var title: String,
+    @ColumnInfo(name = "species") var species: String,
+    @ColumnInfo(name = "wateramount") var wateramount: String,
+    @ColumnInfo(name = "info") var info: String,
+    @ColumnInfo(name = "imgName") var imgName: String,
     @ColumnInfo(name = "giveWaterDate") var giveWaterDate: Long,
-    @ColumnInfo(name = "userimgName") val userimgName: String
+    @ColumnInfo(name = "userimgName") var userimgName: String
     
 
 
