@@ -14,6 +14,7 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
     lateinit var  addplantfrag : AddPlantListFragment
 
+
     var flowers = mutableListOf<String>("Amaryllis", "Aralia", "Aspidistra", "Begonia", "Benjaminfikus",
         "Cyklamen", "Flitiga Lisa", "Fredskalla", "Gloxinia", "Hemtrevnad", "Julstjärna", "Monstera", "Paradisträd",
         "Pelargon", "Prickblad", "Silverkalla", "Spjutbräken", "Svärmors kudde", "Svärmors tunga", "Skvallerreva",
@@ -51,6 +52,15 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
             holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
         }
 
+        holder.listDelete.setOnClickListener {
+            addplantfrag.model.deleteListedPlant(currentPlant)
+            addplantfrag.model.createMyPlantList()
+            addplantfrag.model.createList()
+            notifyDataSetChanged()
+
+
+        }
+
 
        // holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
 
@@ -72,6 +82,7 @@ class AddPlantViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
     var flowertext = view.findViewById<TextView>(R.id.addplantTV)
     var flowerImage = view.findViewById<ImageView>(R.id.imageViewAddPlant)
+    var listDelete = view.findViewById<ImageView>(R.id.addListedPlantDelete)
 
 
 
