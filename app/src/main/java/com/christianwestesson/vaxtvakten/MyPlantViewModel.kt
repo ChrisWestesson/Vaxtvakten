@@ -70,7 +70,7 @@ class MyPlantViewModel : ViewModel() {
 
 
             else -> {
-                print("Hittade inte blomman")
+                image = R.drawable.ic_baseline_local_florist_24
             }
         }
         return  image

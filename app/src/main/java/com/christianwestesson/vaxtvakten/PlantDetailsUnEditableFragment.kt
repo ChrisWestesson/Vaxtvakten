@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddListedPlantBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsUnEditableBinding
+import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.io.File
 
 
@@ -138,6 +139,9 @@ class PlantDetailsUnEditableFragment : Fragment() {
             binding.timeLeftPB.setProgress(percent)
             var dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
             binding.timeToWaterTV.text = dateString
+
+            NotificationUtils().setNotification(currentPlant.giveWaterDate, requireActivity(), id = currentPlant.uid, plantname = currentPlant.title, species = currentPlant.species)
+
         }
 
         binding.editPlantDetailsButton.setOnClickListener {

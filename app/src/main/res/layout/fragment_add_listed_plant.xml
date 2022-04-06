@@ -65,7 +65,6 @@
             android:layout_weight="1"
             android:backgroundTint="@color/black"
             android:ems="10"
-            android:fontFamily="sans-serif-medium"
             android:hapticFeedbackEnabled="true"
             android:imeOptions="actionDone"
             android:inputType="textPersonName"
