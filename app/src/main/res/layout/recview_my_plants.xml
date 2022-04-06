@@ -71,7 +71,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Krukväxt vardagsrum"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textColor="@color/teal_700" />
 
             <ProgressBar
                 android:id="@+id/myPlantsProgressBar"

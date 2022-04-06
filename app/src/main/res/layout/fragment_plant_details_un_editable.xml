@@ -80,7 +80,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -112,7 +113,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,7 +147,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -178,7 +181,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -210,8 +214,25 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/nextwatering"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Nästa vattning:"
+                android:textAlignment="center"
+                android:textColor="@color/teal_700"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
             <TextView
@@ -219,7 +240,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="2dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-medium"
                 android:text="TextView"
@@ -236,7 +257,7 @@
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:progressTint="@color/colorAccent"
@@ -258,6 +279,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
+
                     android:backgroundTint="@color/teal_700"
                     android:text="Redigera"
                     app:layout_constraintBottom_toBottomOf="parent"
