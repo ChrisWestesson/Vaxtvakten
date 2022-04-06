@@ -44,7 +44,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_local_florist_24" />
 
             <EditText
                 android:id="@+id/nameET"
@@ -60,7 +61,6 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -80,7 +80,6 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -100,7 +99,6 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.27"
@@ -140,7 +138,6 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"

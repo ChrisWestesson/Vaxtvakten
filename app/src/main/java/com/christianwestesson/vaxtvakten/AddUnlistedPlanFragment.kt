@@ -33,9 +33,9 @@ class AddUnlistedPlanFragment : Fragment() {
 
     var imagename = ""
 
-    var selectWeeks = IntArray(12){it}
-    var selectDays = IntArray(6){it}
-    var selectHours = IntArray(23){it}
+    var selectWeeks = IntArray(13){it}
+    var selectDays = IntArray(7){it}
+    var selectHours = IntArray(24){it}
 
     var myPlant = MyPlant(uid = 0, waterintervalWeeks = 0, waterintervalDays = 0,
         waterintervalHours = 0, info = "", species = "", title = "",

@@ -80,7 +80,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -112,7 +113,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,7 +147,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -178,7 +181,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -210,7 +214,8 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
