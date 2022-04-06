@@ -75,10 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        findViewById<ImageButton>(R.id.notificationPlantBtn).setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(R.id.fragContainer, plantDetailUnE).commit()
 
-        }
 
         findViewById<ImageButton>(R.id.deletePlantBtn).setOnClickListener {
 

@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -83,7 +84,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         holder.timeleft.text = "Vattnas ${dateString}"
 
 
-        holder.giveWater.setOnClickListener {
+        holder.waterButton.setOnClickListener {
             Log.i("VAXTAPPDEBUG","klickat på vattna, time in millis INNAN watermyplant: " + currentPlant.giveWaterDate)
 
             homefrag.model.waterMyPlant(plant = currentPlant)
@@ -132,7 +133,8 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         var species = view.findViewById<TextView>(R.id.myplantSpeciesTV)
         var progressbar = view.findViewById<ProgressBar>(R.id.myPlantsProgressBar)
         var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
-        var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
+        //var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
+        var waterButton = view.findViewById<Button>(R.id.waterBtn)
         var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
         var deleteIMG = view.findViewById<ImageView>(R.id.myPlantRedDelete)
 

@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -66,12 +67,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-medium"
                 android:text="Krukväxt vardagsrum"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textColor="@color/teal_700"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/waterBtn"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:text="vattna"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/myPlantTimeLeftTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="2 d 16 h"
+                android:textAlignment="center"
+                android:textColor="@color/teal_700"
+                android:visibility="gone" />
 
             <ProgressBar
                 android:id="@+id/myPlantsProgressBar"
@@ -79,45 +106,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="20dp"
                 android:progress="56"
                 android:progressTint="@color/colorAccent"
                 android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/myPlantTimeLeftTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="2 d 16 h"
-                android:textAlignment="center"
-                android:textColor="@color/teal_700" />
-
-            <TextView
-                android:id="@+id/myPlantWaterTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Vattna"
-                android:textAlignment="center"
-                android:textColor="@color/teal_700"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="20dp"
-                android:textAlignment="center"
-                app:srcCompat="@drawable/ic_baseline_water_drop_24" />
 
         </LinearLayout>
 
