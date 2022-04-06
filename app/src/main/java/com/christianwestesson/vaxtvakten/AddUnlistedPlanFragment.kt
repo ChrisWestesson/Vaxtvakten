@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.christianwestesson.vaxtvakten.Databasehelper.Companion.model
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -97,6 +98,7 @@ class AddUnlistedPlanFragment : Fragment() {
                 model.addMyPlant(myPlant)
                 model.addPlant(newPlant)
                 requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+                Snackbar.make(view, ("Din växt är tillagd!"), Snackbar.LENGTH_SHORT).show()
 
             }
 
@@ -219,5 +221,7 @@ class AddUnlistedPlanFragment : Fragment() {
 
         builder.show()
     }
+
+
 
 }

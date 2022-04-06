@@ -83,7 +83,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
        // holder.timeleft.text = "Vattnas ${dateString}"
 
 
-        holder.giveWater.setOnClickListener {
+        holder.waterPlant.setOnClickListener {
             Log.i("VAXTAPPDEBUG","klickat på vattna, time in millis INNAN watermyplant: " + currentPlant.giveWaterDate)
 
             homefrag.model.waterMyPlant(plant = currentPlant)
@@ -116,10 +116,9 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
 
         holder.deleteIMG.setOnClickListener {
-            homefrag.model.deleteMyPlant(currentPlant)
-            homefrag.model.createMyPlantList()
-            homefrag.model.homeFragment.showDeleteButton = false
-            notifyDataSetChanged()
+
+            homefrag.deleteNotification(currentPlant)
+
         }
 
         }
@@ -132,6 +131,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         var species = view.findViewById<TextView>(R.id.myplantSpeciesTV)
         var progressbar = view.findViewById<ProgressBar>(R.id.myPlantsProgressBar)
         //var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
+        var waterPlant = view.findViewById<ImageView>(R.id.imageButton)
         var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
         var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
         var deleteIMG = view.findViewById<ImageView>(R.id.myPlantRedDelete)

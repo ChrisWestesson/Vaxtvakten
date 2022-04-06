@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddListedPlantBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 import java.io.File
 
 class AddListedPlantFragment : Fragment() {
@@ -82,10 +83,14 @@ class AddListedPlantFragment : Fragment() {
                 userimgName = currentPlant.userimgName)
 
             model.addMyPlant(plantToAdd)
+            Snackbar.make(view, ("Din växt är tillagd!"), Snackbar.LENGTH_SHORT).show()
 
 
-            requireActivity().supportFragmentManager.popBackStack()
-           // requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+
+
+
+
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -61,6 +62,8 @@ class AddPlantListFragment : Fragment() {
 
     }
 
+
+
     override fun onDestroyView() {
         super.onDestroyView()
 
@@ -75,5 +78,27 @@ class AddPlantListFragment : Fragment() {
 
         requireActivity().supportFragmentManager.beginTransaction().
         add(R.id.fragContainer, addlistedplantfrag).addToBackStack(null).commit()
+    }
+
+
+    fun deleteNotification(currentplant : Plant) {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Radera växt")
+        builder.setMessage("Vill du verkligen radera denna fina växt?")
+
+        builder.setPositiveButton("Radera") { dialog, which ->
+            model.deleteListedPlant(currentplant)
+            model.createMyPlantList()
+            model.createList()
+            addplantadapter.notifyDataSetChanged()
+
+        }
+        builder.setNegativeButton(("Ångra")) { dialog, which ->
+
+
+        }
+
+        builder.show()
     }
 }
