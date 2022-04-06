@@ -46,11 +46,6 @@ class NotificationUtils {
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
 
 
-
-
-
-
-
         }
 
         //------------ end of alarm settings  -----------------//
