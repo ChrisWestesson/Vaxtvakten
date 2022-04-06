@@ -179,7 +179,9 @@ class MyPlantViewModel : ViewModel() {
         Log.i("VAXTVAKTENDEBUG", "myplant.value : ${myplant.value!!}")
 
     }
+
      */
+
 
     @RequiresApi(Build.VERSION_CODES.N)
     fun wateringDate (weeks : Int , days : Int, hours : Int ) {
@@ -237,7 +239,8 @@ class MyPlantViewModel : ViewModel() {
 
         var timeToWater = Calendar.getInstance()
 
-        Log.i("VAXTVAKTENDEBUG", "timetowater : ${timeToWater.time}")
+        Log.i("VAXTVAKTENDEBUG", "timetowater before added: ${timeToWater.time} " +timeToWater.timeInMillis)
+
 
         timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
         timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
@@ -245,7 +248,13 @@ class MyPlantViewModel : ViewModel() {
 
         var timetoWaterMilli = timeToWater.timeInMillis
 
+
+
+
+
        // var timetoWaterMilli = timeToWater.timeInMillis + 5000
+
+        Log.i("VAXTVAKTENDEBUG", "timetowater after added: ${timeToWater.time} " +timetoWaterMilli)
 
         wateredPlant.giveWaterDate = timetoWaterMilli
 

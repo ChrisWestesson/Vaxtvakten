@@ -1,9 +1,15 @@
 package com.christianwestesson.vaxtvakten
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.core.content.ContextCompat
+import com.christianwestesson.vaxtvakten.notification.NotificationService
 import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.util.*
 
@@ -37,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
 
         Databasehelper.ctx = applicationContext
@@ -97,5 +102,17 @@ class MainActivity : AppCompatActivity() {
         //Nytt test CW
         //Mattias was here again
     }
+
+
+    override fun onStop() {
+        val service = Intent(this, NotificationService::class.java)
+        startService(service)
+        super.onStop()
+
+    }
+
+
+
+
 
 }

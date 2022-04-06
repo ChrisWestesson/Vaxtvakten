@@ -22,7 +22,7 @@ class NotificationUtils {
 
         //------------  alarm settings start  -----------------//
 
-        Log.i("VAXTAPPDEBUG", "setNotification körs, timeinmillis: ${timeInMilliSeconds}, activity: ${activity}")
+        Log.i("VAXTVAKTENDEBUG", "setNotification körs, timeinmillis: ${timeInMilliSeconds}, activity: ${activity}")
 
         if (timeInMilliSeconds > 0) {
 
@@ -41,14 +41,12 @@ class NotificationUtils {
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = timeInMilliSeconds
 
+            Log.i("VAXTVAKTENDEBUG", "setNotification körs, calendar.timeinmillis: ${calendar.timeInMillis}, activity: ${activity}")
 
-            val pendingIntent = PendingIntent.getBroadcast(activity, id, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+
+            val pendingIntent = PendingIntent.getBroadcast(activity, id, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
-
-
-
-
-
 
 
         }

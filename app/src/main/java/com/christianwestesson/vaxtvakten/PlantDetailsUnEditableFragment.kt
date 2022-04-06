@@ -64,6 +64,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
         val dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
         binding.timeToWaterTV.text = dateString
 
+
         /*
         val observer = Observer<List<PlantInfo>> {
             var dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
