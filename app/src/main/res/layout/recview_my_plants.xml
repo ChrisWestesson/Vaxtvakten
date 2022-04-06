@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,8 +36,7 @@
                     android:layout_height="150dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/svarmorstunga"
-                    tools:srcCompat="@drawable/svarmorstunga" />
+                    app:srcCompat="@drawable/ic_baseline_local_florist_24" />
 
                 <ImageView
                     android:id="@+id/myPlantRedDelete"
@@ -94,7 +94,8 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="2 d 16 h"
                 android:textAlignment="center"
-                android:textColor="@color/teal_700" />
+                android:textColor="@color/teal_700"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/myPlantWaterTV"
@@ -107,17 +108,23 @@
                 android:text="Vattna"
                 android:textAlignment="center"
                 android:textColor="@color/teal_700"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/imageButton"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="20dp"
-                android:textAlignment="center"
-                app:srcCompat="@drawable/ic_baseline_water_drop_24" />
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/teal_700"
+                android:foregroundTint="@color/white"
+                android:src="@drawable/ic_baseline_water_drop_24"
+                android:tint="@color/white"
+                tools:layout_editor_absoluteX="22dp"
+                tools:layout_editor_absoluteY="656dp" />
 
         </LinearLayout>
 

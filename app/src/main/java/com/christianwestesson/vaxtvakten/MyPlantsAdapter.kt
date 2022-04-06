@@ -80,7 +80,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         holder.species.text = currentPlant.species
         holder.progressbar.setProgress(percent)
         holder.name.text = currentPlant.title
-        holder.timeleft.text = "Vattnas ${dateString}"
+       // holder.timeleft.text = "Vattnas ${dateString}"
 
 
         holder.giveWater.setOnClickListener {
@@ -131,7 +131,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         var name = view.findViewById<TextView>(R.id.myplantTitleTV)
         var species = view.findViewById<TextView>(R.id.myplantSpeciesTV)
         var progressbar = view.findViewById<ProgressBar>(R.id.myPlantsProgressBar)
-        var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
+        //var timeleft = view.findViewById<TextView>(R.id.myPlantTimeLeftTextView)
         var giveWater = view.findViewById<TextView>(R.id.myPlantWaterTV)
         var plantIMG = view.findViewById<ImageView>(R.id.myPlantImageIV)
         var deleteIMG = view.findViewById<ImageView>(R.id.myPlantRedDelete)
