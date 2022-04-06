@@ -3,8 +3,6 @@ package com.christianwestesson.vaxtvakten.notification
 
 
 import android.annotation.SuppressLint
-
-
 import android.app.*
 import android.content.Context
 import android.content.Intent
@@ -12,18 +10,20 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.media.RingtoneManager
 import android.os.Build
-import java.util.*
-import android.app.NotificationChannel
-import android.os.Bundle
 import android.util.Log
+import androidx.core.app.JobIntentService
+import androidx.core.content.getSystemService
 import com.christianwestesson.vaxtvakten.R
+import java.util.*
 
 
-class NotificationService : IntentService("NotificationService") {
+class NotificationService  : IntentService("NotificationService") {
 
 
     private lateinit var mNotification: Notification
     private val mNotificationId: Int = 1000
+
+
 
     @SuppressLint("NewApi")
     private fun createChannel() {
@@ -43,7 +43,7 @@ class NotificationService : IntentService("NotificationService") {
             notificationChannel.setShowBadge(true)
             notificationChannel.enableLights(true)
             notificationChannel.lightColor = Color.parseColor("#e8334a")
-            //notificationChannel.description = getString(R.string.notification_channel_description)
+            notificationChannel.description = "getString(R.string.notification_channel_description)"
             notificationChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
             notificationManager.createNotificationChannel(notificationChannel)
         }
@@ -57,7 +57,10 @@ class NotificationService : IntentService("NotificationService") {
     }
 
 
+
+
     override fun onHandleIntent(intent: Intent?) {
+
 
         //Create Channel
         createChannel()
@@ -101,9 +104,9 @@ class NotificationService : IntentService("NotificationService") {
 
 
 
-           // notifyIntent.putExtra("title", title)
-           // notifyIntent.putExtra("message", message)
-           // notifyIntent.putExtra("notification", true)
+            notifyIntent.putExtra("title", "title")
+            notifyIntent.putExtra("message", "message")
+            notifyIntent.putExtra("notification", true)
 
             notifyIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
 
@@ -111,7 +114,7 @@ class NotificationService : IntentService("NotificationService") {
             calendar.timeInMillis = timestamp
 
 
-            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_ONE_SHOT)
+            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_IMMUTABLE)
             val res = this.resources
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 
@@ -128,6 +131,7 @@ class NotificationService : IntentService("NotificationService") {
                     .setStyle(Notification.BigTextStyle()
                         .bigText(message))
                     .setContentText(message).build()
+
             } else {
 
                 mNotification = Notification.Builder(this)
