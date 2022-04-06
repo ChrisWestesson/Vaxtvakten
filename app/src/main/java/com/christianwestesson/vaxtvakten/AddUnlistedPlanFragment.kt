@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.app.AlertDialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
@@ -72,21 +73,6 @@ class AddUnlistedPlanFragment : Fragment() {
 
         binding.nextToAddListBtn.setOnClickListener {
 
-            /*
-            var addToMyPlantList = MyPlant(
-                uid = 0,
-                waterintervalWeeks = 1,
-                waterintervalDays = 0,
-                waterintervalHours = 0,
-                info = binding.infoET.text.toString(),
-                species = binding.artET.text.toString(),
-                title = binding.namnET.text.toString(),
-                wateramount = binding.vattenmNgdET.text.toString(),
-                giveWaterDate = date,
-                imgName = "",
-                userimgName = imagename)
-
-             */
 
             myPlant.title = binding.nameET.text.toString()
             myPlant.species = binding.speciesET.text.toString()
@@ -95,21 +81,7 @@ class AddUnlistedPlanFragment : Fragment() {
             myPlant.giveWaterDate = date
             myPlant.userimgName = imagename
 
-            /*
-            var addToPlantList = Plant(
-                uid = 0,
-                waterintervalWeeks = 1,
-                waterintervalDays = 0,
-                waterintervalHours = 0,
-                info = binding.infoET.text.toString(),
-                species = binding.artET.text.toString(),
-                title = "",
-                wateramount = binding.vattenmNgdET.text.toString(),
-                giveWaterDate = date,
-                imgName = "",
-                userimgName = imagename)
 
-             */
 
             newPlant.species = binding.speciesET.text.toString()
             newPlant.wateramount = binding.wateramountET.text.toString()
@@ -117,12 +89,17 @@ class AddUnlistedPlanFragment : Fragment() {
             newPlant.giveWaterDate = date
             newPlant.userimgName = imagename
 
-            model.addMyPlant(myPlant)
-            model.addPlant(newPlant)
+            var interval = myPlant.waterintervalWeeks + myPlant.waterintervalDays + myPlant.waterintervalHours
 
+            if (interval == 0) {
+                intervalNotProvidedNotification()
+            } else {
+                model.addMyPlant(myPlant)
+                model.addPlant(newPlant)
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
 
+            }
 
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
         }
 
         val spinner : Spinner = binding.dagarSpinner
@@ -231,18 +208,16 @@ class AddUnlistedPlanFragment : Fragment() {
         }
     }
 
-    /*
-    fun getimage()
-    {
-        val theuuid = "xyz"
+    fun intervalNotProvidedNotification() {
+        val builder = AlertDialog.Builder(requireContext())
 
-        val imagedir = File(requireContext().getExternalFilesDir(), "plantimages")
-        val imagefile = File(imagedir, theuuid+".jpg")
+        builder.setTitle("Frekvens saknas!")
+        builder.setMessage("Du måste ange hur ofta växten ska vattnas för att kunna lägga till den.")
 
-        val imagebytes = imagefile.readBytes()
-        val bitmap = BitmapFactory.decodeByteArray(imagebytes)
+        builder.setPositiveButton("Okej") { dialog, which ->
+        }
+
+        builder.show()
     }
-
-     */
 
 }

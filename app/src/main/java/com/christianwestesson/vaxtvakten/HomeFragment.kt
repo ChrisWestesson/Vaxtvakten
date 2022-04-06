@@ -39,18 +39,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
-
-
-
-
-
-
-
-
-
         val myPlantsRecView = view.findViewById<RecyclerView>(R.id.myPlantsRV)
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
@@ -58,6 +46,18 @@ class HomeFragment : Fragment() {
         model.createList()
         model.createMyPlantList()
         myPlantsAdapter.notifyDataSetChanged()
+
+        if (model.myPlantList.value?.size ?: 0 == 0) {
+            binding.noPlantsTextView.visibility = View.VISIBLE
+            binding.noPlantAddButton.visibility = View.VISIBLE
+
+            binding.noPlantAddButton.setOnClickListener {
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, AddPlantListFragment()).commit()
+            }
+        } else {
+            binding.noPlantsTextView.visibility = View.GONE
+            binding.noPlantAddButton.visibility = View.GONE
+        }
 
     }
 

@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -30,9 +31,9 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         waterintervalHours = 0, info = "", species = "", title = "",
         wateramount = "", giveWaterDate = 0, imgName = "", userimgName = "")
 
-    var selectWeeks = IntArray(12){it}
-    var selectDays = IntArray(6){it}
-    var selectHours = IntArray(23){it}
+    var selectWeeks = IntArray(13){it}
+    var selectDays = IntArray(7){it}
+    var selectHours = IntArray(24){it}
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,8 +125,17 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             Log.i("PIAXDEBUG", "currentplant days: " + currentPlant.waterintervalDays)
             Log.i("PIAXDEBUG", "currentplant hours: " + currentPlant.waterintervalHours)
 
-            model.updateMyPlant(currentPlant)
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+            var interval = currentPlant.waterintervalWeeks + currentPlant.waterintervalDays + currentPlant.waterintervalHours
+
+            if (interval == 0) {
+                intervalNotProvidedNotification()
+            } else {
+                model.updateMyPlant(currentPlant)
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+
+            }
+
+
         }
 
         binding.dagarSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -221,5 +231,16 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(arg0: AdapterView<*>) {
 
+    }
+    fun intervalNotProvidedNotification() {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Frekvens saknas!")
+        builder.setMessage("Hur ofta ska växten vattnas? Ange frekvens för att kunna spara ändringar.")
+
+        builder.setPositiveButton("Okej") { dialog, which ->
+        }
+
+        builder.show()
     }
 }
