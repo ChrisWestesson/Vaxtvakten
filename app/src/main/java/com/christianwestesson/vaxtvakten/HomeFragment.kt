@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,18 +40,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
-
-
-
-
-
-
-
-
-
         val myPlantsRecView = view.findViewById<RecyclerView>(R.id.myPlantsRV)
         myPlantsRecView.layoutManager = GridLayoutManager(activity, 2)
         myPlantsRecView.adapter = myPlantsAdapter
@@ -59,6 +48,39 @@ class HomeFragment : Fragment() {
         model.createMyPlantList()
         myPlantsAdapter.notifyDataSetChanged()
 
+        if (model.myPlantList.value?.size ?: 0 == 0) {
+            binding.noPlantsTextView.visibility = View.VISIBLE
+            binding.noPlantAddButton.visibility = View.VISIBLE
+
+            binding.noPlantAddButton.setOnClickListener {
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, AddPlantListFragment()).commit()
+            }
+        } else {
+            binding.noPlantsTextView.visibility = View.GONE
+            binding.noPlantAddButton.visibility = View.GONE
+        }
+
+    }
+
+    fun deleteNotification(currentplant : MyPlant) {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Radera växt")
+        builder.setMessage("Vill du verkligen radera denna fina växt?")
+
+        builder.setPositiveButton("Radera") { dialog, which ->
+            model.deleteMyPlant(currentplant)
+            model.createMyPlantList()
+            model.homeFragment.showDeleteButton = false
+            myPlantsAdapter.notifyDataSetChanged()
+
+        }
+        builder.setNegativeButton(("Ångra")) { dialog, which ->
+
+
+        }
+
+        builder.show()
     }
 
 
@@ -69,6 +91,9 @@ class HomeFragment : Fragment() {
 
         requireActivity().supportFragmentManager.beginTransaction().
         add(R.id.fragContainer, plantdetailsuneditablefrag).addToBackStack(null).commit()    }
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

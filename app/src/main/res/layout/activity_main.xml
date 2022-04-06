@@ -23,8 +23,6 @@
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,33 +34,25 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/button_corner_radius"
+
             app:srcCompat="@drawable/ic_baseline_home_24" />
 
         <ImageButton
             android:id="@+id/addPlantBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@drawable/button_corner_radius"
-            app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
-        <ImageButton
-            android:id="@+id/notificationPlantBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_corner_radius"
-            app:srcCompat="@drawable/ic_baseline_notifications_24" />
+            app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
         <ImageButton
             android:id="@+id/deletePlantBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@drawable/button_corner_radius"
+
             app:srcCompat="@drawable/ic_baseline_delete_24" />
     </LinearLayout>
 

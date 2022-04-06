@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.app.AlertDialog
 import android.icu.text.SimpleDateFormat
 import android.os.Build
 import android.util.Log
@@ -7,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.room.*
+import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
 class MyPlantViewModel : ViewModel() {
@@ -70,7 +72,7 @@ class MyPlantViewModel : ViewModel() {
 
 
             else -> {
-                print("Hittade inte blomman")
+                image = R.drawable.ic_baseline_local_florist_24
             }
         }
         return  image
@@ -127,6 +129,7 @@ class MyPlantViewModel : ViewModel() {
     }
 
     fun deleteMyPlant(plantinfo : MyPlant) {
+
         Log.i("VAXTVAKTENDEBUG", "deleteMyPlant körs!")
         var userdao = Databasehelper.getDatabase().userDao()
 
@@ -141,6 +144,9 @@ class MyPlantViewModel : ViewModel() {
         Log.i("VAXTVAKTENDEBUG", "deleteListedPlant")
         userdao.deletePlant(plantinfo)
     }
+
+
+
 
 
 

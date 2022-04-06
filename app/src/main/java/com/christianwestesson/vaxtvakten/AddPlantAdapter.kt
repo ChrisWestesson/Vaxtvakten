@@ -52,11 +52,9 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
             holder.flowerImage.setImageResource(addplantfrag.model.stringtoIMG(currentPlant.species))
         }
 
+
         holder.listDelete.setOnClickListener {
-            addplantfrag.model.deleteListedPlant(currentPlant)
-            addplantfrag.model.createMyPlantList()
-            addplantfrag.model.createList()
-            notifyDataSetChanged()
+            addplantfrag.deleteNotification(currentPlant)
 
 
         }
