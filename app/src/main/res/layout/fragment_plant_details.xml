@@ -56,11 +56,11 @@
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Namn               :"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="serif"
+                    android:text="Namn              :"
                     android:textAlignment="textStart"
                     android:textColor="@color/teal_700"
                     android:textSize="14sp"
@@ -70,6 +70,7 @@
                     android:id="@+id/editTextName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/black"
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
@@ -86,11 +87,11 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="ART                  :"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="serif"
+                    android:text="ART                 :"
                     android:textAlignment="textStart"
                     android:textColor="@color/teal_700"
                     android:textSize="14sp"
@@ -100,6 +101,7 @@
                     android:id="@+id/editTextSpecies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/black"
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
@@ -116,10 +118,10 @@
 
                 <TextView
                     android:id="@+id/textView13"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="serif"
                     android:text="Vattenmändg :"
                     android:textAlignment="textStart"
                     android:textColor="@color/teal_700"
@@ -130,6 +132,7 @@
                     android:id="@+id/editTextWateramount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/black"
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
@@ -146,10 +149,10 @@
 
                 <TextView
                     android:id="@+id/textView15"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="serif"
                     android:text="Övrigt              :"
                     android:textAlignment="textStart"
                     android:textColor="@color/teal_700"
@@ -160,6 +163,7 @@
                     android:id="@+id/editTextInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/black"
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
@@ -187,9 +191,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:orientation="horizontal"
                 android:paddingTop="10dp">
 
@@ -198,9 +199,10 @@
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="serif"
                     android:text="Veckor"
                     android:textColor="@color/teal_700"
                     android:textSize="14sp" />
@@ -209,6 +211,7 @@
                     android:id="@+id/veckor_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
+                    android:layout_marginEnd="100dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
@@ -216,12 +219,23 @@
                     android:theme="@style/spinnerTheme"
                     tools:ignore="TouchTargetSizeCheck" />
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="serif"
                     android:text="Dagar"
                     android:textColor="@color/teal_700"
                     android:textSize="14sp" />
@@ -230,6 +244,7 @@
                     android:id="@+id/dagar_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
+                    android:layout_marginEnd="100dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
@@ -238,14 +253,22 @@
                     android:foregroundTint="@color/black"
                     android:theme="@style/spinnerTheme"
                     tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Tid"
+                    android:fontFamily="serif"
+                    android:text="Timmer"
                     android:textColor="@color/teal_700"
                     android:textSize="14sp" />
 
@@ -253,6 +276,7 @@
                     android:id="@+id/timmer_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp"
+                    android:layout_marginEnd="100dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/teal_700"
                     android:contentDescription="@string/app_name"
@@ -261,8 +285,6 @@
                     android:foregroundTint="@color/black"
                     android:theme="@style/spinnerTheme"
                     tools:ignore="TouchTargetSizeCheck" />
-
-
             </LinearLayout>
 
             <Button
@@ -271,7 +293,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:backgroundTint="@color/teal_700"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:padding="10dip"
                 android:text="Spara"

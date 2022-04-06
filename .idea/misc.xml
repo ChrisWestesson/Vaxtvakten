@@ -18,7 +18,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25890045166015624" />
         <entry key="app/src/main/res/layout/fragment_add_listed_plant.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/fragment_add_plant_list.xml" value="0.2515625" />
-        <entry key="app/src/main/res/layout/fragment_add_unlisted_plan.xml" value="0.3387179565429688" />
+        <entry key="app/src/main/res/layout/fragment_add_unlisted_plan.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/fragment_plant_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_plant_details_un_editable.xml" value="0.22" />
