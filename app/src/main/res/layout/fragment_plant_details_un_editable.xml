@@ -60,12 +60,12 @@
                     android:id="@+id/nameTV"
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="40dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Namn              :"
-                    android:textColor="@color/teal_700"
+                    android:textColor="#365034"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -93,12 +93,12 @@
                     android:id="@+id/artTV"
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="ART                  :"
-                    android:textColor="@color/teal_700"
+                    android:textColor="#365034"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -127,12 +127,12 @@
                     android:id="@+id/vattenmTV"
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Vattenmängd :"
-                    android:textColor="@color/teal_700"
+                    android:textColor="#365034"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -161,12 +161,12 @@
                     android:id="@+id/frekvensTV"
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Frekvens         :"
-                    android:textColor="@color/teal_700"
+                    android:textColor="#365034"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -194,12 +194,12 @@
                     android:id="@+id/övrigtTv"
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Övrigt               :"
-                    android:textColor="@color/teal_700"
+                    android:textColor="#365034"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -229,7 +229,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Nästa vattning:"
                 android:textAlignment="center"
-                android:textColor="@color/teal_700"
+                android:textColor="#365034"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -245,7 +245,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textColor="@color/teal_700"
+                android:textColor="#365034"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/timeLeftPB"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -280,7 +280,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
 
-                    android:backgroundTint="@color/teal_700"
+                    android:backgroundTint="#5FBA63"
                     android:text="Redigera"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -293,7 +293,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/teal_700"
+                    android:backgroundTint="#5FBA63"
                     android:text="Vattna"
                     app:layout_constraintBottom_toTopOf="@+id/editPlantDetailsButton"
                     app:layout_constraintEnd_toEndOf="parent"
