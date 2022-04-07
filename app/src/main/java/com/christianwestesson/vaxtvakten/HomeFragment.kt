@@ -14,6 +14,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment() {
 
@@ -66,6 +67,12 @@ class HomeFragment : Fragment() {
         }
 
     }
+    fun WaterSnackbar(currentplant: MyPlant) {
+        Snackbar.make(requireView(), ("Du har vattnat din " + currentplant.species), Snackbar.LENGTH_SHORT).show()
+
+
+    }
+
 
     fun deleteNotification(currentplant : MyPlant) {
         val builder = AlertDialog.Builder(requireContext())
@@ -90,6 +97,11 @@ class HomeFragment : Fragment() {
         builder.show()
     }
 
+
+
+
+
+
     fun vibrateOnClick() {
         val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         if (Build.VERSION.SDK_INT >= 26) {
@@ -108,6 +120,7 @@ class HomeFragment : Fragment() {
 
         requireActivity().supportFragmentManager.beginTransaction().
         add(R.id.fragContainer, plantdetailsuneditablefrag).addToBackStack(null).commit()    }
+
 
 
 
