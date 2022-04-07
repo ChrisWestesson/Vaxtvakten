@@ -203,8 +203,9 @@
 
                     <TextView
                         android:id="@+id/textView17"
-                        android:layout_width="48dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Veckor"
@@ -213,7 +214,7 @@
 
                     <Spinner
                         android:id="@+id/veckor_spinner"
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/header_text_color"
@@ -234,8 +235,9 @@
 
                     <TextView
                         android:id="@+id/textView16"
-                        android:layout_width="48dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Dagar"
@@ -244,7 +246,7 @@
 
                     <Spinner
                         android:id="@+id/dagar_spinner"
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/header_text_color"
@@ -267,8 +269,9 @@
 
                     <TextView
                         android:id="@+id/textView22"
-                        android:layout_width="49dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Timmar"
@@ -277,7 +280,7 @@
 
                     <Spinner
                         android:id="@+id/timmer_spinner"
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/header_text_color"
