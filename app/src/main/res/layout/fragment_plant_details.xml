@@ -62,7 +62,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Namn               :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -94,7 +94,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="ART                  :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -126,7 +126,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Vattenmängd :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -158,7 +158,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Övrigt              :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -188,7 +188,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Frekvens"
                 android:textAlignment="viewStart"
-                android:textColor="@color/teal_700"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -212,20 +212,21 @@
                         android:id="@+id/textView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginStart="100dp"
                         android:layout_marginEnd="2dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Veckor"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
                         android:id="@+id/veckor_spinner"
-                        android:layout_width="75dp"
-                        android:layout_height="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="41dp"
                         android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:entries="@array/Veckor"
                         android:scrollbarSize="10dp"
@@ -245,20 +246,21 @@
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginStart="100dp"
                         android:layout_marginEnd="9dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Dagar"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
                         android:id="@+id/dagar_spinner"
-                        android:layout_width="75dp"
-                        android:layout_height="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="41dp"
                         android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Dagar"
@@ -280,19 +282,20 @@
                         android:id="@+id/textView22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginStart="100dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Timmar"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
                         android:id="@+id/timmer_spinner"
-                        android:layout_width="75dp"
-                        android:layout_height="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="41dp"
                         android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Timmer"
@@ -311,7 +314,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:backgroundTint="@color/teal_700"
+                android:backgroundTint="@color/button_color"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:padding="10dip"

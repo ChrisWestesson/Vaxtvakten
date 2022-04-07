@@ -26,7 +26,7 @@
                 android:id="@+id/btn_camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/teal_700"
+                android:backgroundTint="@color/button_color"
                 android:fontFamily="sans-serif-medium"
                 android:text="ta bild"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +117,7 @@
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textColorHint="@color/teal_700"
+                android:textColorHint="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +166,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Veckor"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
@@ -175,7 +175,7 @@
                         android:layout_height="41dp"
                         android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:entries="@array/Veckor"
                         android:theme="@style/spinnerTheme"
@@ -196,7 +196,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Dagar"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
@@ -205,7 +205,7 @@
                         android:layout_height="41dp"
                         android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Dagar"
@@ -228,7 +228,7 @@
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Timmar"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
@@ -237,7 +237,7 @@
                         android:layout_height="41dp"
                         android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Timmer"
@@ -254,7 +254,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/teal_700"
+                android:backgroundTint="@color/button_color"
                 android:fontFamily="sans-serif-medium"
                 android:text="lägg till"
                 app:layout_constraintEnd_toEndOf="parent"
