@@ -3,13 +3,13 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>    </style>
+        <item name="colorAccent">@color/header_text_color</item>    </style>
     <style name="spinnerTheme">
         <item name="android:background">@color/vaxtvakentLightGreen</item>
         <item name="android:textColor">@color/header_text_color</item>
 
         <!-- this is for api 19 text color -->
-        <item name="android:color">@color/teal_700</item>
+        <item name="android:color">@color/header_text_color</item>
     </style>
     
     <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">

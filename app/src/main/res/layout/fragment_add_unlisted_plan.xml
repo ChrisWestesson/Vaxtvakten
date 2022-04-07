@@ -60,7 +60,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName|textCapSentences"
                 android:minHeight="48dp"
-                android:textColor="@color/black"
+                android:textColor="@color/header_text_color"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -79,7 +79,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName|textCapSentences"
                 android:minHeight="48dp"
-                android:textColor="@color/black"
+                android:textColor="@color/header_text_color"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -98,7 +98,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName|textCapSentences"
                 android:minHeight="48dp"
-                android:textColor="@color/black"
+                android:textColor="@color/header_text_color"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.27"
@@ -137,7 +137,7 @@
                 android:imeOptions="actionDone"
                 android:inputType="textPersonName|textCapSentences"
                 android:minHeight="48dp"
-                android:textColor="@color/black"
+                android:textColor="@color/header_text_color"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -160,7 +160,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Veckor"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -181,7 +181,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Dagar"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp" />
 
                 <Spinner
@@ -205,7 +205,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="Timmar"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp" />
 
                 <Spinner
