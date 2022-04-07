@@ -23,8 +23,56 @@ class NotificationService  : IntentService("NotificationService") {
     private lateinit var mNotification: Notification
     private val mNotificationId: Int = 1000
 
+    /*
+    override fun onCreate() {
+        super.onCreate()
+
+        val notifyIntent = Intent(this, ResultActivity::class.java)
 
 
+        val pendingIntent = PendingIntent.getActivity(applicationContext, 0, notifyIntent, PendingIntent.FLAG_IMMUTABLE)
+        val res = this.resources
+        val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+
+
+        var message = "banan"
+        var title = "apelsin"
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+
+            mNotification = Notification.Builder(this, CHANNEL_ID)
+                // Set the intent that will fire when the user taps the notification
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setLargeIcon(BitmapFactory.decodeResource(res, R.mipmap.ic_launcher))
+                .setAutoCancel(true)
+                .setContentTitle(title)
+                .setStyle(Notification.BigTextStyle()
+                    .bigText(message))
+                .setContentText(message).build()
+
+        } else {
+
+            mNotification = Notification.Builder(this)
+                // Set the intent that will fire when the user taps the notification
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setLargeIcon(BitmapFactory.decodeResource(res, R.mipmap.ic_launcher))
+                .setAutoCancel(true)
+                .setPriority(Notification.PRIORITY_MAX)
+                .setContentTitle(title)
+                .setStyle(Notification.BigTextStyle()
+                    .bigText(message))
+                .setSound(uri)
+                .setContentText(message).build()
+
+        }
+
+        startForeground(1, mNotification)
+    }
+    */
+    
     @SuppressLint("NewApi")
     private fun createChannel() {
 

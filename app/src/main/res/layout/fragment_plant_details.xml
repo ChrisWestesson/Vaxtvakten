@@ -44,7 +44,7 @@
                     android:layout_height="200dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/svarmorstunga"
+                    android:src="@drawable/ic_baseline_local_florist_24"
                     app:shapeAppearanceOverlay="@style/RoundedSquare" />
             </androidx.cardview.widget.CardView>
 
@@ -313,7 +313,8 @@
                 android:id="@+id/saveButton"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/button_color"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
