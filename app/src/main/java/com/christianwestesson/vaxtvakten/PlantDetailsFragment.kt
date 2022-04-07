@@ -2,6 +2,7 @@ package com.christianwestesson.vaxtvakten
 
 import android.app.AlertDialog
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.*
 import android.util.Log
@@ -14,6 +15,7 @@ import androidx.core.view.get
 import androidx.fragment.app.activityViewModels
 import com.christianwestesson.vaxtvakten.databinding.FragmentAddUnlistedPlanBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsBinding
+import java.io.File
 
 
 class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
@@ -90,6 +92,19 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
             spinner2.adapter = adapter
+        }
+
+        if(currentPlant.userimgName != "")
+        {
+            // GET FILE STUFF
+            val imagedir = File(requireContext().getExternalFilesDir("vaxtvakten"), "plantimages")
+            val imagefile = File(imagedir, currentPlant.userimgName)
+
+            val imagebytes = imagefile.readBytes()
+            val bitmap = BitmapFactory.decodeByteArray(imagebytes, 0, imagebytes.size)
+            binding.imageView7.setImageBitmap(bitmap)
+        } else {
+            binding.imageView7.setImageResource(model.stringtoIMG(currentPlant.species))
         }
 
 

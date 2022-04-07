@@ -257,12 +257,7 @@ class MyPlantViewModel : ViewModel() {
         var timetoWaterMilli = timeToWater.timeInMillis
 
 
-
-
-
-
-
-        //var timetoWaterMilli = timeToWater.timeInMillis + 5000
+      //  var timetoWaterMilli = timeToWater.timeInMillis + 5000
 
         Log.i("VAXTVAKTENDEBUG", "timetowater after added: ${timeToWater.time} " +timetoWaterMilli)
 
