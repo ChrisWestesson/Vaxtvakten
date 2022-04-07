@@ -1,5 +1,6 @@
 package com.christianwestesson.vaxtvakten
 
+import android.app.AlertDialog
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
@@ -92,5 +93,16 @@ class AddListedPlantFragment : Fragment() {
 
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
         }
+    }
+    fun intervalNotProvidedNotification() {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Namn saknas!")
+        builder.setMessage("Du måste ge din växt ett eget namn.")
+
+        builder.setPositiveButton("Okej") { dialog, which ->
+        }
+
+        builder.show()
     }
 }

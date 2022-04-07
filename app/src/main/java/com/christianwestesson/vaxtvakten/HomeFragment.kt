@@ -1,7 +1,11 @@
 package com.christianwestesson.vaxtvakten
 
 import android.app.AlertDialog
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,6 +57,7 @@ class HomeFragment : Fragment() {
             binding.noPlantAddButton.visibility = View.VISIBLE
 
             binding.noPlantAddButton.setOnClickListener {
+                vibrateOnClick()
                 requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, AddPlantListFragment()).commit()
             }
         } else {
@@ -69,6 +74,7 @@ class HomeFragment : Fragment() {
         builder.setMessage("Vill du verkligen radera denna fina växt?")
 
         builder.setPositiveButton("Radera") { dialog, which ->
+            vibrateOnClick()
             model.deleteMyPlant(currentplant)
             model.createMyPlantList()
             model.homeFragment.showDeleteButton = false
@@ -76,6 +82,7 @@ class HomeFragment : Fragment() {
 
         }
         builder.setNegativeButton(("Ångra")) { dialog, which ->
+            vibrateOnClick()
 
 
         }
@@ -83,9 +90,19 @@ class HomeFragment : Fragment() {
         builder.show()
     }
 
+    fun vibrateOnClick() {
+        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrator.vibrate(50)
+        }
+    }
+
 
 
     fun goPlantDetails(chosenPlant : MyPlant) {
+
         val plantdetailsuneditablefrag = PlantDetailsUnEditableFragment()
         plantdetailsuneditablefrag.currentPlant = chosenPlant
 

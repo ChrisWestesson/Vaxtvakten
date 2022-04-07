@@ -1,10 +1,14 @@
 package com.christianwestesson.vaxtvakten
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
@@ -50,6 +54,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Databasehelper.checkStart()
+        fun vibrateOnClick() {
+            val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            if (Build.VERSION.SDK_INT >= 26) {
+                vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                vibrator.vibrate(50)
+            }
+        }
 
 
 
@@ -68,9 +80,11 @@ class MainActivity : AppCompatActivity() {
  */
         findViewById<ImageButton>(R.id.homePlantBtn).setOnClickListener {
            // NotificationUtils().setNotification(mNotificationTime2, this@MainActivity)
+            vibrateOnClick()
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, homeFrag).commit()
         }
         findViewById<ImageButton>(R.id.addPlantBtn).setOnClickListener {
+            vibrateOnClick()
             supportFragmentManager.beginTransaction().replace(R.id.fragContainer, addPlantList).commit()
 
         }
@@ -78,6 +92,7 @@ class MainActivity : AppCompatActivity() {
 
 
         findViewById<ImageButton>(R.id.deletePlantBtn).setOnClickListener {
+            vibrateOnClick()
 
             if (homeFrag.model.homeFragment.showDeleteButton == true)
             {

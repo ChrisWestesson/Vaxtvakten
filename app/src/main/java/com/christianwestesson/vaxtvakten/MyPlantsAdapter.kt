@@ -45,6 +45,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: MyPlantsViewHolder, position: Int) {
 
+
         var currentPlant = homefrag.model.myPlantList.value!![position]
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm")
         val dateString = simpleDateFormat.format(currentPlant.giveWaterDate)
@@ -84,6 +85,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
 
         holder.waterPlant.setOnClickListener {
+            homefrag.vibrateOnClick()
             Log.i("VAXTAPPDEBUG","klickat på vattna, time in millis INNAN watermyplant: " + currentPlant.giveWaterDate)
 
             homefrag.model.waterMyPlant(plant = currentPlant)
@@ -100,7 +102,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         }
 
             holder.itemView.setOnClickListener {
-
+                homefrag.vibrateOnClick()
                 homefrag.goPlantDetails(chosenPlant = currentPlant)
 
 
@@ -116,7 +118,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
 
         holder.deleteIMG.setOnClickListener {
-
+            homefrag.vibrateOnClick()
             homefrag.deleteNotification(currentPlant)
 
         }
@@ -124,6 +126,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
         }
 
     }
+
 
     class MyPlantsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

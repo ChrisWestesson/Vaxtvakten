@@ -1,10 +1,13 @@
 package com.christianwestesson.vaxtvakten
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.icu.text.SimpleDateFormat
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -130,6 +133,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
        // binding.frekvensTV.text = "${days.toString()} dagar ${hours.toString()} timmar"
 
         binding.giveWaterButton.setOnClickListener {
+            vibrateOnClick()
             model.waterMyPlant(plant = currentPlant)
             percent = model.timeLeft(
                 timetowater = currentPlant.giveWaterDate,
@@ -145,6 +149,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
         }
 
         binding.editPlantDetailsButton.setOnClickListener {
+            vibrateOnClick()
 
             val plantdetailsfrag = PlantDetailsFragment()
             plantdetailsfrag.currentPlant = currentPlant
@@ -156,6 +161,14 @@ class PlantDetailsUnEditableFragment : Fragment() {
         }
 
 
+    }
+    fun vibrateOnClick() {
+        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrator.vibrate(50)
+        }
     }
 
 

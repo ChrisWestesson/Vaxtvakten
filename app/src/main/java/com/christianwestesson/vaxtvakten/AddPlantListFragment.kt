@@ -1,7 +1,11 @@
 package com.christianwestesson.vaxtvakten
 
 import android.app.AlertDialog
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -55,6 +59,7 @@ class AddPlantListFragment : Fragment() {
         addplantRecview.adapter = addplantadapter
 
         binding.addNewPlantButton.setOnClickListener {
+            vibrateOnClick()
             requireActivity().supportFragmentManager.beginTransaction().
             add(R.id.fragContainer, AddUnlistedPlanFragment()).commit()
 
@@ -70,9 +75,18 @@ class AddPlantListFragment : Fragment() {
 
         _binding = null
     }
+    fun vibrateOnClick() {
+        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrator.vibrate(50)
+        }
+    }
 
     fun goChoosenPlant(chosenPlant : Plant)
     {
+        vibrateOnClick()
         val addlistedplantfrag = AddListedPlantFragment()
         addlistedplantfrag.currentPlant = chosenPlant
 
@@ -88,6 +102,7 @@ class AddPlantListFragment : Fragment() {
         builder.setMessage("Vill du verkligen radera denna fina växt?")
 
         builder.setPositiveButton("Radera") { dialog, which ->
+            vibrateOnClick()
             model.deleteListedPlant(currentplant)
             model.createMyPlantList()
             model.createList()
@@ -95,6 +110,7 @@ class AddPlantListFragment : Fragment() {
 
         }
         builder.setNegativeButton(("Ångra")) { dialog, which ->
+            vibrateOnClick()
 
 
         }
