@@ -13,7 +13,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.core.content.ContextCompat
-import com.christianwestesson.vaxtvakten.notification.NotificationService
 import com.christianwestesson.vaxtvakten.notification.NotificationUtils
 import java.util.*
 
@@ -115,13 +114,15 @@ class MainActivity : AppCompatActivity() {
         //Mattias was here again
     }
 
-
+    /*
     override fun onStop() {
         val service = Intent(this, NotificationService::class.java)
         startService(service)
         super.onStop()
 
     }
+
+     */
 
 
 
