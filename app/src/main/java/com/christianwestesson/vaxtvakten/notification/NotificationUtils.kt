@@ -32,6 +32,7 @@ class NotificationUtils {
 
 
 
+            alarmIntent.putExtra("plantid", id)
             alarmIntent.putExtra("reason", plantname)
             alarmIntent.putExtra("plant", plantname)
             alarmIntent.putExtra("species", species)
@@ -43,9 +44,7 @@ class NotificationUtils {
 
             Log.i("VAXTVAKTENDEBUG", "setNotification körs, calendar.timeinmillis: ${calendar.timeInMillis}, activity: ${activity}")
 
-
-
-            val pendingIntent = PendingIntent.getBroadcast(activity, id, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
+            val pendingIntent = PendingIntent.getBroadcast(activity.applicationContext, id, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
 
 

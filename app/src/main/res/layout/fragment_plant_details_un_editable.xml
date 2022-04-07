@@ -261,7 +261,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
-                android:progressTint="#7BD673"
+                android:progressTint="@color/teal_700"
                 app:layout_constraintBottom_toTopOf="@+id/giveWaterButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.49"
