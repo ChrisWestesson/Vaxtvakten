@@ -145,7 +145,9 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
             if (interval == 0) {
                 intervalNotProvidedNotification()
-            } else {
+            } else if (binding.editTextName.text.toString() == "") {
+                nameNotProvidedNotification()
+            }  else {
                 model.updateMyPlant(currentPlant)
                 requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
 
@@ -264,6 +266,18 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         builder.setMessage("Hur ofta ska växten vattnas? Ange frekvens för att kunna spara ändringar.")
 
         builder.setPositiveButton("Okej") { dialog, which ->
+        }
+
+        builder.show()
+    }
+    fun nameNotProvidedNotification() {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Namn saknas!")
+        builder.setMessage("Du måste ge din växt ett eget namn.")
+
+        builder.setPositiveButton("Okej") { dialog, which ->
+            vibrateOnClick()
         }
 
         builder.show()

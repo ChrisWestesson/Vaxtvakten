@@ -100,6 +100,8 @@ class AddUnlistedPlanFragment : Fragment() {
 
             if (interval == 0) {
                 intervalNotProvidedNotification()
+            } else if (binding.nameET.text.toString() == "") {
+                nameNotProvidedNotification()
             } else {
                 model.addMyPlant(myPlant)
                 model.addPlant(newPlant)
@@ -229,6 +231,19 @@ class AddUnlistedPlanFragment : Fragment() {
 
         builder.setTitle("Frekvens saknas!")
         builder.setMessage("Du måste ange hur ofta växten ska vattnas för att kunna lägga till den.")
+
+        builder.setPositiveButton("Okej") { dialog, which ->
+            vibrateOnClick()
+        }
+
+        builder.show()
+    }
+
+    fun nameNotProvidedNotification() {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Namn saknas!")
+        builder.setMessage("Du måste ge din växt ett eget namn.")
 
         builder.setPositiveButton("Okej") { dialog, which ->
             vibrateOnClick()
