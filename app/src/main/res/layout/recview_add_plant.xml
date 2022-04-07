@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:fontFamily="sans-serif-medium"
         android:text="TextView"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/header_text_color"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedSquare"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/ic_baseline_local_florist_24" />
 
     <ImageView
         android:id="@+id/addListedPlantDelete"

@@ -4,24 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/button_corner_radius.xml" value="0.2795" />
+        <entry key="app/src/main/res/drawable/custombtn.xml" value="0.2255" />
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/ic_baseline_delete_24_grey.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable/ic_baseline_local_florist_24.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/ic_baseline_red_delete_24.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/ic_baseline_water_drop_24.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.139" />
         <entry key="app/src/main/res/font/vaxtvakten_font.xml" value="0.22760416666666666" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.526531982421875" />
-        <entry key="app/src/main/res/layout/fragment_add_listed_plant.xml" value="0.2515625" />
-        <entry key="app/src/main/res/layout/fragment_add_plant_list.xml" value="0.5485336303710938" />
-        <entry key="app/src/main/res/layout/fragment_add_unlisted_plan.xml" value="0.3387179565429688" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25890045166015624" />
+        <entry key="app/src/main/res/layout/fragment_add_listed_plant.xml" value="0.346026611328125" />
+        <entry key="app/src/main/res/layout/fragment_add_plant_list.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_add_unlisted_plan.xml" value="0.2582690429687501" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2515625" />
-        <entry key="app/src/main/res/layout/fragment_plant_details.xml" value="0.2627105712890625" />
-        <entry key="app/src/main/res/layout/fragment_plant_details_un_editable.xml" value="0.3483795166015625" />
+        <entry key="app/src/main/res/layout/fragment_plant_details.xml" value="0.21252143193566825" />
+        <entry key="app/src/main/res/layout/fragment_plant_details_un_editable.xml" value="0.25534851074218745" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/gradient_background.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/notification_layout.xml" value="0.22760416666666666" />

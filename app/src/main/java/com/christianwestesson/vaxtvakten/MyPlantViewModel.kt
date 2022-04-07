@@ -150,6 +150,8 @@ class MyPlantViewModel : ViewModel() {
 
 
 
+
+
     fun addPlant(plantinfo : Plant) {
 
         Log.i("VAXTVAKTENDEBUG", "addPlant körs!")

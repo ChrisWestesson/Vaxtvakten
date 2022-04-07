@@ -54,6 +54,7 @@ class AddPlantAdapter() : RecyclerView.Adapter<AddPlantViewHolder>() {
 
 
         holder.listDelete.setOnClickListener {
+            addplantfrag.vibrateOnClick()
             addplantfrag.deleteNotification(currentPlant)
 
 

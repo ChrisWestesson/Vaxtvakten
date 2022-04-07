@@ -1,9 +1,9 @@
 package com.christianwestesson.vaxtvakten
 
 import android.app.AlertDialog
+import android.content.Context
 import android.graphics.Color
-import android.os.Bundle
-import android.os.CountDownTimer
+import android.os.*
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -115,6 +115,7 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
         //startTimer()
 
         binding.saveButton.setOnClickListener {
+            vibrateOnClick()
 
             currentPlant.title = binding.editTextName.text.toString()
             currentPlant.species = binding.editTextSpecies.text.toString()
@@ -231,6 +232,15 @@ class PlantDetailsFragment : Fragment() ,AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(arg0: AdapterView<*>) {
 
+    }
+
+    fun vibrateOnClick() {
+        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrator.vibrate(50)
+        }
     }
     fun intervalNotProvidedNotification() {
         val builder = AlertDialog.Builder(requireContext())
