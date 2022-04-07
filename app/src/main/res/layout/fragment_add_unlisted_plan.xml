@@ -10,7 +10,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,15 +51,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
                 android:fontFamily="sans-serif-medium"
                 android:hint="Namn"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName|textCapSentences"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/header_text_color"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -77,9 +76,9 @@
                 android:fontFamily="sans-serif-medium"
                 android:hint="Vattenmängd"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName|textCapSentences"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/header_text_color"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -96,9 +95,9 @@
                 android:fontFamily="sans-serif-medium"
                 android:hint="ART"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName|textCapSentences"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/header_text_color"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.27"
@@ -118,7 +117,7 @@
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textColorHint="@color/header_text_color"
+                android:textColorHint="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -135,9 +134,9 @@
                 android:fontFamily="sans-serif-medium"
                 android:hint="Övrigt"
                 android:imeOptions="actionDone"
-                android:inputType="textPersonName|textCapSentences"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColor="@color/header_text_color"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -148,9 +147,7 @@
                 android:id="@+id/linearLayout6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frekvensET">
@@ -159,25 +156,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="100dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Veckor"
-                        android:textColor="@color/header_text_color"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
                         android:id="@+id/veckor_spinner"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="41dp"
+                        android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:entries="@array/Veckor"
                         android:theme="@style/spinnerTheme"
@@ -188,24 +186,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Dagar"
-                        android:textColor="@color/header_text_color"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
                         android:id="@+id/dagar_spinner"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="41dp"
+                        android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Dagar"
@@ -214,29 +214,30 @@
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textView22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Timmar"
-                        android:textColor="@color/header_text_color"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <Spinner
                         android:id="@+id/timmer_spinner"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="41dp"
+                        android:layout_marginEnd="100dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/black"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Timmer"
@@ -244,6 +245,7 @@
                         android:theme="@style/spinnerTheme"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
+
 
             </LinearLayout>
 
