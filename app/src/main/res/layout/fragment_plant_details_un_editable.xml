@@ -79,9 +79,9 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -112,9 +112,9 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,9 +146,9 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -180,9 +180,9 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -213,9 +213,9 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:text="TextView"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="normal" />
             </LinearLayout>
 
 
@@ -260,7 +260,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
-                android:progressTint="@color/colorAccent"
                 app:layout_constraintBottom_toTopOf="@+id/giveWaterButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.49"

@@ -45,7 +45,8 @@
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/svarmorstunga"
-                    app:shapeAppearanceOverlay="@style/RoundedSquare" />
+                    app:shapeAppearanceOverlay="@style/RoundedSquare"
+                    app:srcCompat="@drawable/ic_baseline_local_florist_24" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -62,7 +63,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Namn               :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -76,9 +77,9 @@
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionNext"
                     android:inputType="textPersonName"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +95,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="ART                  :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -108,9 +109,9 @@
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionNext"
                     android:inputType="textPersonName"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textColorHint="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,7 +127,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Vattenmängd :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -140,9 +141,9 @@
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionNext"
                     android:inputType="textPersonName"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textColorHint="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -158,7 +159,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Övrigt              :"
                     android:textAlignment="textStart"
-                    android:textColor="@color/teal_700"
+                    android:textColor="@color/header_text_color"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -173,9 +174,9 @@
                     android:imeOptions="actionDone"
                     android:inputType="textPersonName"
                     android:singleLine="false"
-                    android:textColor="@color/black"
+                    android:textColor="@color/header_text_color"
                     android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <TextView
@@ -188,7 +189,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Frekvens"
                 android:textAlignment="viewStart"
-                android:textColor="@color/teal_700"
+                android:textColor="@color/header_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -209,12 +210,12 @@
 
                     <TextView
                         android:id="@+id/textView17"
-                        android:layout_width="48dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Veckor"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/header_text_color"
                         android:textSize="14sp" />
 
                     <Spinner
@@ -222,10 +223,9 @@
                         android:layout_width="75dp"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/header_text_color"
                         android:contentDescription="@string/app_name"
                         android:entries="@array/Veckor"
-                        android:scrollbarSize="10dp"
                         android:textAlignment="inherit"
                         android:theme="@style/spinnerTheme"
                         tools:ignore="TouchTargetSizeCheck" />
@@ -240,12 +240,12 @@
 
                     <TextView
                         android:id="@+id/textView16"
-                        android:layout_width="48dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Dagar"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/header_text_color"
                         android:textSize="14sp" />
 
                     <Spinner
@@ -253,12 +253,11 @@
                         android:layout_width="75dp"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/header_text_color"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Dagar"
                         android:foregroundTint="@color/black"
-                        android:scrollbarSize="10dp"
                         android:textAlignment="inherit"
                         android:theme="@style/spinnerTheme"
                         tools:ignore="TouchTargetSizeCheck" />
@@ -273,12 +272,12 @@
 
                     <TextView
                         android:id="@+id/textView22"
-                        android:layout_width="44dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:text="Timmar"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/header_text_color"
                         android:textSize="14sp" />
 
                     <Spinner
@@ -286,12 +285,11 @@
                         android:layout_width="75dp"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/teal_700"
+                        android:backgroundTint="@color/header_text_color"
                         android:contentDescription="@string/app_name"
                         android:dropDownSelector="@color/black"
                         android:entries="@array/Timmer"
                         android:foregroundTint="@color/black"
-                        android:scrollbarSize="10dp"
                         android:textAlignment="inherit"
                         android:theme="@style/spinnerTheme"
                         tools:ignore="TouchTargetSizeCheck" />
@@ -305,7 +303,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:backgroundTint="@color/teal_700"
+                android:backgroundTint="@color/button_color"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:padding="10dip"
