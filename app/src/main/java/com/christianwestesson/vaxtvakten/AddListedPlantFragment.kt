@@ -1,8 +1,12 @@
 package com.christianwestesson.vaxtvakten
 
 import android.app.AlertDialog
+import android.content.Context
 import android.graphics.BitmapFactory
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -70,28 +74,42 @@ class AddListedPlantFragment : Fragment() {
 
         binding.homeBtn.setOnClickListener {
 
-            var plantToAdd = MyPlant(
-                uid = 0,
-                waterintervalWeeks = currentPlant.waterintervalWeeks,
-                waterintervalDays = currentPlant.waterintervalDays,
-                waterintervalHours = currentPlant.waterintervalHours,
-                info = currentPlant.info,
-                species = binding.detailsTypeTextview.text.toString(),
-                title = binding.detailsNameEditText.text.toString(),
-                wateramount = binding.detailsWaterAmountTextview.text.toString(),
-                giveWaterDate = currentPlant.giveWaterDate,
-                imgName = currentPlant.imgName,
-                userimgName = currentPlant.userimgName)
+            var interval = currentPlant.waterintervalWeeks + currentPlant.waterintervalDays + currentPlant.waterintervalHours
 
-            model.addMyPlant(plantToAdd)
-            Snackbar.make(view, ("Din växt är tillagd!"), Snackbar.LENGTH_SHORT).show()
+            if (interval == 0) {
+                intervalNotProvidedNotification()
+            } else if (binding.detailsNameEditText.text.toString() == "") {
+                nameNotProvidedNotification()
+            } else {
+
+                var plantToAdd = MyPlant(
+                    uid = 0,
+                    waterintervalWeeks = currentPlant.waterintervalWeeks,
+                    waterintervalDays = currentPlant.waterintervalDays,
+                    waterintervalHours = currentPlant.waterintervalHours,
+                    info = currentPlant.info,
+                    species = binding.detailsTypeTextview.text.toString(),
+                    title = binding.detailsNameEditText.text.toString(),
+                    wateramount = binding.detailsWaterAmountTextview.text.toString(),
+                    giveWaterDate = currentPlant.giveWaterDate,
+                    imgName = currentPlant.imgName,
+                    userimgName = currentPlant.userimgName)
+
+                model.addMyPlant(plantToAdd)
+                Snackbar.make(view, ("Din växt är tillagd!"), Snackbar.LENGTH_SHORT).show()
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+            }
 
 
+        }
+    }
 
-
-
-
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragContainer, HomeFragment()).commit()
+    fun vibrateOnClick() {
+        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrator.vibrate(50)
         }
     }
     fun intervalNotProvidedNotification() {
@@ -101,6 +119,19 @@ class AddListedPlantFragment : Fragment() {
         builder.setMessage("Du måste ge din växt ett eget namn.")
 
         builder.setPositiveButton("Okej") { dialog, which ->
+        }
+
+        builder.show()
+    }
+
+    fun nameNotProvidedNotification() {
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Namn saknas!")
+        builder.setMessage("Du måste ge din växt ett eget namn.")
+
+        builder.setPositiveButton("Okej") { dialog, which ->
+            vibrateOnClick()
         }
 
         builder.show()
