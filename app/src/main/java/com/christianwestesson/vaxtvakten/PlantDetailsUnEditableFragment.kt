@@ -20,6 +20,7 @@ import com.christianwestesson.vaxtvakten.databinding.FragmentAddListedPlantBindi
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsBinding
 import com.christianwestesson.vaxtvakten.databinding.FragmentPlantDetailsUnEditableBinding
 import com.christianwestesson.vaxtvakten.notification.NotificationUtils
+import com.google.android.material.snackbar.Snackbar
 import java.io.File
 
 
@@ -134,6 +135,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
         binding.giveWaterButton.setOnClickListener {
             vibrateOnClick()
+            Snackbar.make(requireView(), ("Du har vattnat din " + currentPlant.species), Snackbar.LENGTH_SHORT).show()
             model.waterMyPlant(plant = currentPlant)
             percent = model.timeLeft(
                 timetowater = currentPlant.giveWaterDate,

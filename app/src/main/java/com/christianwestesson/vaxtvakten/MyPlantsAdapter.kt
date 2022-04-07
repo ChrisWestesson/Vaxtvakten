@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.christianwestesson.vaxtvakten.notification.NotificationUtils
+import com.google.android.material.snackbar.Snackbar
 import java.io.File
 import java.util.*
 
@@ -86,6 +87,7 @@ class MyPlantsAdapter() : RecyclerView.Adapter<MyPlantsViewHolder>() {
 
         holder.waterPlant.setOnClickListener {
             homefrag.vibrateOnClick()
+            homefrag.WaterSnackbar(currentPlant)
             Log.i("VAXTAPPDEBUG","klickat på vattna, time in millis INNAN watermyplant: " + currentPlant.giveWaterDate)
 
             homefrag.model.waterMyPlant(plant = currentPlant)

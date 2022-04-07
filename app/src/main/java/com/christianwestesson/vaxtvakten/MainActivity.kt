@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Databasehelper.checkStart()
+
+
         fun vibrateOnClick() {
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             if (Build.VERSION.SDK_INT >= 26) {
