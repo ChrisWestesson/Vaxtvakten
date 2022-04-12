@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Namn               :"
+                    android:text="Namn"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -75,10 +75,10 @@
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
+                    android:inputType="textPersonName|textCapSentences"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="ART                  :"
+                    android:text="ART"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -107,10 +107,10 @@
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
+                    android:inputType="textPersonName|textCapSentences"
                     android:textColor="@color/black"
                     android:textColorHint="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -124,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Vattenmängd :"
+                    android:text="Vattenmängd"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -139,10 +139,10 @@
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
+                    android:inputType="textPersonName|textCapSentences"
                     android:textColor="@color/black"
                     android:textColorHint="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -156,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Övrigt              :"
+                    android:text="Övrigt"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -171,11 +171,11 @@
                     android:ems="10"
                     android:fontFamily="sans-serif-medium"
                     android:imeOptions="actionDone"
-                    android:inputType="textPersonName"
+                    android:inputType="textPersonName|textCapSentences"
                     android:singleLine="false"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <TextView

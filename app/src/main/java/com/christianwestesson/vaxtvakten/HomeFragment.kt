@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
 
     }
     fun WaterSnackbar(currentplant: MyPlant) {
-        Snackbar.make(requireView(), ("Du har vattnat din " + currentplant.species), Snackbar.LENGTH_SHORT).show()
+
 
 
     }

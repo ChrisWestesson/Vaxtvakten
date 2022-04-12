@@ -28,8 +28,8 @@ class AlarmReceiver : BroadcastReceiver() {
 
         Log.i("PLANTDEBUG", "onReceive")
 
-        var title = intent.getStringExtra("reason")
-        var message = intent.getStringExtra("species")
+        var title = intent.getStringExtra("reason") + " (" + intent.getStringExtra("species") + ")"
+        var message = "Jag behöver vatten!"
         var plantid = intent.getIntExtra("plantid", 1)
 
         notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
