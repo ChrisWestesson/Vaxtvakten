@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.christianwestesson.vaxtvakten.databinding.FragmentHomeBinding
@@ -52,6 +53,13 @@ class HomeFragment : Fragment() {
         model.createList()
         model.createMyPlantList()
         myPlantsAdapter.notifyDataSetChanged()
+
+        val listObserver = Observer<List<MyPlant>> {
+            myPlantsAdapter.notifyDataSetChanged()
+
+            }
+
+            model.myPlantList.observe(viewLifecycleOwner, listObserver)
 
         if (model.myPlantList.value?.size ?: 0 == 0) {
             binding.noPlantsTextView.visibility = View.VISIBLE

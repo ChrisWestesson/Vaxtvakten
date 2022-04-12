@@ -148,6 +148,7 @@ class PlantDetailsUnEditableFragment : Fragment() {
 
             NotificationUtils().setNotification(currentPlant.giveWaterDate, requireActivity(), id = currentPlant.uid, plantname = currentPlant.title, species = currentPlant.species)
 
+            model.createMyPlantList()
         }
 
         binding.editPlantDetailsButton.setOnClickListener {

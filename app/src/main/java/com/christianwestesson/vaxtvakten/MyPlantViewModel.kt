@@ -249,17 +249,19 @@ class MyPlantViewModel : ViewModel() {
 
         Log.i("VAXTVAKTENDEBUG", "timetowater before added: ${timeToWater.time} " +timeToWater.timeInMillis)
 
-/*
+
         timeToWater.add(Calendar.WEEK_OF_YEAR, + plant.waterintervalWeeks)
         timeToWater.add(Calendar.DAY_OF_YEAR, + plant.waterintervalDays)
         timeToWater.add(Calendar.HOUR, + plant.waterintervalHours)
 
         var timetoWaterMilli = timeToWater.timeInMillis
 
- */
 
 
-        var timetoWaterMilli = timeToWater.timeInMillis + 5000
+
+
+
+      //  var timetoWaterMilli = timeToWater.timeInMillis + 5000
 
         Log.i("VAXTVAKTENDEBUG", "timetowater after added: ${timeToWater.time} " +timetoWaterMilli)
 
